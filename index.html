@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Animal Crossing Food Delivery</title>
 
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fascinate&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Quintessential&family=Schoolbell&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="css/global.css" />
     <!-- Team-specific CSS -->
     <link rel="stylesheet" href="css/navbar.css" />       <!-- Patricia -->
@@ -14,152 +19,152 @@
     </head>
 
     <body>
+        <div class="wrapper">
+            <!-- ===================== -->
+            <!-- 1️⃣ NAVIGATION BAR -->
+            <!-- Owner: Patricia -->
+            <!-- ===================== -->
+            <nav id="navbar">
+                <!-- Left: Logo -->
+                <div class="logo">
+                <img src="assets/logo.png" alt="Animal Crossing Logo" />
+                <h1>Crossing Eats</h1>
+                </div>
 
-    <!-- ===================== -->
-    <!-- 1️⃣ NAVIGATION BAR -->
-    <!-- Owner: Patricia -->
-    <!-- ===================== -->
-    <nav id="navbar">
-        <!-- Left: Logo -->
-        <div class="logo">
-        <img src="assets/logo.png" alt="Animal Crossing Logo" />
-        <h1>Crossing Eats</h1>
-        </div>
+                <!-- Middle: Navigation links -->
+                <ul class="nav-links">
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#promo">Promotions</a></li>
+                <li><a href="#contact">Contact</a></li>
+                </ul>
 
-        <!-- Middle: Navigation links -->
-        <ul class="nav-links">
-        <li><a href="#menu">Menu</a></li>
-        <li><a href="#promo">Promotions</a></li>
-        <li><a href="#contact">Contact</a></li>
-        </ul>
-
-        <!-- Right: User avatar or settings -->
-        <div class="user-info">
-        <img src="assets/user-avatar.png" alt="User" />
-        </div>
-    </nav>
-
-
-    <!-- ===================== -->
-    <!-- 2️⃣ HEADER SECTION -->
-    <!-- Owner: Eric -->
-    <!-- Contains: search bar + promo banner -->
-    <!-- ===================== -->
-    <header id="header">
-        <div class="promo-banner">
-        <h2>🍔 Deal of the Weekend!</h2>
-        <p>Get <strong>50% off</strong> burgers all weekend long.</p>
-        <button>Check Menu</button>
-        </div>
-
-        <div class="search-bar">
-        <input type="text" placeholder="Search your favorite food..." />
-        </div>
-    </header>
+                <!-- Right: User avatar or settings -->
+                <div class="user-info">
+                <img src="assets/user-avatar.png" alt="User" />
+                </div>
+            </nav>
 
 
-    <!-- ===================== -->
-    <!-- 3️⃣ ANIMAL CROSSING DISPLAY GRID -->
-    <!-- Owner: Patricia -->
-    <!-- (Grid of Animal Crossing food art shown above the cart) -->
-    <!-- Fixed on right-side -->
-    <!-- ===================== -->
-    <section id="ac-display">
-        <h3>🍎 Animal Crossing Favorites</h3>
-        <div class="ac-grid">
-        <!-- Grid images: AC foods -->
-        <img src="assets/ac_food1.png" alt="Fruit Tart" />
-        <img src="assets/ac_food2.png" alt="Pumpkin Pie" />
-        <img src="assets/ac_food3.png" alt="Seafood Pizza" />
-        <img src="assets/ac_food4.png" alt="Veggie Curry" />
-        <!-- Add more as needed -->
-        </div>
-    </section>
+            <!-- ===================== -->
+            <!-- 2️⃣ HEADER SECTION -->
+            <!-- Owner: Eric -->
+            <!-- Contains: search bar + promo banner -->
+            <!-- ===================== -->
+            <header id="header">
+                <div class="promo-banner">
+                <h2>🍔 Deal of the Weekend!</h2>
+                <p>Get <strong>50% off</strong> burgers all weekend long.</p>
+                <button>Check Menu</button>
+                </div>
+
+                <div class="search-bar">
+                <input type="text" placeholder="Search your favorite food..." />
+                </div>
+            </header>
 
 
-    <!-- ===================== -->
-    <!-- 4️⃣ MAIN CONTENT AREA -->
-    <!-- Owner: Jordan -->
-    <!-- Contains: Category Nav + Food Menu Cards -->
-    <!-- ===================== -->
-    <main id="main-content">
-
-        <!-- Category Navigation -->
-        <section id="category-nav">
-        <h2>Menu Categories</h2>
-        <div class="categories">
-            <button class="category active">Pizza</button>
-            <button class="category">Snacks</button>
-            <button class="category">Drinks</button>
-            <button class="category">Desserts</button>
-            <button class="category">Specials</button>
-        </div>
-        </section>
-
-        <!-- Food Menu Grid -->
-        <section id="food-menu">
-        <h2>Popular Dishes</h2>
-        <div class="menu-grid">
-            <!-- Example Food Card -->
-            <div class="food-card">
-            <img src="assets/pizza.png" alt="Cheese Pizza" />
-            <h3>Cheese Pizza</h3>
-            <p class="price">$7.49</p>
-            <button class="add-cart">Add to Cart</button>
-            </div>
-            
-            <div class="food-card">
-            <img src="assets/pizza.png" alt="Cheese Pizza" />
-            <h3>Apple pie</h3>
-            <p class="price">$9.00</p>
-            <button class="add-cart">Add to Cart</button>
-            </div>
-            
-            <div class="food-card">
-            <img src="assets/pizza.png" alt="Cheese Pizza" />
-            <h3>Smoothie</h3>
-            <p class="price">$12.00</p>
-            <button class="add-cart">Add to Cart</button>
-            </div>
-            <!-- Duplicate cards for more items -->
-        </div>
-        </section>
-
-    </main>
+            <!-- ===================== -->
+            <!-- 3️⃣ ANIMAL CROSSING DISPLAY GRID -->
+            <!-- Owner: Patricia -->
+            <!-- (Grid of Animal Crossing food art shown above the cart) -->
+            <!-- Fixed on right-side -->
+            <!-- ===================== -->
+            <section id="ac-display">
+                <h3>🍎 Animal Crossing Favorites</h3>
+                <div class="ac-grid">
+                <!-- Grid images: AC foods -->
+                <img src="assets/ac_food1.png" alt="Fruit Tart" />
+                <img src="assets/ac_food2.png" alt="Pumpkin Pie" />
+                <img src="assets/ac_food3.png" alt="Seafood Pizza" />
+                <img src="assets/ac_food4.png" alt="Veggie Curry" />
+                <!-- Add more as needed -->
+                </div>
+            </section>
 
 
-    <!-- ===================== -->
-    <!-- 5️⃣ CHECKOUT CART -->
-    <!-- Owner: Steffani -->
-    <!-- Fixed on right side -->
-    <!-- ===================== -->
-    <aside id="checkout-cart">
-        <h3>My Cart</h3>
-        <div class="cart-items">
-        <!-- Each cart item -->
-        <div class="cart-item">
-            <img src="assets/pizza-thumb.png" alt="Pizza" />
-            <div class="item-info">
-            <p>Italian Pizza</p>
-            <small>x1</small>
-            </div>
-            <span>$7.49</span>
-        </div>
-        </div>
+            <!-- ===================== -->
+            <!-- 4️⃣ MAIN CONTENT AREA -->
+            <!-- Owner: Jordan -->
+            <!-- Contains: Category Nav + Food Menu Cards -->
+            <!-- ===================== -->
+            <main id="main-content">
 
-        <div class="cart-footer">
-        <button class="checkout-btn">Checkout</button>
-        </div>
-    </aside>
+                <!-- Category Navigation -->
+                <section id="category-nav">
+                <h2>Menu Categories</h2>
+                <div class="categories">
+                    <button class="category active">Pizza</button>
+                    <button class="category">Snacks</button>
+                    <button class="category">Drinks</button>
+                    <button class="category">Desserts</button>
+                    <button class="category">Specials</button>
+                </div>
+                </section>
 
-    <!-- ===================== -->
-    <!-- 6️⃣ FOOTER -->
-    <!-- Owner: Steffani -->
-    <!-- ===================== -->
-    <footer id="footer">
-        <p>© 2025 Crossing Eats — All Rights Reserved</p>
-    </footer>
+                <!-- Food Menu Grid -->
+                <section id="food-menu">
+                <h2>Popular Dishes</h2>
+                <div class="menu-grid">
+                    <!-- Example Food Card -->
+                    <div class="food-card">
+                    <img src="assets/pizza.png" alt="Cheese Pizza" />
+                    <h3>Cheese Pizza</h3>
+                    <p class="price">$7.49</p>
+                    <button class="add-cart">Add to Cart</button>
+                    </div>
+                    
+                    <div class="food-card">
+                    <img src="assets/pizza.png" alt="Cheese Pizza" />
+                    <h3>Apple pie</h3>
+                    <p class="price">$9.00</p>
+                    <button class="add-cart">Add to Cart</button>
+                    </div>
+                    
+                    <div class="food-card">
+                    <img src="assets/pizza.png" alt="Cheese Pizza" />
+                    <h3>Smoothie</h3>
+                    <p class="price">$12.00</p>
+                    <button class="add-cart">Add to Cart</button>
+                    </div>
+                    <!-- Duplicate cards for more items -->
+                </div>
+                </section>
 
+            </main>
+
+
+            <!-- ===================== -->
+            <!-- 5️⃣ CHECKOUT CART -->
+            <!-- Owner: Steffani -->
+            <!-- Fixed on right side -->
+            <!-- ===================== -->
+            <aside id="checkout-cart">
+                <h3>My Cart</h3>
+                <div class="cart-items">
+                <!-- Each cart item -->
+                <div class="cart-item">
+                    <img src="assets/pizza-thumb.png" alt="Pizza" />
+                    <div class="item-info">
+                    <p>Italian Pizza</p>
+                    <small>x1</small>
+                    </div>
+                    <span>$7.49</span>
+                </div>
+                </div>
+
+                <div class="cart-footer">
+                <button class="checkout-btn">Checkout</button>
+                </div>
+            </aside>
+
+            <!-- ===================== -->
+            <!-- 6️⃣ FOOTER -->
+            <!-- Owner: Steffani -->
+            <!-- ===================== -->
+            <footer id="footer">
+                <p>© 2025 Crossing Eats — All Rights Reserved</p>
+            </footer>
+    </div>
     <!-- Optional JS -->
     <script src="js/main.js"></script>
 
