@@ -3,6 +3,7 @@
 Kind reminder if you are confused,
 
 Remote:
+
 1) Main branch
 2) Patricia-branch (Published)
 3) Eric-branch (Published)
@@ -10,6 +11,7 @@ Remote:
 5) Steffeni-branch (Published)
 
 Local:
+
 Patricia's computer has two branches 
 -> main branch + Patricia-branch (Nav-bar, side banner section)
 
