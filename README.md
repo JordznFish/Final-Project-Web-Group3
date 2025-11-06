@@ -1,6 +1,6 @@
 # Final-Project-Web-Group3
 
-Kind reminder if you are confused,
+Kind reminder if you are confused, 
 
 Remote:
 
@@ -25,5 +25,8 @@ Steffeni's computer has two branches
 -> main branch + Steffeni-branch (Checkout-cart, footer section)
 
 
-ps. local main branch: (we won't modify this until final merging phase)
+ps. 
+- local main branch: (we won't modify this until final merging phase)
+- we only have to do "sync changes" locally to update the newest version onto GitHub, NO NEED to Pull Request! (IMPORTANT)
+
 
