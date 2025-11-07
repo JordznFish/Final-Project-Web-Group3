@@ -1,5 +1,4 @@
 # Final-Project-Web-Group3
-
 Kind reminder if you are confused, 
 
 Remote:
@@ -13,16 +12,20 @@ Remote:
 Local:
 
 Patricia's computer has two branches 
--> main branch + Patricia-branch (Nav-bar, side banner section)
+-> main branch + Patricia-branch 
+Responsible: Nav-bar, monthly event banner section
 
 Eric's computer has two branches 
--> main branch + Eric-branch (Main Banner section)
+-> main branch + Eric-branch 
+Responsible: Main Banner & search bar section
 
 Jordan's computer has two branches 
--> main branch + Jordan-branch (Menu section)
+-> main branch + Jordan-branch 
+Responsible: Menu section
 
-Steffeni's computer has two branches 
--> main branch + Steffeni-branch (Checkout-cart, footer section)
+Stefani's computer has two branches 
+-> main branch + Steffeni-branch 
+Responsible: Checkout-cart, award/cst review section, footer section
 
 
 ps. 
