@@ -4,10 +4,71 @@
   width: 100%;
 }
 
-#category-nav {
-    padding-top: 50px;
+
+/* Overall layout */
+#menu-carousel {
+    background-color: #f6e1bc;
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='1' cy='1' r='1' fill='%23ffb347' /%3E%3C/svg%3E");
+    text-align: center;
+    font-weight: bold;
+    font-size: 16pt;
+    padding: 30px 0 15px 0;
 }
 
+#menu-carousel p{
+    margin: 0;
+    padding-top: 5px;
+}
+
+#menu-carousel .food-card {
+    box-shadow: 0 8px 15px rgba(255, 180, 80, 0.4); /* warm tone glow */
+    border-radius: 15px; /* optional for rounded corners */
+}
+
+
+.carousel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.carousel-track {
+    display: flex;
+    justify-content: space-around;
+    gap: 7em;
+}
+
+.arrow {
+  background-color: #fff7e0;             /* cream background */
+  color: #ff9d23;                        /* warm orange arrow */
+  border: 3px solid #ffd37f;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.arrow:hover {
+  background-color: #ffcf77;
+  color: white;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.25);
+}
+
+.arrow.left {
+  margin-right: 40px;
+}
+
+.arrow.right {
+  margin-left: 40px;
+}
+
+
+/* For Testing */
 #food-menu {
     padding-bottom: 50px;
 }
