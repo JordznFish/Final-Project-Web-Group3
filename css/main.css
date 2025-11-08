@@ -1,0 +1,13 @@
+#main-content {
+  background-image: url("../img/yellow-oil-paint-textured-background.jpg");
+  background-size: cover;
+  width: 100%;
+}
+
+#category-nav {
+    padding-top: 50px;
+}
+
+#food-menu {
+    padding-bottom: 50px;
+}

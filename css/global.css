@@ -1,14 +1,22 @@
+html, body {
+  height: auto;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: 'Schoolbell', cursive;
   font-weight: bold;
 }
 
 .background-wrapper {
-  position: absolute;
+  position: absolute;       /* back to absolute */
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
+  width: 100%;
+  min-height: 100%;         /* fills visible area */
+  z-index: -1;              /* stays behind all sections */
   
   background-color: #FFE0AF;
   background-image:
@@ -17,7 +25,7 @@ body {
   linear-gradient(45deg, transparent, transparent 50%, #FFC87F 50%, #FFC87F);
   background-size: 100px 100px;
   background-position: 0 0, 50px 50px, 50px 0px;
-  -webkit-animation: scroll 5s linear infinite;
+  -webkit-animation: scroll 15s linear infinite;
 }
 
 @-webkit-keyframes scroll {
@@ -34,10 +42,6 @@ body {
 }
 
 #ac-display {
-  border: 2px solid black;
-}
-
-#main-content {
   border: 2px solid black;
 }
 
