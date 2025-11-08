@@ -167,7 +167,7 @@
                             <button class="add-btn">+</button>
                         </div>
 
-                        <div class="food-card">
+                        <div class="food-card desserts">
                             <img src="img/carrot-cake.jpg" alt="Carrot Cake" />
                             <h3>Carrot Cake</h3>
                             <p class="desc">Sweet and moist cake with grated carrots and a touch of cinnamon.</p>
@@ -175,7 +175,7 @@
                             <button class="add-btn">+</button>
                         </div>
 
-                        <div class="food-card">
+                        <div class="food-card desserts">
                             <img src="img/apple-pie.jpg" alt="Apple Pie" />
                             <h3>Apple Pie</h3>
                             <p class="desc">Buttery crust filled with caramelized apples — a timeless homemade dessert.</p>
@@ -183,7 +183,7 @@
                             <button class="add-btn">+</button>
                         </div>
 
-                        <div class="food-card">
+                        <div class="food-card desserts">
                             <img src="img/fruit-tart.jpg" alt="Fruit Tart" />
                             <h3>Fruit Tart</h3>
                             <p class="desc">A colorful medley of fruits over smooth custard — as cheerful as it is delicious.</p>
@@ -191,7 +191,7 @@
                             <button class="add-btn">+</button>
                         </div>
 
-                        <div class="food-card">
+                        <div class="food-card soups">
                             <img src="img/mushroom-soup.jpg" alt="Mushroom Soup" />
                             <h3>Mushroom Soup</h3>
                             <p class="desc">Earthy, creamy, and aromatic — a bowl of pure woodland comfort.</p>
@@ -199,7 +199,7 @@
                             <button class="add-btn">+</button>
                         </div>
 
-                        <div class="food-card">
+                        <div class="food-card soups">
                             <img src="img/carrot-pottage.jpg" alt="Carrot Potage" />
                             <h3>Carrot Potage</h3>
                             <p class="desc">Smooth, sweet carrot soup that feels like a warm hug on a cool day.</p>
@@ -207,7 +207,7 @@
                             <button class="add-btn">+</button>
                         </div>
 
-                        <div class="food-card">
+                        <div class="food-card beverages">
                             <img src="img/strawberry-smoothie.jpg" alt="Strawberry Smoothie" />
                             <h3>Strawberry Smoothie</h3>
                             <p class="desc">A refreshing blend of ripe strawberries and creamy milk.</p>
@@ -215,7 +215,7 @@
                             <button class="add-btn">+</button>
                         </div>
 
-                        <div class="food-card">
+                        <div class="food-card beverages">
                             <img src="img/banana-smoothie.jpg" alt="Banana Smoothie" />
                             <h3>Banana Smoothie</h3>
                             <p class="desc">Thick, creamy, and naturally sweet — an all-time classic.</p>
@@ -223,7 +223,7 @@
                             <button class="add-btn">+</button>
                         </div>
 
-                        <div class="food-card">
+                        <div class="food-card beverages">
                             <img src="img/mango-smoothie.jpg" alt="Mango Smoothie" />
                             <h3>Mango Smoothie</h3>
                             <p class="desc">Rich, velvety mango blended to perfection — a sweet tropical escape in every sip.</p>
@@ -278,17 +278,38 @@
         <script>
             const buttons = document.querySelectorAll('.cat-btn');
             const categoryTitle = document.getElementById('current-category');
+            const foodCards = document.querySelectorAll('.food-card');
+
+            function filterCategory(category) {
+                foodCards.forEach(card => {
+                    card.style.display = 'none';
+                    card.classList.remove('show');
+
+                    if (category === 'all' || card.classList.contains(category)) {
+                        card.style.display = 'block';
+                        setTimeout(() => card.classList.add('show'), 50);
+                    }
+                });
+
+                categoryTitle.textContent =
+                category === 'all'
+                    ? 'All Menu'
+                    : category.replace('-', ' ').replace(/\b\w/g, c => c.toUpperCase());
+            }
 
             buttons.forEach(btn => {
                 btn.addEventListener('click', () => {
-                    buttons.forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
-                    const category = btn.dataset.category;
-                    categoryTitle.textContent =
-                    category === 'all'
-                    ? 'All Menu'
-                    : category.replace('-', ' ').replace(/\b\w/g, c => c.toUpperCase());
+                buttons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const category = btn.dataset.category;
+                filterCategory(category);
                 });
+            });
+
+            // 🟢 Automatically show "All" on first load
+            window.addEventListener('DOMContentLoaded', () => {
+                document.querySelector('.cat-btn[data-category="all"]').classList.add('active');
+                filterCategory('all');
             });
         </script>
     </body>

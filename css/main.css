@@ -17,7 +17,7 @@
   border: 5px solid #4a2e1a;
   border-radius: 16px;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25);
-  width: 80%;
+  width: 50%;
   margin: 60px auto;
   padding: 30px 0;
   text-align: center;
@@ -61,7 +61,7 @@
 }
 
 #menu-signboard h2 {
-  font-size: 28px;
+  font-size: 40px;
   margin: 0;
   letter-spacing: 1px;
 }
@@ -245,29 +245,49 @@
   z-index: 2; /* make sure the enlarged card sits on top of others */
 }
 
-/* Floating + button */
-.food-card {
-  position: relative; /* ensure button positions relative to card */
+/* 🌿 Entry animation for food cards when switching category */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
+
+.food-card {
+    position: relative; /* ensure button positions relative to card */
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.food-card.show {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Floating + button */
 .add-btn {
-  position: absolute;
-  bottom: 15px;
-  right: 19px;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: none;
-  background-color: #0e8253;
-  color: #fffdf5;
-  font-size: 1.5rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: transform 0.4s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-  z-index: 3;
+    position: absolute;
+    bottom: 15px;
+    right: 19px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background-color: #0e8253;
+    color: #fffdf5;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.4s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    z-index: 3;
 }
 
 .food-card:hover .add-btn{
-  background-color: #13a064;
-  transform: rotate(360deg) scale(1.1);
+    background-color: #13a064;
+    transform: rotate(360deg) scale(1.1);
 }
