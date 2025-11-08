@@ -1,6 +1,7 @@
 /*  MAIN CONTENT (base mobile) */
 #main-content {
   background-image: url("../img/yellow-oil-paint-textured-background.jpg");
+  background-attachment: fixed;
   background-size: cover;
   background-position: center;
   width: 100%;
@@ -10,31 +11,73 @@
 
 /* MENU CAROUSEL */
 #menu-carousel {
-  background-color: #f6e1bc;
-  /* background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='1' cy='1' r='1' fill='%23ffb347' /%3E%3C/svg%3E"); */
+  background-image: url("../img/wood.jpg");
+  background-repeat: repeat;
+  background-position-x: center;
+  border: 5px solid #4a2e1a;
+  border-radius: 16px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25);
+  width: 80%;
+  margin: 60px auto;
+  padding: 30px 0;
   text-align: center;
+  position: relative;
+  font-family: 'Schoolbell', cursive;
   font-weight: bold;
-  font-size: 14pt;        /* smaller text for mobile */
-  padding: 20px 0;
-  border-radius: 12px;
-  overflow: hidden;
-  max-width: fit-content;
-  margin: 0 auto;
+  color: #fffdf5;
+  z-index: 1; /* board above ropes */
 }
+
+/* realistic ropes */
+#menu-carousel::before,
+#menu-carousel::after {
+  content: "";
+  position: absolute;
+  top: -81.5px;
+  width: 6px;
+  height: 90px;
+  background: repeating-linear-gradient(
+    45deg,
+    #5a4025 0,
+    #5a4025 4px,
+    #6e5234 4px,
+    #6e5234 8px
+  ); /* rope texture */
+  border-radius: 3px;
+  box-shadow:
+    inset 0 0 4px rgba(0,0,0,0.3),
+    0 1px 2px rgba(0,0,0,0.3);
+  transform-origin: top;
+}
+
+/* left rope */
+#menu-carousel::before {
+  left: 25%;
+  transform: rotate(10deg); /* subtle hang curve */
+}
+
+/* right rope */
+#menu-carousel::after {
+  right: 25%;
+  transform: rotate(-10deg);
+}
+
 
 /* Text under each icon */
 #menu-carousel p {
-  margin: 0;
-  padding-top: 5px;
-  font-size: 0.9rem;
+    color: black;
+    margin: 0;
+    padding-top: 5px;
+    font-size: 0.9rem;
 }
 
 /* Food cards in the carousel */
-#menu-carousel .food-card {
-  box-shadow: 0 4px 8px rgba(255, 180, 80, 0.4);
-  border-radius: 12px;
-  width: 80px;            /* fixed smaller width */
-  flex: 0 0 auto;         /* don’t stretch */
+#menu-carousel .carousel-food {
+    background: #fff9e2;
+    box-shadow: 0 4px 8px rgba(14, 8, 1, 0.4);
+    border-radius: 12px;
+    width: 80px;            /* fixed smaller width */
+    flex: 0 0 auto;         /* don’t stretch */
 }
 
 /*  CAROUSEL LAYOUT */
@@ -49,7 +92,7 @@
 .carousel-track {
   display: flex;
   overflow-x: auto;           /* allow horizontal scrolling on mobile */
-  gap: 2.5rem;                /* smaller gap */
+  gap: 6rem;                /* smaller gap */
   scroll-snap-type: x mandatory;
   justify-content: flex-start;
   padding: 0.5rem 1rem;
@@ -71,36 +114,6 @@
   font-size: 0.8rem;
 }
 
-
-/* ARROWS (mobile size) */
-.arrow {
-  background-color: #fff7e0;
-  color: #ff9d23;
-  border: 2px solid #ffd37f;
-  border-radius: 50%;
-  width: 35px;
-  height: 35px;
-  font-size: 1.2rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
-  flex-shrink: 0;             /* prevent shrinking */
-}
-
-.arrow:hover {
-  background-color: #ffcf77;
-  color: white;
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.25);
-}
-
-.arrow.left {
-  margin-right: 10px;
-}
-
-.arrow.right {
-  margin-left: 10px;
-}
 
 /* FOOD MENU SECTION */
 /* 375px MOBILE */
