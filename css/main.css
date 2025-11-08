@@ -9,110 +9,106 @@
   box-sizing: border-box;
 }
 
-/* MENU CAROUSEL */
-#menu-carousel {
-  background-image: url("../img/wood.jpg");
-  background-repeat: repeat;
-  background-position-x: center;
+/* ========== CATEGORY SIGNBOARD ========== */
+#menu-signboard {
+  position: relative;
+  background-color: #b27745; /* warm wooden tone */
   border: 5px solid #4a2e1a;
   border-radius: 16px;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25);
-  width: 80%;
-  margin: 60px auto;
-  padding: 30px 0;
+  width: 70%;
+  margin: 80px auto 25px auto;
+  padding: 20px 0;
   text-align: center;
-  position: relative;
   font-family: 'Schoolbell', cursive;
-  font-weight: bold;
   color: #fffdf5;
-  z-index: 1; /* board above ropes */
+  z-index: 1;
 }
 
-/* realistic ropes */
-#menu-carousel::before,
-#menu-carousel::after {
+/* Rope details */
+#menu-signboard::before,
+#menu-signboard::after {
   content: "";
   position: absolute;
-  top: -81.5px;
+  top: -70px;
   width: 6px;
-  height: 90px;
+  height: 70px;
   background: repeating-linear-gradient(
     45deg,
     #5a4025 0,
     #5a4025 4px,
     #6e5234 4px,
     #6e5234 8px
-  ); /* rope texture */
+  );
   border-radius: 3px;
-  box-shadow:
-    inset 0 0 4px rgba(0,0,0,0.3),
-    0 1px 2px rgba(0,0,0,0.3);
-  transform-origin: top;
+  box-shadow: inset 0 0 4px rgba(0,0,0,0.3);
 }
 
-/* left rope */
-#menu-carousel::before {
-  left: 25%;
-  transform: rotate(10deg); /* subtle hang curve */
+#menu-signboard::before {
+  left: 28%;
+  transform: rotate(6deg);
 }
 
-/* right rope */
-#menu-carousel::after {
-  right: 25%;
-  transform: rotate(-10deg);
+#menu-signboard::after {
+  right: 28%;
+  transform: rotate(-6deg);
 }
 
-
-/* Text under each icon */
-#menu-carousel p {
-    color: black;
-    margin: 0;
-    padding-top: 5px;
-    font-size: 0.9rem;
+#menu-signboard h2 {
+  font-size: 28px;
+  margin: 0;
+  letter-spacing: 1px;
 }
 
-/* Food cards in the carousel */
-#menu-carousel .carousel-food {
-    background: #fff9e2;
-    box-shadow: 0 4px 8px rgba(14, 8, 1, 0.4);
-    border-radius: 12px;
-    width: 80px;            /* fixed smaller width */
-    flex: 0 0 auto;         /* don’t stretch */
-}
-
-/*  CAROUSEL LAYOUT */
-.carousel-container {
+/* ========== CATEGORY BUTTONS ========== */
+.category-buttons {
   display: flex;
-  align-items: center;
   justify-content: center;
-  overflow: hidden;
-  width: 100%;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 40px;
 }
 
-.carousel-track {
-  display: flex;
-  overflow-x: auto;           /* allow horizontal scrolling on mobile */
-  gap: 6rem;                /* smaller gap */
-  scroll-snap-type: x mandatory;
-  justify-content: flex-start;
-  padding: 0.5rem 1rem;
+.cat-btn {
+  background-color: #f6e1bc;
+  color: #4a2e1a;
+  border: 3px solid #b27745;
+  border-radius: 10px;
+  padding: 10px 18px;
+  font-family: 'Schoolbell', cursive;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.15);
 }
 
-.carousel-track::-webkit-scrollbar {
-  display: none;
+.cat-btn:hover {
+  background-color: #ffcf77;
+  transform: scale(1.05);
 }
 
-.carousel-food img {
-  width: 60px;
-  height: auto;
-  display: block;
-  margin: 0 auto;
+.cat-btn.active {
+  background-color: #0e8253;
+  color: #fffdf5;
+  border-color: #0b5f3b;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-.food-card p {
-  margin-top: 0.3rem;
-  font-size: 0.8rem;
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  #menu-signboard {
+    width: 90%;
+    margin: 60px auto 20px auto;
+  }
+  #menu-signboard h2 {
+    font-size: 22px;
+  }
+  .cat-btn {
+    font-size: 14px;
+    padding: 8px 14px;
+  }
 }
+
 
 
 /* FOOD MENU SECTION */

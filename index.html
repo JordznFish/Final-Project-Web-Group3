@@ -93,36 +93,19 @@
             <!-- Contains: Category Nav + Food Menu Cards -->
             <!-- ===================== -->
             <main id="main-content">
-                <!-- Category Navigation -->
-                <section id="menu-carousel">
-                    <div id="color-banner"></div>
-                    <div class="carousel-container">
-                        <div class="carousel-track">
-                            <div class="carousel-food">
-                                <img src="img/pumpkin-pie.png" alt="Dessert" width="80px">
-                                <p>Dessert</p>
-                            </div>
-                            <div class="carousel-food">
-                                <img src="img/fries.png" alt="Snacks" width="80px">
-                                <p>Snacks</p>
-                            </div>
-                            <div class="carousel-food">
-                                <img src="img/bibimbap.png" alt="Main Dishes" width="80px">
-                                <p>Main Dishes</p>
-                            </div>
-                            <div class="carousel-food">
-                                <img src="img/smoothie.png" alt="Beverage" width="80px">
-                                <p>Beverage</p>
-                            </div>
-                            <div class="carousel-food">
-                                <img src="img/food.png" alt="Soup" width="80px">
-                                <p>Soup</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div id="color-banner"></div>
-                </section>
+                <!-- Signboard and Category Buttons -->
+<div id="menu-signboard">
+  <h2 id="current-category">All Menu</h2>
+</div>
+
+<div class="category-buttons">
+  <button class="cat-btn active" data-category="all">All</button>
+  <button class="cat-btn" data-category="main-dish">Main Dishes</button>
+  <button class="cat-btn" data-category="snacks">Snacks</button>
+  <button class="cat-btn" data-category="soups">Soups</button>
+  <button class="cat-btn" data-category="desserts">Desserts</button>
+  <button class="cat-btn" data-category="beverages">Beverages</button>
+</div>
             
                 <!-- Food Menu Grid -->
                 <section id="food-menu">
@@ -293,7 +276,20 @@
 
         <!-- Optional JS -->
         <script>
-            
+            const buttons = document.querySelectorAll('.cat-btn');
+            const categoryTitle = document.getElementById('current-category');
+
+            buttons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    buttons.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    const category = btn.dataset.category;
+                    categoryTitle.textContent =
+                    category === 'all'
+                    ? 'All Menu'
+                    : category.replace('-', ' ').replace(/\b\w/g, c => c.toUpperCase());
+                });
+            });
         </script>
     </body>
 </html>
