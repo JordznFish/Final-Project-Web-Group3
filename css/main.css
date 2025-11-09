@@ -163,10 +163,11 @@
 }
 
 .food-card h3 {
+  font-family: "Caveat", cursive;
   color: white;
   border: 2px solid black;
   border-radius: 8px;
-  background-color: #0e8253;
+  background: linear-gradient(#0b5f3b, #227c35);
   margin: 5px 0 10px 0;
   font-size: 21px;
 }
@@ -190,15 +191,30 @@
   position: relative; /* ensure button positions relative to card */
 }
 
+/* Cozy dotted price tag background */
 .food-card .price {
   position: absolute;
-  bottom: 15px;
+  bottom: 1px;
   left: 19px;
-  color: goldenrod;
-  font-size: 20px;
-  margin: 0;
-  text-align: left;
+  color: #4a2e1a;
+  font-family: "Schoolbell", cursive;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 6px 16px;
+  border: 3px solid #b27745;
+  border-radius: 12px 4px 12px 4px;
+
+  /* beige paper + dotted overlay */
+  background:
+    radial-gradient(circle at 1px 1px, rgba(90, 60, 20, 0.15) 1px, transparent 0) repeat,
+    #f6e1bc;
+  background-size: 5px 5px, 100% 100%;
+
+  box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+
 
 /* =========================
 /* Ipad: ≥750px       */
@@ -300,7 +316,7 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: none;
+  border: 2.5px solid black;
   background-color: #0e8253;
   color: #fffdf5;
   font-size: 1.5rem;
