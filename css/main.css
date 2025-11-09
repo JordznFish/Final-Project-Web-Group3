@@ -1,6 +1,6 @@
 /*  MAIN CONTENT (base mobile) */
 #main-content {
-  background-image: url("../img/yellow-oil-paint-textured-background.jpg");
+  background-image: url("../img/paperboard-texture.jpg");
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
@@ -146,7 +146,9 @@
 #food-menu .food-card {
   width: 90%;                     /* fit nicely inside mobile screen */
   max-width: 320px;
-  background: #fff9e2;
+  /* background: #fff9e2; */
+  background-image: url("../img/v602-nunoon-14a-rippednotes.jpg");
+  background-size: cover;
   border-radius: 20px;
   padding: 1rem 1rem 0.8rem 1rem;
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
@@ -235,14 +237,17 @@
 
 /* ✨ Hover enlarge effect for food cards */
 .food-card {
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.4s ease;
   cursor: pointer;
 }
 
 .food-card:hover {
-  transform: scale(1.05);  /* slightly enlarge the card */
-  box-shadow: 0 10px 25px rgba(255, 200, 120, 0.6);  /* warm glowing shadow */
-  z-index: 2; /* make sure the enlarged card sits on top of others */
+  transform: translateY(0) scale(1.05);
+  box-shadow: 0 10px 25px rgba(255, 200, 120, 0.6);
+  z-index: 2;
 }
 
 /* 🌿 Entry animation for food cards when switching category */
@@ -257,13 +262,6 @@
   }
 }
 
-
-.food-card {
-    position: relative; /* ensure button positions relative to card */
-    opacity: 0;
-    transform: translateY(30px) scale(0.95);
-    transition: opacity 0.4s ease, transform 0.4s ease;
-}
 
 .food-card.show {
   animation: fadeInUp 0.6s ease forwards;
