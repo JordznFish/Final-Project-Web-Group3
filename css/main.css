@@ -1,8 +1,8 @@
 /*  MAIN CONTENT (base mobile) */
 #main-content {
-  background-image: url("../img/paperboard-texture.jpg");
-  background-attachment: fixed;
+  background-image: url("../img/yellow-oil-paint-textured-background.jpg");
   background-size: cover;
+  background-attachment:local;
   background-position: center;
   width: 100%;
   padding: 1rem;
@@ -123,19 +123,19 @@
 /* 📱 Base: 375px (Mobile)   */
 /* ========================= */
 #main-title {
-    text-align: center;
-    margin: 0 auto 10px auto;     
-    padding: 8px 20px;
-    background-color: #0e8253;
-    border-radius: 8px;
-    color: #fffdf5;
-    width: fit-content;
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  margin: 0 auto 10px auto;     
+  padding: 8px 20px;
+  background-color: #0e8253;
+  border-radius: 8px;
+  color: #fffdf5;
+  width: fit-content;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
 }
 
 .menu-grid {
   display: grid;
-  grid-template-columns: 1fr;     /* 1 column for small phones */
+  grid-template-columns: 2fr;     /* 1 column for small phones */
   justify-items: center;
   row-gap: 20px;
   column-gap: 0;
@@ -145,7 +145,7 @@
 
 #food-menu .food-card {
   width: 90%;                     /* fit nicely inside mobile screen */
-  max-width: 320px;
+  max-width: 230px;
   /* background: #fff9e2; */
   background-image: url("../img/v602-nunoon-14a-rippednotes.jpg");
   background-size: cover;
@@ -162,22 +162,26 @@
 }
 
 .food-card h3 {
-    margin: 5px 0 10px 0;
-    font-size: 21px;
+  color: white;
+  border: 2px solid black;
+  border-radius: 8px;
+  background-color: #0e8253;
+  margin: 5px 0 10px 0;
+  font-size: 21px;
 }
 
 .food-card .desc {
-    color: rgb(123, 122, 122);
-    font-style: italic;
-    font-size: 15px;
+  color: rgb(123, 122, 122);
+  font-style: italic;
+  font-size: 15px;
 }
 
 .food-card .price {
-    color: goldenrod;
-    font-size: 20px;
-    margin: 0;
-    text-align: left;
-    padding-left: 10px;
+  color: goldenrod;
+  font-size: 20px;
+  margin: 0;
+  text-align: left;
+  padding-left: 10px;
 }
 
 /* image stays centered and small on mobile */
@@ -190,11 +194,35 @@
 }
 
 /* =========================
+/* Ipad: ≥750px       */
+/* ========================= */
+@media (min-width: 750px) {
+  .menu-grid {
+    grid-template-columns: repeat(2, 2fr); /* 2 columns */
+    column-gap: 2rem;
+    row-gap: 2rem;
+    justify-items: center;
+    padding: 2rem;
+  }
+
+  #food-menu .food-card {
+    width: 320px;
+    padding: 1.2rem 1rem;
+  }
+
+  .food-card img {
+    width: 200px;
+    height: 140px;
+  }
+}
+
+
+/* =========================
 /* 💻 Tablet: ≥1024px        */
 /* ========================= */
 @media (min-width: 1024px) {
   .menu-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    grid-template-columns: repeat(3, 2fr); /* 2 columns */
     column-gap: 2rem;
     row-gap: 2rem;
     justify-items: center;
@@ -217,7 +245,7 @@
 /* ========================= */
 @media (min-width: 1366px) {
   .menu-grid {
-    grid-template-columns: repeat(3, 1fr); /* 3 columns (auto adjusts to screen) */
+    grid-template-columns: repeat(4, 1fr); /* 3 columns (auto adjusts to screen) */
     column-gap: 2.5rem;
     row-gap: 2.5rem;
     justify-items: center;
@@ -233,59 +261,49 @@
     width: 220px;
     height: 150px;
   }
-} 
+}
+
+@media (min-width: 1600px) {
+  .menu-grid {
+    grid-template-columns: repeat(4, 0.5fr);
+  }
+}
 
 /* ✨ Hover enlarge effect for food cards */
 .food-card {
-  position: relative;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.4s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
   cursor: pointer;
 }
 
 .food-card:hover {
-  transform: translateY(0) scale(1.05);
-  box-shadow: 0 10px 25px rgba(255, 200, 120, 0.6);
-  z-index: 2;
-}
-
-/* 🌿 Entry animation for food cards when switching category */
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(30px) scale(0.95);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-
-.food-card.show {
-  animation: fadeInUp 0.6s ease forwards;
+  transform: scale(1.05);  /* slightly enlarge the card */
+  box-shadow: 0 10px 25px rgba(255, 200, 120, 0.6);  /* warm glowing shadow */
+  z-index: 2; /* make sure the enlarged card sits on top of others */
 }
 
 /* Floating + button */
+.food-card {
+  position: relative; /* ensure button positions relative to card */
+}
+
 .add-btn {
-    position: absolute;
-    bottom: 15px;
-    right: 19px;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: none;
-    background-color: #0e8253;
-    color: #fffdf5;
-    font-size: 1.5rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: transform 0.4s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-    z-index: 3;
+  position: absolute;
+  bottom: 15px;
+  right: 19px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background-color: #0e8253;
+  color: #fffdf5;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  z-index: 3;
 }
 
 .food-card:hover .add-btn{
-    background-color: #13a064;
-    transform: rotate(360deg) scale(1.1);
+  background-color: #13a064;
+  transform: rotate(360deg) scale(1.1);
 }
