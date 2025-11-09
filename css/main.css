@@ -146,6 +146,7 @@
 #food-menu .food-card {
   width: 90%;                     /* fit nicely inside mobile screen */
   max-width: 230px;
+  height: 320px;
   /* background: #fff9e2; */
   background-image: url("../img/v602-nunoon-14a-rippednotes.jpg");
   background-size: cover;
@@ -176,14 +177,6 @@
   font-size: 15px;
 }
 
-.food-card .price {
-  color: goldenrod;
-  font-size: 20px;
-  margin: 0;
-  text-align: left;
-  padding-left: 10px;
-}
-
 /* image stays centered and small on mobile */
 .food-card img {
   width: 180px;
@@ -191,6 +184,20 @@
   border-radius: 10px;
   object-fit: cover;
   box-shadow: 0 4px 10px rgba(0,0,0,0.7);
+}
+
+.food-card {
+  position: relative; /* ensure button positions relative to card */
+}
+
+.food-card .price {
+  position: absolute;
+  bottom: 15px;
+  left: 19px;
+  color: goldenrod;
+  font-size: 20px;
+  margin: 0;
+  text-align: left;
 }
 
 /* =========================
