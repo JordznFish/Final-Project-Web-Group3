@@ -20,27 +20,50 @@
 
     <body>
         <div class="background-wrapper">
-            <!-- ===================== -->
-            <!-- NAVIGATION BAR -->
-            <!-- Owner: Patricia -->
-            <!-- ===================== -->
             <nav id="navbar">
                 <div class="logo">
-                    <img src="assets/logo.png" alt="Animal Crossing Logo" />
-                    <h1>Crossing Eats</h1>
-                </div>
+                    <img src="img/fox.png" alt="Logo" class="nav-icon"/>
+                    </div>
+                    <hr class="divider">
+                    <ul class="nav-links">
+                        <li>
+                            <a href="#food-menu">
+                            <img src="img/menu 2.png" alt="Menu Icon" class="nav-icon"/>
+                            <span class="tooltip">Menu</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#awards">
+                            <img src="img/award.png" alt="Awards Icon" class="nav-icon"/>
+                            <span class="tooltip">Awards</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#contact">
+                            <img src="img/contact-us.png" alt="Contact Icon" class="nav-icon"/>
+                            <span class="tooltip">Contact</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="cart.html">
+                            <img src="img/shopping-cart.png" alt="Cart Icon" class="nav-icon"/>
+                            <span class="tooltip">Cart</span>
+                        </a>
+                        </li>
+                    </ul>
 
-                <ul class="nav-links">
-                    <li><a href="#menu">Menu</a></li>
-                    <li><a href="#awards">Awards</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-
-                <div class="user-info">
-                    <a href="cart.html"><img src="assets/cart-icon.png" alt="Cart" title="View Cart" /></a>
-                    <img src="assets/user-avatar.png" alt="User" />
-                </div>
-            </nav>
+                    <div class="user-info">
+                        <hr class="divider">
+                        <a href="profile.html">
+                            <img src="img/user.png" alt="Profile Icon" class="nav-icon"/>
+                            <span class="tooltip">Profile</span>
+                        </a>
+                        <a href="settings.html">
+                            <img src="img/settings.png" alt="Settings Icon" class="nav-icon"/>
+                            <span class="tooltip">Settings</span>
+                        </a>
+                    </div>
+                </nav>
 
             <!-- ===================== -->
             <!-- HEADER SECTION -->
@@ -64,28 +87,13 @@
             <!-- Owner: Patricia -->
             <!-- Spinning Lucky wheel for prizes and discounts -->
             <!-- ===================== -->
-            <section id="monthly-event">
-                <h3>🎯 Monthly Event — Spin & Hunt Week!</h3>
-                <p class="event-intro">
-                    This week, we have <strong>a fun challenge</strong> for all our little food explorers!
-                    Spin the lucky wheel 🎁 to win cute prizes and discounts!
-                </p>
-
-                <div class="event-grid">
-                    <!-- Spin & Win -->
-                    <div class="event-card">
-                    <img src="assets/event-spin.png" alt="Spin and Win" />
-                    <h4>🎡 Spin & Win Week!</h4>
-                    <p>Try your luck! Spin the wheel once a day and see what tasty prize you'll get!</p>
-                    <button id="spin-btn">Spin the Wheel 🎁</button>
-                    </div>
-                </div>
-
-                <!-- Spin Result Display -->
-                <div id="spin-result" class="hidden">
-                    <p id="result-text"></p>
-                </div>
-            </section>
+            <div class="event-banner">
+                <h2>🍃 November 11.11 Kids Feast!</h2>
+                <p><span class="highlight">Nook's Kitchen Special:</span> Enjoy <span class="highlight">11% OFF</span> all kids meals this month! Let Isabelle, Tom Nook, and all your favorite Animal Crossing friends deliver smiles and tasty surprises straight to your island home!</p>
+                <button class="learn-btn">
+                    Learn More <span class="arrow">&rarr;</span></button>
+            </div>
+</section>
 
             <!-- ===================== -->
             <!-- MAIN CONTENT AREA -->
