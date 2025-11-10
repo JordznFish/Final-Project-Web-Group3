@@ -137,11 +137,15 @@
 .event-banner {
     width: 100%;
     margin: 36px auto;
-    background: rgba(255, 250, 209, 0.98);
-    border-radius: 18px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    background: #7f6951;         
+    color: #fff;
     text-align: center;
-    border: 3px solid #ffd980; 
+    border: 3px solid #ffd980;
+    border-radius: 22px;
+    background-image: radial-gradient(#8e785f 1.2px, transparent 1.2px);
+    box-shadow: 0 12px 24px rgba(0,0,0,.18);
+    background-size: 10px 10px;
+
 }
 
 .event-banner h2 {
@@ -259,6 +263,7 @@
   .logo .nav-icon, .nav-links .nav-icon, .user-info .nav-icon {
     width: 30px;
     height: 30px;
+    z-index: 100;
   }
   .event-banner {
     width: 80%;
