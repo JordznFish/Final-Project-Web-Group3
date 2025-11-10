@@ -9,7 +9,9 @@
     top: 0;
     width: 100px;
     height: 100vh;
-    background: #FFD65A;
+    background-color: #38B24D;
+    background-image: radial-gradient(rgba(2, 124, 20, 0.931) 10%, transparent 11%);
+    background-size: 10px 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -135,18 +137,21 @@
 }
 
 .event-banner {
-    width: 100%;
-    margin: 36px auto;
-    background: rgba(255, 250, 209, 0.98);
-    border-radius: 18px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-    text-align: center;
-    border: 3px solid #ffd980; 
+  width: 100%;
+  margin: 36px auto;
+  background: rgba(121, 28, 28, 0.964);         
+  color: #fff;
+  text-align: center;
+  border: 3px solid #ffd980;
+  border-radius: 22px;
+  background-image: radial-gradient(#c12b2e 1.2px, transparent 1.2px);
+  box-shadow: 0 12px 24px rgba(0,0,0,.18);
+  background-size: 10px 10px;
 }
 
 .event-banner h2 {
     font-size: 2em;
-    color: #FF9D23;           
+    color: white;           
     font-weight: 700;
     margin-bottom: 10px;
     letter-spacing: 1px;
@@ -154,7 +159,7 @@
 
 .event-banner p {
     font-size: 1.2em;
-    color: #453c15;              
+    color: white;              
     line-height: 1.5;
 }
 
@@ -167,7 +172,7 @@
 
 .learn-btn {
   background-color: #FFD65A;
-  color: #FF9D23;
+  color: white;
   font-weight: bold;
   padding: 12px 30px;
   border-radius: 25px;
