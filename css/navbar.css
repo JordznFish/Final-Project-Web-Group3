@@ -1,143 +1,164 @@
+/* ===========================
+   🌿 GLOBAL LAYOUT BASE
+   =========================== */
 .background-wrapper {
-    width: 100%; 
-    margin-left: 100px;
+  width: calc(100% - 100px); /* default: beside navbar */
+  margin-left: 100px;
+  transition: margin-left 0.3s ease, width 0.3s ease;
 }
 
+/* ===========================
+   🌿 NAVBAR BASE DESIGN
+   =========================== */
 #navbar {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100px;
-    height: 100vh;
-    background-color: #38B24D;
-    background-image: radial-gradient(rgba(2, 124, 20, 0.931) 10%, transparent 11%);
-    background-size: 10px 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    z-index: 100;
-    margin: 0 !important;
-    padding: 0 !important;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100px;
+  height: 100vh;
+  background-color: #38B24D;
+  background-image: radial-gradient(rgba(2, 124, 20, 0.931) 10%, transparent 11%);
+  background-size: 10px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  z-index: 100;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden;
 }
 
 .logo {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;     
-    justify-content: center; 
-    margin-top: 36px;
-    margin-bottom: 36px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 36px 0;
 }
 
 .logo .nav-icon {
-    width: 35px;
-    height: 35px;
-    display: block;
-    margin: 0 auto;          
+  width: 35px;
+  height: 35px;
+  display: block;
+  margin: 0 auto;
 }
 
 .divider {
-    width: 70%;
-    border: none;
-    border-top: 2px solid #e5e5e5; 
-    margin: 0 auto 18px auto;      
+  width: 70%;
+  border: none;
+  border-top: 2px solid #e5e5e5;
+  margin: 0 auto 18px auto;
+}
+
+/* ===========================
+   🌿 NAV-LINKS
+   =========================== */
+.nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1 0 auto;
+}
+
+.nav-links li {
+  width: 100%;
+  margin: 22px 0;
+  position: relative;
+}
+
+.nav-links a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #444;
+  text-decoration: none;
+  font-size: 15px;
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  position: relative;
+  transition: color 0.2s;
 }
 
 .nav-links .nav-icon,
 .user-info .nav-icon {
-  width: 25px;
-  height: 25px;
-  padding: 8px; /* larger padding creates a bigger circle */
-  background: #FFD65A;
+  width: 35px;
+  height: 35px;
+  padding: 8px;
+  background: #e7fae3;
   border-radius: 50%;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   transition: background 0.2s, transform 0.2s;
-  align-items: center;  
-  
-}
-
-.nav-links {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex: 1 0 auto;       
-}
-
-.nav-links li {
-    width: 100%;
-    margin: 22px 0;
-    position: relative;
-}
-
-.nav-links a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: #444;
-    text-decoration: none;
-    font-size: 15px;
-    background: none;
-    border: none;
-    box-shadow: none;
-    padding: 0;
-    position: relative;
-    transition: color 0.2s;
-}
-
-.tooltip {
-    display: none;
-    position: absolute;
-    left: 100px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: #fff;
-    color: #333;
-    padding: 6px 14px;
-    border-radius: 4px;
-    white-space: nowrap;
-    font-size: 14px;
-    z-index: 1;
-}
-
-.user-info {
-    position: relative;
-    margin-top: auto;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 22px;
-}
-
-.user-info a:last-child {
-    margin-top: 20px;
-}
-
-.nav-links a:hover .tooltip,
-.user-info a:hover .tooltip {
-    display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .nav-links a:hover .nav-icon,
 .user-info a:hover .nav-icon {
-  background: #FF9D23;
+  background: #c9f7e3;
   transform: scale(1.05);
 }
 
-.user-info .nav-icon {
-    object-fit: cover;
-    border-radius: 50%;
-    display: block;
+/* ===========================
+   🌿 TOOLTIP
+   =========================== */
+.tooltip {
+  display: none;
+  position: absolute;
+  left: 100px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fff;
+  color: #333;
+  padding: 6px 14px;
+  border-radius: 4px;
+  white-space: nowrap;
+  font-size: 14px;
+  z-index: 1;
 }
 
-.event-banner {
+.nav-links a:hover .tooltip,
+.user-info a:hover .tooltip {
+  display: block;
+}
+
+
+/* ===========================
+   🌿 USER ICONS (BOTTOM)
+   =========================== */
+.user-info {
+  position: relative;
+  margin-top: auto;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+.user-info a:last-child {
+  margin-top: 20px;
+}
+
+.user-info .nav-icon {
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+
+/* ===========================
+   🌿 EVENT BANNER
+   =========================== */
+.event-banner {
+  width: 92%;
   margin: 36px auto;
   background: rgba(121, 28, 28, 0.964);         
   color: #fff;
@@ -147,14 +168,23 @@
   background-image: radial-gradient(#c12b2e 1.2px, transparent 1.2px);
   box-shadow: 0 12px 24px rgba(0,0,0,.18);
   background-size: 10px 10px;
+  font-family: "schoolbell";
 }
 
-.event-banner h2 {
-    font-size: 2em;
-    color: white;           
-    font-weight: 700;
-    margin-bottom: 10px;
-    letter-spacing: 1px;
+
+.feature-title{
+  display: inline-block;
+  border: 4px solid #ffb6c1; /* pastel pink outline */
+  border-radius: 36px; /* curved corners */
+  background: #fff8fa; /* light pastel background */
+  padding: 16px 40px;
+  font-family: "Schoolbell", cursive, sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #a14b5c; /* deep pinkish brown for text */
+  box-shadow: 0 2px 8px rgba(255,182,193, 0.10);
+  margin: 32px auto 24px auto;
+  text-align: center;
 }
 
 .event-banner p {
@@ -165,14 +195,15 @@
 
 .event-banner .highlight {              
     font-weight: bold;
-    background: #FFD65A;
+    background: #ffb6c1;
+    color: #a7361d;
     padding: 2px 10px;
     border-radius: 8px;
 }
 
 .learn-btn {
-  background-color: #FFD65A;
-  color: white;
+  background-color: #fff8fa;
+  color: #a7361d;
   font-weight: bold;
   padding: 12px 30px;
   border-radius: 25px;
@@ -186,11 +217,15 @@
   display: block;
   position: relative;
   overflow: hidden;
+  border: 4px solid #ffb6c1; /* pastel pink outline */
+  border-radius: 36px; /* curved corners */
 }
 
 .learn-btn:hover {
-  background: #FF9D23;
-  color: #FFF;
+  background: #ffb6c1;
+  color: #a7361d;
+  border: 4px solid #fff8fa; /* pastel pink outline */
+  border-radius: 36px; /* curved corners */
 }
 
 .learn-btn .arrow {
@@ -225,50 +260,73 @@
   animation: popOut 0.8s cubic-bezier(.23,1.63,.42,.96) backwards;
 }
 
-
-
-/* Large screens (desktop/laptop, width ≥ 1366px) */
-@media (min-width: 1366px) {
-  .background-wrapper {
-    margin-left: 90px;  
+/* ===========================
+   🌿 POP ANIMATION
+   =========================== */
+@keyframes popOut {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
   }
-  #navbar {
-    width: 90px;
-    height: 100%
+  60% {
+    transform: scale(1.08);
+    opacity: 1;
   }
-  .logo .nav-icon, .nav-links .nav-icon, .user-info .nav-icon {
-    width: 35px;
-    height: 35px;
+  80% {
+    transform: scale(0.95);
   }
-  .event-banner {
-    width: 80%;
-    padding: 24px 12px 24px 12px;
-  }
-  .event-banner h2 {
-    font-size: 1.7em;
-  }
-  .event-banner p {
-    font-size: 1.05em;
+  100% {
+    transform: scale(1);
+    opacity: 1;
   }
 }
 
-/* Medium devices (tablet, 501px–1024px) */
-@media (min-width: 501px) and (max-width: 1024px) {
-  .background-wrapper {
-    margin-left: 75px;
+/* ===========================
+   🌿 RESPONSIVE BREAKPOINTS
+   =========================== */
+
+/* 🖥️ Desktop ≥1366px */
+@media (min-width: 1366px) {
+  #navbar {
+    width: 100px;
   }
+  .background-wrapper {
+    margin-left: 100px;
+    width: calc(100% - 100px);
+  }
+  .logo .nav-icon,
+  .nav-links .nav-icon,
+  .user-info .nav-icon {
+    width: 35px;
+    height: 35px;
+  }
+  .event-banner h2 {
+    font-size: 1.8em;
+  }
+  .event-banner p {
+    font-size: 1.15em;
+  }
+}
+
+/* 💻 Tablet 501px–1024px */
+@media (min-width: 501px) and (max-width: 1024px) {
   #navbar {
     width: 75px;
-    height: 100%
   }
-  .logo .nav-icon, .nav-links .nav-icon, .user-info .nav-icon {
+  .background-wrapper {
+    margin-left: 75px;
+    width: calc(100% - 75px);
+  }
+  .logo .nav-icon,
+  .nav-links .nav-icon,
+  .user-info .nav-icon {
     width: 30px;
     height: 30px;
     z-index: 100;
   }
   .event-banner {
-    width: 80%;
-    padding: 20px 5px 18px 5px;
+    width: 85%;
+    padding: 18px 10px;
   }
   .event-banner h2 {
     font-size: 1.5em;
@@ -278,37 +336,60 @@
   }
 }
 
-/* Small devices (mobile, up to 375px) */
-@media (max-width: 375px) {
-  .background-wrapper {
-    margin-left: 50px;
+@media (max-width: 1366px) {
+   .event-banner {
+    width: 85%;
+    padding: 18px 10px;
   }
+}
 
+/* 📱 Mobile ≤375px */
+@media (max-width: 500px) {
   #navbar {
-    width: 50px;
-    height: 100%;
+    width: 55px;
+    height: 100vh;
   }
-
-  .logo .nav-icon, .nav-links .nav-icon, .user-info .nav-icon {
+  .background-wrapper {
+    margin-left: 55px;
+    width: calc(100% - 55px);
+  }
+  .logo .nav-icon,
+  .nav-links .nav-icon,
+  .user-info .nav-icon {
     width: 24px;
     height: 24px;
   }
-
   .event-banner {
-    width: 50% !important;
-    margin: 12px auto !important;
-    box-sizing: border-box !important;
-    display: block !important;
-    text-align: center;
-
+    width: 90%;
+    margin: 18px auto;
+    padding: 14px 8px;
   }
-
   .event-banner h2 {
-    font-size: 1.15em;
+    font-size: 1.2em;
   }
-  
   .event-banner p {
-    text-align: center;
     font-size: 0.95em;
+  }
+}
+
+/* Default for desktop */
+.background-wrapper {
+  margin-left: 100px;   /* match navbar width */
+  width: calc(100% - 100px);
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .background-wrapper {
+    margin-left: 75px;
+    width: calc(100% - 75px);
+  }
+}
+
+/* Mobile */
+@media (max-width: 500px) {
+  .background-wrapper {
+    margin-left: 55px;
+    width: calc(100% - 55px);
   }
 }

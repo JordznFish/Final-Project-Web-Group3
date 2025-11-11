@@ -247,7 +247,7 @@ body {
 }
 
 /* === Large Screens (Desktops: 1366px and above) === */
-@media (min-width: 1025px) 
+@media (min-width: 1025px) {
 
   .cart-header h1 {
     font-size: 28px;
@@ -277,3 +277,4 @@ body {
     font-size: 16px;
     padding: 10px 18px;
   }
+}
