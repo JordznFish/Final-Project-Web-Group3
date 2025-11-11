@@ -1,15 +1,38 @@
-/*  MAIN CONTENT (base mobile) */
+/* ===============================
+   🟢 MAIN CONTENT BASE
+   =============================== */
 #main-content {
   background-image: url("../img/yellow-oil-paint-textured-background.jpg");
   background-size: cover;
-  background-attachment:local;
+  background-attachment: local;
   background-position: center;
   width: 100%;
-  padding: 1rem;
+  padding: 2rem 1rem;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
-/* ========== CATEGORY SIGNBOARD ========== */
+/* Decorative bush + fruit banner */
+.bush-banner {
+  background-image: url("../img/bushes.png");
+  background-repeat: repeat-x;
+  background-position: center bottom;
+  background-size: contain;
+  width: 100%;
+  height: 120px;
+  
+  /* display settings */
+  position: relative;
+  top: 98px;
+  z-index: 0;           /* must be positive to appear above background */
+  
+  /* flip vertically if you want it hanging down */
+  transform: rotateX(180deg);    /* cleaner vertical flip than rotate(180deg) */
+}
+
+/* ===============================
+   🪵 CATEGORY SIGNBOARD
+   =============================== */
 #menu-signboard {
   background-image: url("../img/wood.jpg");
   background-repeat: repeat;
@@ -17,18 +40,17 @@
   border: 5px solid #4a2e1a;
   border-radius: 16px;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25);
-  width: 50%;
-  margin: 60px auto;
+  width: 60%;
+  margin: 60px auto 40px;
   padding: 30px 0;
   text-align: center;
-  position: relative;
   font-family: 'Schoolbell', cursive;
   font-weight: bold;
   color: #fffdf5;
-  z-index: 1; /* board above ropes */
+  position: relative;
+  z-index: 2;
 }
 
-/* Rope details */
 #menu-signboard::before,
 #menu-signboard::after {
   content: "";
@@ -36,37 +58,29 @@
   top: -81.5px;
   width: 6px;
   height: 85px;
-  background: repeating-linear-gradient(
-    45deg,
-    #5a4025 0,
-    #5a4025 4px,
-    #6e5234 4px,
-    #6e5234 8px
-  ); /* rope texture */
+  background: repeating-linear-gradient(45deg, #5a4025 0, #5a4025 4px, #6e5234 4px, #6e5234 8px);
   border-radius: 3px;
-  box-shadow:
-    inset 0 0 4px rgba(0,0,0,0.3),
-    0 1px 2px rgba(0,0,0,0.3);
-  transform-origin: top;
+  box-shadow: inset 0 0 4px rgba(0,0,0,0.3), 0 1px 2px rgba(0,0,0,0.3);
 }
 
-#menu-signboard::before {
-  left: 28%;
-  transform: rotate(6deg);
+#menu-signboard::before { 
+  left: 28%; 
+  transform: rotate(6deg); 
 }
-
-#menu-signboard::after {
-  right: 28%;
-  transform: rotate(-6deg);
+#menu-signboard::after { 
+  right: 28%; 
+  transform: rotate(-6deg); 
 }
 
 #menu-signboard h2 {
-  font-size: 40px;
+  font-size: 38px;
   margin: 0;
   letter-spacing: 1px;
 }
 
-/* ========== CATEGORY BUTTONS ========== */
+/* ===============================
+   🟤 CATEGORY BUTTONS
+   =============================== */
 .category-buttons {
   display: flex;
   justify-content: center;
@@ -88,34 +102,13 @@
   box-shadow: 0 4px 6px rgba(0,0,0,0.15);
 }
 
-.cat-btn:hover {
-  background-color: #ffcf77;
-  transform: scale(1.05);
-}
-
+.cat-btn:hover { background-color: #ffcf77; transform: scale(1.05); }
 .cat-btn.active {
   background-color: #0e8253;
   color: #fffdf5;
   border-color: #0b5f3b;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
-
-/* Responsive tweaks */
-@media (max-width: 768px) {
-  #menu-signboard {
-    width: 90%;
-    margin: 60px auto 20px auto;
-  }
-  #menu-signboard h2 {
-    font-size: 22px;
-  }
-  .cat-btn {
-    font-size: 14px;
-    padding: 8px 14px;
-  }
-}
-
-
 
 /* FOOD MENU SECTION */
 /* 375px MOBILE */
@@ -268,7 +261,7 @@
 /* ========================= */
 @media (min-width: 1366px) {
   .menu-grid {
-    grid-template-columns: repeat(4, 1fr); /* 3 columns (auto adjusts to screen) */
+    grid-template-columns: repeat(4, 2fr); 
     column-gap: 2.5rem;
     row-gap: 2.5rem;
     justify-items: center;
