@@ -182,7 +182,7 @@ h3 {
   }
 }
 
-.site-footer {
+#site-footer {
   position: relative;
   background-image: url('img/background/footerzz.jpg');
   background-repeat: no-repeat;
@@ -196,7 +196,7 @@ h3 {
   z-index: 0;
 }
 
-.site-footer::before {
+#site-footer::before {
   content: "";
   position: absolute;
   top: -20px;
@@ -236,16 +236,16 @@ h3 {
 
 /* Small screen (375px) */
 @media (max-width: 480px) {
-  .site-footer {
+  #site-footer {
     background-size: contain; /* keep whole image visible */
     background-position: bottom;
   }
 
-  .site-footer h2 {
+  #site-footer h2 {
     font-size: 22px;
   }
 
-  .site-footer p {
+  #site-footer p {
     font-size: 14px;
   }
 
@@ -258,26 +258,26 @@ h3 {
 
 /* Medium screen (1024px) */
 @media (min-width: 481px) and (max-width: 1024px) {
-  .site-footer {
+  #site-footer {
     background-size: cover;
     background-position: center bottom;
     padding: 50px 15px;
   }
 
-  .site-footer h2 {
+  #site-footer h2 {
     font-size: 28px;
   }
 }
 
 /* Large screen (1366px) */
 @media (min-width: 1025px) {
-  .site-footer {
+  #site-footer {
     background-size: 100% auto; /* full width, keep height ratio */
     background-position: bottom center;
     padding: 60px 20px;
   }
 
-  .site-footer h2 {
+  #site-footer h2 {
     font-size: 32px;
   }
 }

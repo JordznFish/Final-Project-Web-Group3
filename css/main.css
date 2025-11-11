@@ -281,7 +281,7 @@
 
 @media (min-width: 1600px) {
   .menu-grid {
-    grid-template-columns: repeat(3, 2fr);
+    grid-template-columns: repeat(3, 0.5fr);
   }
 }
 
