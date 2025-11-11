@@ -71,3 +71,66 @@
 .ribbon::after {
   right: 10px;
 }
+
+/* ============================================
+   THEME LOGO ("Crossing Eats")
+   ============================================ */
+.ac-logo {
+  position: absolute;
+  top: 140px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  font-family: 'Fascinate', 'Comic Sans MS', cursive;
+  background-image: url("../img/wood.jpg");
+  background-size: cover;
+  border: 4px solid #8b5a2b;
+  border-radius: 20px;
+  box-shadow: 0 6px 0 #5a3818, 0 8px 16px rgba(0, 0, 0, 0.25);
+  padding: 16px 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: #5a3818;
+  text-align: center;
+  animation: float 3s ease-in-out infinite;
+  opacity: 95%;
+  transition: all 0.3s ease;
+}
+
+/* Text styling */
+.ac-logo h1 {
+  margin: 0;
+  font-size: 2.4rem;
+  letter-spacing: 1px;
+}
+
+.ac-logo .eats {
+  color: #3b8b3b;
+  text-shadow: 2px 2px #b8e88f;
+}
+
+/* Leaf emoji or icon */
+.ac-logo .leaf {
+  font-size: 2.2rem;
+  animation: sway 2.5s ease-in-out infinite;
+}
+
+/* Cute floating effect */
+@keyframes float {
+  0%, 100% { transform: translate(-50%, 0); }
+  50%      { transform: translate(-50%, -5px); }
+}
+
+/* Gentle leaf sway */
+@keyframes sway {
+  0%, 100% { transform: rotate(0deg); }
+  50%      { transform: rotate(-12deg); }
+}
+
+/* Hover pop */
+.ac-logo:hover {
+  transform: translateX(-50%) scale(1.05);
+  box-shadow: 0 10px 0 #5a3818, 0 12px 18px rgba(0, 0, 0, 0.3);
+}
