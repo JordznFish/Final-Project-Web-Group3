@@ -261,7 +261,7 @@
 /* ========================= */
 @media (min-width: 1366px) {
   .menu-grid {
-    grid-template-columns: repeat(4, 2fr); 
+    grid-template-columns: repeat(3, 2fr); 
     column-gap: 2.5rem;
     row-gap: 2.5rem;
     justify-items: center;
@@ -281,7 +281,7 @@
 
 @media (min-width: 1600px) {
   .menu-grid {
-    grid-template-columns: repeat(4, 0.5fr);
+    grid-template-columns: repeat(3, 2fr);
   }
 }
 

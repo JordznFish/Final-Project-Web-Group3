@@ -16,56 +16,68 @@
       </header>
 
       <main class="cart-page-content">
-        <!-- Tomato Curry -->
-        <div class="cart-item">
-          <div class="cart-box">
-            <img src= "img/foods/Tomato_Curry.jpeg" alt="Tomato Curry" />
-            <div class="item-details">
-              <h3>Tomato Curry</h3>
-
-              <div class="quantity-control">
-                <button class="decrease">-</button>
-                <input type="number" value="1" min="1" />
-                <button class="increase">+</button>
+        <div class="cart-layout">
+          <div class="cart-items-section">
+            <!-- Tomato Curry -->
+            <div class="cart-item">
+              <div class="cart-box">
+                <img src="img/foods/Tomato_Curry.jpeg" alt="Tomato Curry" />
+                <div class="item-details">
+                  <h3>Tomato Curry</h3>
+                  <div class="quantity-control">
+                    <button class="decrease">-</button>
+                    <input type="number" value="1" min="1" />
+                    <button class="increase">+</button>
+                  </div>
+                  <div class="item-bottom">
+                    <span class="item-price">$7.49</span>
+                    <button class="remove-btn">Remove</button>
+                  </div>
+                </div>
               </div>
+            </div>
 
-              <div class="item-bottom">
-                <span class="item-price">$7.49</span>
-                <button class="remove-btn">Remove</button>
+            <!-- Sea Bass Pie -->
+            <div class="cart-item">
+              <div class="cart-box">
+                <img src="img/foods/sea-bass-pie.jpeg" alt="Sea Bass Pie" />
+                <div class="item-details">
+                  <h3>Sea Bass Pie</h3>
+                  <div class="quantity-control">
+                    <button class="decrease">-</button>
+                    <input type="number" value="1" min="1" />
+                    <button class="increase">+</button>
+                  </div>
+                  <div class="item-bottom">
+                    <span class="item-price">$9.00</span>
+                    <button class="remove-btn">Remove</button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- Sea Bass Pie -->
-        <div class="cart-item">
-          <div class="cart-box">
-            <img src="img/foods/sea-bass-pie.jpeg" alt="Sea Bass Pie" />
-            <div class="item-details">
-              <h3>Sea Bass Pie</h3>
-
-              <div class="quantity-control">
-                <button class="decrease">-</button>
-                <input type="number" value="1" min="1" />
-                <button class="increase">+</button>
-              </div>
-
-              <div class="item-bottom">
-                <span class="item-price">$9.00</span>
-                <button class="remove-btn">Remove</button>
-              </div>
+          <!-- Cart Summary (Total) -->
+          <aside class="cart-summary">
+            <h2>Order Summary</h2>
+            <div class="summary-item">
+              <span>Subtotal</span>
+              <span>$16.49</span>
             </div>
-          </div>
-        </div>
-
-        <!-- Total Section -->
-        <div class="cart-total">
-          <h3>Total: $16.49</h3>
-          <button class="checkout-btn">Proceed to Checkout</button>
+            <div class="summary-item">
+              <span>Delivery Fee</span>
+              <span>$2.50</span>
+            </div>
+            <div class="summary-item total">
+              <strong>Total</strong>
+              <strong>$18.99</strong>
+            </div>
+            <button class="checkout-btn">Proceed to Checkout</button>
+          </aside>
         </div>
       </main>
     </div>
-    
+
     <script src="script.js"></script>
   </body>
 </html>
