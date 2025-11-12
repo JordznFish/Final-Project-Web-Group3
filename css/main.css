@@ -236,7 +236,7 @@
 /* =========================
 /* 💻 Tablet: ≥1024px        */
 /* ========================= */
-@media (min-width: 1024px) {
+@media (min-width: 1100px) {
   .menu-grid {
     grid-template-columns: repeat(3, 2fr); /* 2 columns */
     column-gap: 2rem;
