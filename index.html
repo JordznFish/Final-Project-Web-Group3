@@ -27,12 +27,14 @@
         <div class="background-wrapper">
             <nav id="navbar">
                 <div class="logo">
-                    <img src="img/compass.png" alt="Logo" class="nav-icon"/>
+                    <a href="#banner">
+                        <img src="img/compass2.png" alt="Logo" class="nav-icon"/>
+                    </a>
                 </div>
                 <hr class="divider">
                 <ul class="nav-links">
                     <li>
-                        <a href="#food-menu">
+                        <a href="#main-content">
                             <img src="img/menu_final.png" alt="Menu Icon" class="nav-icon"/>
                             <span class="tooltip">Menu</span>
                         </a>
@@ -76,6 +78,7 @@
             <!-- Owner: Eric -->
             <!-- Contains: Theme banner -->
             <!-- ===================== -->
+            <div id="banner"></div>
             <section class="banner">
                 <img src="img/banner.jpg" alt="Animal Crossing Banner">
             </section>
@@ -129,19 +132,20 @@
             <div class="bush-banner"></div>
             <main id="main-content">
                 <!-- Signboard and Category Buttons -->
-                <div id="menu-signboard">
-                    <h2 id="current-category">All Menu</h2>
-                </div>
+                <section id="upper-menu">
+                    <div id="menu-signboard">
+                        <h2 id="current-category">All Menu</h2>
+                    </div>
 
-                <div class="category-buttons">
-                    <button class="cat-btn active" data-category="all">All</button>
-                    <button class="cat-btn" data-category="main-dish">Main Dishes</button>
-                    <button class="cat-btn" data-category="snacks">Snacks</button>
-                    <button class="cat-btn" data-category="soups">Soups</button>
-                    <button class="cat-btn" data-category="desserts">Desserts</button>
-                    <button class="cat-btn" data-category="beverages">Beverages</button>
-                </div>
-            
+                    <div class="category-buttons">
+                        <button class="cat-btn active" data-category="all">All</button>
+                        <button class="cat-btn" data-category="main-dish">Main Dishes</button>
+                        <button class="cat-btn" data-category="snacks">Snacks</button>
+                        <button class="cat-btn" data-category="soups">Soups</button>
+                        <button class="cat-btn" data-category="desserts">Desserts</button>
+                        <button class="cat-btn" data-category="beverages">Beverages</button>
+                    </div>
+                </section>
                 <!-- Food Menu Grid -->
                 <section id="food-menu">
                     <div class="menu-grid">
