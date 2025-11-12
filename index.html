@@ -57,6 +57,12 @@
                             <span class="tooltip">Cart</span>
                         </a>
                     </li>
+                    <li>
+                        <a href="javascript:void(0);" id="newsletter-btn">
+                            <img src="img/newsletter_final.png" alt="Newsletter Icon" class="nav-icon"/>
+                            <span class="tooltip">Newsletter</span>
+                        </a>
+                    </li>
                 </ul>
 
                 <div class="user-info">
@@ -71,6 +77,19 @@
                     </a>
                 </div>
             </nav>
+
+            <div class="sidebar-overlay"></div>
+
+            <!-- Newsletter Modal Here -->
+            <div id="newsletter" class="modal">
+                <div class="modal-content">
+                    <span class="modal-close">&times;</span>
+                    <h2 class="w3-wide">NEWSLETTER</h2>
+                    <p>Join our mailing list to receive updates on new arrivals and special offers.</p>
+                    <p><input class="newsletter-input" type="text" placeholder="Enter e-mail"></p>
+                    <button type="button" class="newsletter-subscribe">Subscribe</button>
+                </div>
+            </div>
     
             
             <!-- ===================== -->
@@ -78,6 +97,17 @@
             <!-- Owner: Eric -->
             <!-- Contains: Theme banner -->
             <!-- ===================== -->
+            <header id="header-banner">
+                <a href="#banner" style="text-decoration:none">
+                    <div id="ac-logo-header">
+                        <h1>Crossing <span class="eats">Eats</span></h1>
+                    </div>
+
+                    <a href="javascript:void(0)" class="drop-down-icon" id="menu-toggle">☰</a>
+                </a>
+                
+            </header>
+
             <div id="banner"></div>
             <section class="banner">
                 <img src="img/banner.jpg" alt="Animal Crossing Banner">
@@ -107,7 +137,7 @@
                 </div>
 
                 <div class="right-col promo">
-                    <a href="#menu" class="ribbon">Click me to bring the 'NOM' to your home!
+                    <a href="cart.html" class="ribbon">Click me to bring the 'NOM' to your home!
                         <span class="ribbon-sub">Order now and enjoy island-fresh flavor anytime 🌴</span>
                     </a>
 
@@ -345,7 +375,6 @@
                 </footer>
 
         </div>
-        </div>
 
         <!-- Optional JS -->
         <script>
@@ -384,6 +413,64 @@
                 document.querySelector('.cat-btn[data-category="all"]').classList.add('active');
                 filterCategory('all');
             });
+
+            // NEWSLETTER MODAL 
+            document.addEventListener("DOMContentLoaded", function() {
+                const newsletterBtn = document.getElementById('newsletter-btn');
+                const newsletterModal = document.getElementById('newsletter');
+                const closeBtn = document.querySelector('.modal-close');
+                const subscribeBtn = document.getElementById('subscribe-btn');
+
+                //  Show modal
+                if (newsletterBtn) {
+                    newsletterBtn.addEventListener('click', () => {
+                    newsletterModal.classList.add('show');
+                    });
+                }
+
+                //  Close modal via X button
+                if (closeBtn) {
+                    closeBtn.addEventListener('click', () => {
+                    newsletterModal.classList.remove('show');
+                    });
+                }
+
+                //  Close modal via subscribe button
+                if (subscribeBtn) {
+                    subscribeBtn.addEventListener('click', () => {
+                    newsletterModal.classList.remove('show');
+                    });
+                }
+
+                //  Close modal by clicking outside
+                if (newsletterModal) {
+                    window.addEventListener('click', (event) => {
+                    if (event.target === newsletterModal) {
+                        newsletterModal.classList.remove('show');
+                    }
+                    });
+                }
+            });
+
+            // NAVBAR ON SMALL DEVICE
+            // Responsive Navbar Toggle (Mobile)
+            document.addEventListener("DOMContentLoaded", () => {
+            const menuToggle = document.getElementById("menu-toggle");
+            const navbar = document.getElementById("navbar");
+            const overlay = document.querySelector(".sidebar-overlay");
+
+            if (menuToggle && navbar && overlay) {
+                menuToggle.addEventListener("click", () => {
+                    navbar.classList.toggle("open");
+                    overlay.classList.toggle("active");
+                });
+
+                overlay.addEventListener("click", () => {
+                    navbar.classList.remove("open");
+                    overlay.classList.remove("active");
+                });
+            }
+        });
         </script>
     </body>
 </html>
