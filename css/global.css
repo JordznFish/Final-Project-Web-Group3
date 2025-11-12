@@ -3,6 +3,7 @@ html, body {
   min-height: 100%;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 body {
@@ -31,28 +32,4 @@ body {
 @-webkit-keyframes scroll {
   from { background-position: 0 0, 50px 50px, 50px 0; }
   to { background-position: -100px -100px, -50px -50px, -50px -100px; }
-}
-
-#navbar {
-  border: 2px solid black;
-}
-
-#header {
-  border: 2px solid black;
-}
-
-#ac-display {
-  border: 2px solid black;
-}
-
-#main-content {
-  border: 2px solid black;
-}
-
-#checkout-cart {
-  border: 2px solid black;
-}
-
-#footer {
-  border: 2px solid black;
 }

@@ -9,7 +9,12 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Fascinate&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Quintessential&family=Schoolbell&display=swap" rel="stylesheet">
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
 
+        <!-- CSS -->
         <link rel="stylesheet" href="css/global.css" />
         <!-- Team-specific CSS -->
         <link rel="stylesheet" href="css/navbar.css" />       <!-- Patricia -->
@@ -20,163 +25,452 @@
 
     <body>
         <div class="background-wrapper">
-            <!-- ===================== -->
-            <!-- NAVIGATION BAR -->
-            <!-- Owner: Patricia -->
-            <!-- ===================== -->
             <nav id="navbar">
                 <div class="logo">
-                    <img src="assets/logo.png" alt="Animal Crossing Logo" />
-                    <h1>Crossing Eats</h1>
+                    <a href="#banner">
+                        <img src="img/compass1.png" alt="Logo" class="nav-icon"/>
+                    </a>
                 </div>
-
+                <hr class="divider">
                 <ul class="nav-links">
-                    <li><a href="#menu">Menu</a></li>
-                    <li><a href="#awards">Awards</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li>
+                        <a href="#main-content">
+                            <img src="img/menu_final.png" alt="Menu Icon" class="nav-icon"/>
+                            <span class="tooltip">Menu</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#reviews">
+                            <img src="img/awards_final.png" alt="Awards Icon" class="nav-icon"/>
+                            <span class="tooltip">Reviews</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#site-footer">
+                            <img src="img/contact_final.png" alt="Contact Icon" class="nav-icon"/>
+                            <span class="tooltip">Contact</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="cart.html">
+                            <img src="img/cart_final.png" alt="Cart Icon" class="nav-icon"/>
+                            <span class="tooltip">Cart</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" id="newsletter-btn">
+                            <img src="img/newsletter_final.png" alt="Newsletter Icon" class="nav-icon"/>
+                            <span class="tooltip">Newsletter</span>
+                        </a>
+                    </li>
                 </ul>
 
                 <div class="user-info">
-                    <a href="cart.html"><img src="assets/cart-icon.png" alt="Cart" title="View Cart" /></a>
-                    <img src="assets/user-avatar.png" alt="User" />
+                    <hr class="divider">
+                    <a href="profile.html">
+                        <img src="img/user.png" alt="Profile Icon" class="nav-icon"/>
+                        <span class="tooltip">Profile</span>
+                    </a>
+                    <a href="settings.html">
+                        <img src="img/settings_final.png" alt="Settings Icon" class="nav-icon"/>
+                        <span class="tooltip">Settings</span>
+                    </a>
                 </div>
             </nav>
 
+            <div class="sidebar-overlay"></div>
+
+            <!-- Newsletter Modal Here -->
+            <div id="newsletter" class="modal">
+                <div class="modal-content">
+                    <span class="modal-close">&times;</span>
+                    <h2 class="w3-wide">NEWSLETTER</h2>
+                    <p>Join our mailing list to receive updates on new arrivals and special offers.</p>
+                    <p><input class="newsletter-input" type="text" placeholder="Enter e-mail"></p>
+                    <button type="button" class="newsletter-subscribe">Subscribe</button>
+                </div>
+            </div>
+    
+            
             <!-- ===================== -->
             <!-- HEADER SECTION -->
             <!-- Owner: Eric -->
-            <!-- Contains: promo banner + search bar   -->
+            <!-- Contains: Theme banner -->
             <!-- ===================== -->
-            <header id="header">
-                <div class="promo-banner">
-                    <h2>🍔 Deal of the Weekend!</h2>
-                    <p>Get <strong>50% off</strong> burgers all weekend long.</p>
-                    <button>Check Menu</button>
+            <header id="header-banner">
+                <a href="#banner" style="text-decoration:none">
+                    <div id="ac-logo-header">
+                        <h1>Crossing <span class="eats">Eats</span></h1>
+                    </div>
+
+                    <a href="javascript:void(0)" class="drop-down-icon" id="menu-toggle">☰</a>
+                </a>
+                
+            </header>
+
+            <div id="banner"></div>
+            <section class="banner">
+                <img src="img/banner.jpg" alt="Animal Crossing Banner">
+            </section>
+
+            <div class="ac-logo">
+                <h1>Crossing <span class="eats">Eats</span></h1>
+            </div>
+
+            <section class="brown-box">
+                <div class="left-col">
+                    <h2 class="title">Food Made With Love!</h2>
+
+                    <div class="delivery-row">
+                        <div class="pill delivery-pill">
+                            <span class="label">Estimated Delivery:</span>
+                            <span class="time">09:00</span> to <span class="time">21:00</span>
+                        </div>
+
+                        <div class="pill fee-pill">
+                            
+                            <span class="fee-label">Delivery Fee</span>
+                            <span class="price">NT$  <strong>39</strong></span>
+                            <span class="free-tag">FREE over NT$ 299</span>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="search-bar">
-                    <input type="text" placeholder="Search your favorite food..." />
+                <div class="right-col promo">
+                    <a href="cart.html" class="ribbon">Click me to bring the 'NOM' to your home!
+                        <span class="ribbon-sub">Order now and enjoy island-fresh flavor anytime 🌴</span>
+                    </a>
+
+                    <img src="img/happy.png" alt="Mascot" class="character">
                 </div>
-            </header>
+            </section>
 
             <!-- ===================== -->
             <!-- ANIMAL CROSSING Monthly Events -->
             <!-- Owner: Patricia -->
             <!-- Spinning Lucky wheel for prizes and discounts -->
             <!-- ===================== -->
-            <section id="monthly-event">
-                <h3>🎯 Monthly Event — Spin & Hunt Week!</h3>
-                <p class="event-intro">
-                    This week, we have <strong>a fun challenge</strong> for all our little food explorers!
-                    Spin the lucky wheel 🎁 to win cute prizes and discounts!
-                </p>
-
-                <div class="event-grid">
-                    <!-- Spin & Win -->
-                    <div class="event-card">
-                    <img src="assets/event-spin.png" alt="Spin and Win" />
-                    <h4>🎡 Spin & Win Week!</h4>
-                    <p>Try your luck! Spin the wheel once a day and see what tasty prize you'll get!</p>
-                    <button id="spin-btn">Spin the Wheel 🎁</button>
-                    </div>
-                </div>
-
-                <!-- Spin Result Display -->
-                <div id="spin-result" class="hidden">
-                    <p id="result-text"></p>
-                </div>
-            </section>
-
+            <div class="event-banner">
+                <h2 class="feature-title">November 11.11 Kids Feast!</h2>
+                <p><span class="highlight"> Crossing's Eats Special:</span> Enjoy <span class="highlight">11% OFF</span> all kids meals this month! Let Isabelle, Tom Nook, and all your favorite Crossing friends 
+                    <br> deliver smiles and tasty surprises straight to your island home!</p>
+                <button class="learn-btn">
+                    Learn More <span class="arrow">&rarr;</span></button>
+            </div>
+            
             <!-- ===================== -->
             <!-- MAIN CONTENT AREA -->
             <!-- Owner: Jordan -->
             <!-- Contains: Category Nav + Food Menu Cards -->
             <!-- ===================== -->
+            <div class="bush-banner"></div>
             <main id="main-content">
-                <!-- Category Navigation -->
-                <section id="category-nav">
-                <h2>Menu Categories</h2>
-                <div class="categories">
-                    <button class="category active">Pizza</button>
-                    <button class="category">Snacks</button>
-                    <button class="category">Drinks</button>
-                    <button class="category">Desserts</button>
-                    <button class="category">Specials</button>
-                </div>
-                </section>
+                <!-- Signboard and Category Buttons -->
+                <section id="upper-menu">
+                    <div id="menu-signboard">
+                        <h2 id="current-category">All Menu</h2>
+                    </div>
 
-                <!-- Food Menu Grid -->
-                <section id="food-menu">
-                    <h2>Popular Dishes</h2>
-                    <div class="menu-grid">
-                        <!-- Example Food Card -->
-                        <div class="food-card">
-                            <img src="assets/pizza.png" alt="Cheese Pizza" />
-                            <h3>Cheese Pizza</h3>
-                            <p class="price">$7.49</p>
-                            <button class="add-cart">Add to Cart</button>
-                        </div>
-                        
-                        <div class="food-card">
-                            <img src="assets/pizza.png" alt="Cheese Pizza" />
-                            <h3>Apple pie</h3>
-                            <p class="price">$9.00</p>
-                            <button class="add-cart">Add to Cart</button>
-                        </div>
-                        
-                        <div class="food-card">
-                            <img src="assets/pizza.png" alt="Cheese Pizza" />
-                            <h3>Smoothie</h3>
-                            <p class="price">$12.00</p>
-                            <button class="add-cart">Add to Cart</button>
-                        </div>
-                        <!-- Duplicate cards for more items -->
+                    <div class="category-buttons">
+                        <button class="cat-btn active" data-category="all">All</button>
+                        <button class="cat-btn" data-category="main-dish">Main Dishes</button>
+                        <button class="cat-btn" data-category="snacks">Snacks</button>
+                        <button class="cat-btn" data-category="soups">Soups</button>
+                        <button class="cat-btn" data-category="desserts">Desserts</button>
+                        <button class="cat-btn" data-category="beverages">Beverages</button>
                     </div>
                 </section>
+                <!-- Food Menu Grid -->
+                <section id="food-menu">
+                    <div class="menu-grid">
+                        <!-- Example Food Card -->
+                        <div class="food-card main-dish">
+                            <img src="img/Tomato_Curry.jpg" alt="Tomato Curry"/>
+                            <h3>Tomato Curry Rice</h3>
+                            <p class="desc">A hearty curry simmered with fresh tomatoes and a touch of island spice.</p>
+                            <p class="price">NT$ 139</p>
+                            <button class="add-btn">+</button>
+                        </div>
+                        
+                        <div class="food-card main-dish">
+                            <img src="img/sea-bass-pie.jpg" alt="Sea-Bass Pie" />
+                            <h3>Sea-Bass Pie</h3>
+                            <p class="desc">Flaky crust stuffed with tender sea bass and creamy filling — a seaside comfort favorite.</p>
+                            <p class="price">NT$ 199</p>
+                            <button class="add-btn">+</button>
+                        </div>
+                        
+                        <div class="food-card main-dish">
+                            <img src="img/minestrone soup.jpg" alt="Minestrone Soup" />
+                            <h3>Minestrone Soup</h3>
+                            <p class="desc">A colorful vegetable soup bursting with warmth, perfect for a cozy evening.</p>
+                            <p class="price">NT$ 119</p>
+                            <button class="add-btn">+</button>
+                        </div>
+                        
+                        <div class="food-card main-dish">
+                            <img src="img/aji fry.jpg" alt="Aji Fry" />
+                            <h3>Aji Fry teishoku</h3>
+                            <p class="desc">Golden-fried horse mackerel paired with fluffy rice, miso soup, and crisp seasonal greens.</p>
+                            <p class="price">NT$ 199</p>
+                            <button class="add-btn">+</button>
+                        </div>
 
+                        <div class="food-card snacks">
+                            <img src="img/french-fries.jpg" alt="French Fries" />
+                            <h3>French Fries</h3>
+                            <p class="desc">Crispy, golden fries with just the right amount of salt — everyone’s favorite bite.</p>
+                            <p class="price">NT$ 89</p>
+                            <button class="add-btn">+</button>
+                        </div>
+
+                        <div class="food-card snacks">
+                            <img src="img/sandwich.jpg" alt="Sandwich" />
+                            <h3>Sandwich</h3>
+                            <p class="desc">Freshly made with soft bread, crisp veggies, and a generous layer of filling.</p>
+                            <p class="price">NT$ 129</p>
+                            <button class="add-btn">+</button>
+                        </div>
+
+                        <div class="food-card snacks">
+                            <img src="img/potato croquettes.jpg" alt="Potato Croquettes" />
+                            <h3>Potato Croquettes</h3>
+                            <p class="desc">Crunchy on the outside, fluffy inside — a classic comfort snack.</p>
+                            <p class="price">NT$ 99</p>
+                            <button class="add-btn">+</button>
+                        </div>
+
+                        <div class="food-card desserts">
+                            <img src="img/carrot-cake.jpg" alt="Carrot Cake" />
+                            <h3>Carrot Cake</h3>
+                            <p class="desc">Sweet and moist cake with grated carrots and a touch of cinnamon.</p>
+                            <p class="price">NT$ 149</p>
+                            <button class="add-btn">+</button>
+                        </div>
+
+                        <div class="food-card desserts">
+                            <img src="img/apple-pie.jpg" alt="Apple Pie" />
+                            <h3>Apple Pie</h3>
+                            <p class="desc">Buttery crust filled with caramelized apples — a timeless homemade dessert.</p>
+                            <p class="price">NT$ 139</p>
+                            <button class="add-btn">+</button>
+                        </div>
+
+                        <div class="food-card desserts">
+                            <img src="img/fruit-tart.jpg" alt="Fruit Tart" />
+                            <h3>Fruit Tart</h3>
+                            <p class="desc">A colorful medley of fruits over smooth custard — as cheerful as it is delicious.</p>
+                            <p class="price">NT$ 99</p>
+                            <button class="add-btn">+</button>
+                        </div>
+
+                        <div class="food-card soups">
+                            <img src="img/mushroom-soup.jpg" alt="Mushroom Soup" />
+                            <h3>Mushroom Soup</h3>
+                            <p class="desc">Earthy, creamy, and aromatic — a bowl of pure woodland comfort.</p>
+                            <p class="price">NT$ 49</p>
+                            <button class="add-btn">+</button>
+                        </div>
+
+                        <div class="food-card soups">
+                            <img src="img/carrot-pottage.jpg" alt="Carrot Potage" />
+                            <h3>Carrot Potage</h3>
+                            <p class="desc">Smooth, sweet carrot soup that feels like a warm hug on a cool day.</p>
+                            <p class="price">NT$ 49</p>
+                            <button class="add-btn">+</button>
+                        </div>
+
+                        <div class="food-card beverages">
+                            <img src="img/strawberry-smoothie.jpg" alt="Strawberry Smoothie" />
+                            <h3>Strawberry Smoothie</h3>
+                            <p class="desc">A refreshing blend of ripe strawberries and creamy milk.</p>
+                            <p class="price">NT$ 79</p>
+                            <button class="add-btn">+</button>
+                        </div>
+
+                        <div class="food-card beverages">
+                            <img src="img/banana-smoothie.jpg" alt="Banana Smoothie" />
+                            <h3>Banana Smoothie</h3>
+                            <p class="desc">Thick, creamy, and naturally sweet — an all-time classic.</p>
+                            <p class="price">NT$ 79</p>
+                            <button class="add-btn">+</button>
+                        </div>
+
+                        <div class="food-card beverages">
+                            <img src="img/mango-smoothie.jpg" alt="Mango Smoothie" />
+                            <h3>Mango Smoothie</h3>
+                            <p class="desc">Rich, velvety mango blended to perfection — a sweet tropical escape in every sip.</p>
+                            <p class="price">NT$ 79</p>
+                            <button class="add-btn">+</button>
+                        </div>
+                    </div>
+                </section>
             </main>
 
-            <!-- ===================== -->
+              <!-- ===================== -->
             <!-- Choose either one AWARDS / REVIEWS SECTION -->
             <!-- Owner: Steffani -->
             <!-- ===================== -->
-            <section id="awards">
-                <h2>🏆 Our Awards & Customer Love</h2>
-                <div class="awards-container">
-                    <div class="award-card">
-                        <img src="assets/award1.png" alt="Best Food Delivery 2024" />
-                        <h3>Best Food Delivery 2024</h3>
-                        <p>Recognized by Animal Crossing Culinary Guild</p>
-                    </div>
+            <section id="reviews">
+            <div class="review-title">Customers Love</div>
 
-                    <div class="award-card">
-                        <img src="assets/award2.png" alt="Customer Choice Award" />
-                        <h3>Customer Choice Award</h3>
-                        <p>Rated 4.9⭐ by over 5,000 happy villagers!</p>
-                    </div>
-
-                    <div class="review-card">
-                        <p>“Amazing food, super cute theme, and fast delivery! 🍕”</p>
-                        <small>- Isabelle, Town Mayor</small>
-                    </div>
-
-                    <div class="review-card">
-                        <p>“Best curry in the island! 🥘 I order every week.”</p>
-                        <small>- Tom Nook</small>
-                    </div>
+           <div class="review-container">
+               
+                <div class="review-card">
+                    <img src="img/avatar/Avatar1.jpg" alt="Customer 1">
+                    <h3>Tom Nook</h3>
+                    <div class="stars">★★★★☆</div>
+                    <p>Amazing food and fast delivery! 🍕</p>
+                    <small>June 4, 2025</small>
                 </div>
+
+                <div class="review-card">
+                    <img src="img/avatar/Avatar2.jpg" alt="Customer 2">
+                    <h3>Isabelle, Town Mayor</h3>
+                    <div class="stars">★★★★★</div>
+                    <p>Best curry in the island! 🥘 I order every week.</p>
+                    <small>August 18, 2025</small>
+                </div>
+
+                <div class="review-card">
+                    <img src="img/avatar/Avatar3.jpg" alt="Customer 3">
+                    <h3>Alfonso</h3>
+                    <div class="stars">★★★★☆</div>
+                    <p>Loved the Sea-Bass Pie! Warm, tasty, and fun to share with friends!</p>
+                    <small>Nov 6, 2025</small>
+
+                </div>
+            </div>
             </section>
 
             <!-- ===================== -->
             <!-- FOOTER -->
             <!-- Owner: Steffani -->
             <!-- ===================== -->
-            <footer id="footer">
-                <p>© 2025 Crossing Eats — All Rights Reserved</p>
-            </footer>
+            <footer id="site-footer"style="background-image: url('img/background/footerzz.png');
+              background-size: 100% 100%;
+              background-position: center;
+              background-repeat: no-repeat;
+              text-align: center;
+              position: relative;
+              padding: 60px 20px;">
+
+                    <h2>Thank you for visiting!</h2>
+                    <p>Follow us on social media:</p>
+        
+                    <div class="social-links">
+                    <a href="https://www.facebook.com" target="_blank">
+                        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" class="social-icon">
+                    </a>
+                    <a href="https://www.instagram.com" target="_blank">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" class="social-icon">
+                    </a>
+                    <a href="https://www.twitter.com" target="_blank">
+                        <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" class="social-icon">
+                    </a>
+                    </div>
+
+                    <p class="copyright">© 2025 CrossingEats. All rights reserved.</p>
+                
+                </footer>
+
         </div>
 
         <!-- Optional JS -->
-        <script></script>
+        <script>
+            const buttons = document.querySelectorAll('.cat-btn');
+            const categoryTitle = document.getElementById('current-category');
+            const foodCards = document.querySelectorAll('.food-card');
+
+            function filterCategory(category) {
+                foodCards.forEach(card => {
+                    card.style.display = 'none';
+                    card.classList.remove('show');
+
+                    if (category === 'all' || card.classList.contains(category)) {
+                        card.style.display = 'block';
+                        setTimeout(() => card.classList.add('show'), 50);
+                    }
+                });
+
+                categoryTitle.textContent =
+                category === 'all'
+                    ? 'All Menu'
+                    : category.replace('-', ' ').replace(/\b\w/g, c => c.toUpperCase());
+            }
+
+            buttons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                buttons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const category = btn.dataset.category;
+                filterCategory(category);
+                });
+            });
+
+            // 🟢 Automatically show "All" on first load
+            window.addEventListener('DOMContentLoaded', () => {
+                document.querySelector('.cat-btn[data-category="all"]').classList.add('active');
+                filterCategory('all');
+            });
+
+            // NEWSLETTER MODAL 
+            document.addEventListener("DOMContentLoaded", function() {
+                const newsletterBtn = document.getElementById('newsletter-btn');
+                const newsletterModal = document.getElementById('newsletter');
+                const closeBtn = document.querySelector('.modal-close');
+                const subscribeBtn = document.getElementById('subscribe-btn');
+
+                //  Show modal
+                if (newsletterBtn) {
+                    newsletterBtn.addEventListener('click', () => {
+                    newsletterModal.classList.add('show');
+                    });
+                }
+
+                //  Close modal via X button
+                if (closeBtn) {
+                    closeBtn.addEventListener('click', () => {
+                    newsletterModal.classList.remove('show');
+                    });
+                }
+
+                //  Close modal via subscribe button
+                if (subscribeBtn) {
+                    subscribeBtn.addEventListener('click', () => {
+                    newsletterModal.classList.remove('show');
+                    });
+                }
+
+                //  Close modal by clicking outside
+                if (newsletterModal) {
+                    window.addEventListener('click', (event) => {
+                    if (event.target === newsletterModal) {
+                        newsletterModal.classList.remove('show');
+                    }
+                    });
+                }
+            });
+
+            // NAVBAR ON SMALL DEVICE
+            // Responsive Navbar Toggle (Mobile)
+            document.addEventListener("DOMContentLoaded", () => {
+            const menuToggle = document.getElementById("menu-toggle");
+            const navbar = document.getElementById("navbar");
+            const overlay = document.querySelector(".sidebar-overlay");
+
+            if (menuToggle && navbar && overlay) {
+                menuToggle.addEventListener("click", () => {
+                    navbar.classList.toggle("open");
+                    overlay.classList.toggle("active");
+                });
+
+                overlay.addEventListener("click", () => {
+                    navbar.classList.remove("open");
+                    overlay.classList.remove("active");
+                });
+            }
+        });
+        </script>
     </body>
 </html>
