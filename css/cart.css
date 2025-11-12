@@ -27,14 +27,57 @@ body {
 }
 
 .back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #ffb347;
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
   text-decoration: none;
-  color: #0077cc;
-  font-weight: bold;
+  padding: 8px 14px;
+  margin-left: 20px;
+  border-radius: 25px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
 }
 
 .back-btn:hover {
-  text-decoration: underline;
+  background-color: #ff9a00;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
 }
+
+/* === My Cart Title === */
+.cart-header h1 {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 26px;
+  font-weight: 700;
+  color: #4a2c00;
+  background-color: #fff6d6;
+  padding: 8px 18px;
+  border-radius: 25px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden; 
+}
+
+.cart-header h1::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.02) 0px,
+    rgba(0, 0, 0, 0.02) 2px,
+    transparent 2px,
+    transparent 6px
+  );
+  opacity: 0.4;
+  pointer-events: none;
+}
+
 
 /* === Cart Item Box === */
 .cart-item {
@@ -168,15 +211,15 @@ body {
 .cart-layout {
   display: flex;
   align-items: flex-start;
-  gap: 20px; /* spacing between items and summary */
+  gap: 20px; 
 }
 
-/* Left section: cart items */
+
 .cart-items-section {
   flex: 3;
 }
 
-/* Right section: order summary */
+
 .cart-summary {
   flex: 0.8; 
   max-width: 280px;
@@ -200,6 +243,15 @@ body {
 
 /* === Small Screens (Mobile: 375px) === */
 @media (max-width: 480px) {
+  .cart-layout {
+    display: flex;
+    flex-direction: row; /* keep side-by-side layout */
+    align-items: flex-start;
+    gap: 10px;
+    overflow-x: auto;        /* allows horizontal scroll if needed */
+    flex-wrap: nowrap;
+  }
+
   .background-wrapper {
     padding: 10px;
   }
@@ -225,14 +277,6 @@ body {
     height: auto;
   }
 
-  .cart-item {
-  margin-right: 10px;
-  margin-left: 10px;
-}
-  .item-details {
-    width: 100%;
-  }
-
   .quantity-control input {
     width: 40px;
   }
@@ -248,6 +292,11 @@ body {
     margin-right: 10px;
     margin-left: 10px;
     margin-bottom: 10px;
+  }
+   .cart-summary {
+    flex: 0 0 35%;           
+    max-width: 180px;
+    position: static;       
   }
 
   .checkout-btn {
@@ -273,6 +322,9 @@ body {
   margin-left: 20px;
 }
 
+.cart-summary {
+  margin-right: 20px;
+}
 
   .item-price {
     font-size: 16px;
@@ -305,6 +357,9 @@ body {
   margin-left: 30px;
   }
 
+  .cart-summary {
+  margin-right: 20px;
+}
   .item-details h3 {
     font-size: 18px;
   }

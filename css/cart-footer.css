@@ -9,12 +9,12 @@
   font-size: 50px;
   font-weight: bold;
   color: #000;
-  margin: 10px auto 15px auto;
+  margin-top: 50px;
   box-shadow: 0 4px 10px rgba(255, 182, 193, 0.3);
 }
 
 #reviews {
-  text-align: center; /* centers the title box */
+  text-align: center; 
   padding-top: 20px;
 }
   
@@ -107,13 +107,6 @@ h3 {
   margin-bottom: 2px;
 }
 
-.review-title {
-  text-align: center;
-  font-size: 50px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-
 /* Small screen (375px) */
 @media (max-width: 480px) {
   .review-title {
@@ -123,13 +116,15 @@ h3 {
   .review-container {
     flex-direction: column;
     align-items: center;
-    gap: 30px;
-    padding: 10px;
+    gap: 20px;
+    padding: 0 10px;
   }
 
   .review-card {
-    width: 90%;  /* full width on mobile */
+    width: 100%;
+    max-width: 320px;
     padding: 15px;
+    box-sizing: border-box;
   }
 
   .review-card p {
@@ -142,20 +137,24 @@ h3 {
   }
 }
 
-/* Medium screen (1024px) */
 
+/* Medium screen (Tablet: 481px–1024px) */
 @media (min-width: 481px) and (max-width: 1024px) {
   .review-title {
     font-size: 40px;
   }
 
   .review-container {
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr); 
     gap: 60px;
-    padding: 20px 40px;
+    justify-items: center; 
+    padding: 30px 50px;
   }
 
   .review-card {
-    width: 280px;
+    width: 100%;     
+    max-width: 280px; 
   }
 
   .review-card p {
@@ -164,17 +163,22 @@ h3 {
 }
 
 /* Large screen (1366px and up) */
-@media (min-width: 100px) {
+@media (min-width: 1025px) {
   .review-title {
     font-size: 50px;
   }
 
   .review-container {
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr);
     gap: 100px;
+    justify-items: center; 
+    padding: 50px 100px; 
   }
 
   .review-card {
-    width: 300px;
+    width: 100%;      
+    max-width: 300px; 
   }
 
   .review-card p {
@@ -182,13 +186,14 @@ h3 {
   }
 }
 
+
 #site-footer {
   position: relative;
   background-image: url('img/background/footerzz.jpg');
   background-repeat: no-repeat;
   background-size: cover; 
   background-position: bottom; 
-  bottom: -200px;
+  bottom: -150px;
   text-align: center;
   width: 100%;
   padding: 40px 20px 20px 20px; 
