@@ -3,81 +3,127 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Cart — Crossing Eats</title>
-    <link rel="stylesheet" href="css/global.css" />
+    <title>My Cart</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fascinate&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Quintessential&family=Schoolbell&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="css/cart.css" />
   </head>
 
   <body>
     <div class="background-wrapper">
-      <header class="cart-header">
-        <a href="index.html" class="back-btn">← Back to Menu</a>
-        <h1>🛒 My Cart</h1>
-      </header>
+      <div class="align">
+        <header class="cart-header">
+          <a href="index.html" class="back-btn">← Back to Menu</a>
+          <h1>🛒 My Cart</h1>
+        </header>
 
-      <main class="cart-page-content">
-        <div class="cart-layout">
-          <div class="cart-items-section">
-            <!-- Tomato Curry -->
-            <div class="cart-item">
-              <div class="cart-box">
+        <main class="cart-page-content">
+          <div class="cart-layout">
+            <!-- 🧺 LEFT: Cart Items -->
+            <section class="cart-items-section">
+              <h2>Your Items</h2>
+              <!-- Tomato Curry -->
+              <div class="cart-item">
                 <img src="img/foods/Tomato_Curry.jpeg" alt="Tomato Curry" />
-                <div class="item-details">
+                <div class="item-info">
                   <h3>Tomato Curry</h3>
+                  <p>Delicious creamy curry made with ripe tomatoes.</p>
+
                   <div class="quantity-control">
                     <button class="decrease">-</button>
                     <input type="number" value="1" min="1" />
                     <button class="increase">+</button>
                   </div>
+
                   <div class="item-bottom">
                     <span class="item-price">$7.49</span>
                     <button class="remove-btn">Remove</button>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <!-- Sea Bass Pie -->
-            <div class="cart-item">
-              <div class="cart-box">
+              <!-- Sea Bass Pie -->
+              <div class="cart-item">
                 <img src="img/foods/sea-bass-pie.jpeg" alt="Sea Bass Pie" />
-                <div class="item-details">
+                <div class="item-info">
                   <h3>Sea Bass Pie</h3>
+                  <p>Golden crust filled with savory sea bass and herbs.</p>
+
                   <div class="quantity-control">
                     <button class="decrease">-</button>
                     <input type="number" value="1" min="1" />
                     <button class="increase">+</button>
                   </div>
+
                   <div class="item-bottom">
                     <span class="item-price">$9.00</span>
                     <button class="remove-btn">Remove</button>
                   </div>
                 </div>
               </div>
-            </div>
+            </section>
+
+            <!-- 🎟 RIGHT: Coupon + Summary -->
+            <aside class="cart-sidebar">
+              <div class="coupon-box">
+                <h3>Coupons</h3>
+                <input type="text" placeholder="Enter coupon code" />
+                <button class="apply-btn">Apply</button>
+              </div>
+
+              <div class="cart-summary">
+                <h3>Your Order</h3>
+                <div class="summary-item">
+                  <span>Subtotal (2 items)</span>
+                  <span>$16.49</span>
+                </div>
+                <div class="summary-item">
+                  <span>Delivery</span>
+                  <span>$2.50</span>
+                </div>
+                <div class="summary-item">
+                  <span>Tax</span>
+                  <span>$1.00</span>
+                </div>
+                <div class="summary-item total">
+                  <strong>Total Payable</strong>
+                  <strong>$19.99</strong>
+                </div>
+                <button class="checkout-btn">Proceed to Payment</button>
+              </div>
+            </aside>
           </div>
+        </main>
+      </div>
 
-          <!-- Cart Summary (Total) -->
-          <aside class="cart-summary">
-            <h2>Order Summary</h2>
-            <div class="summary-item">
-              <span>Subtotal</span>
-              <span>$16.49</span>
-            </div>
-            <div class="summary-item">
-              <span>Delivery Fee</span>
-              <span>$2.50</span>
-            </div>
-            <div class="summary-item total">
-              <strong>Total</strong>
-              <strong>$18.99</strong>
-            </div>
-            <button class="checkout-btn">Proceed to Checkout</button>
-          </aside>
-        </div>
-      </main>
+      <footer id="site-footer"style="background-image: url('img/background/footerzz.png');
+              background-size: 100% 100%;
+              background-position: center;
+              background-repeat: no-repeat;
+              text-align: center;
+              position: relative;
+              padding: 60px 20px;">
+
+              <h2>Thank you for visiting!</h2>
+              <p>Follow us on social media:</p>
+  
+              <div class="social-links">
+              <a href="https://www.facebook.com" target="_blank">
+                  <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" class="social-icon">
+              </a>
+              <a href="https://www.instagram.com" target="_blank">
+                  <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" class="social-icon">
+              </a>
+              <a href="https://www.twitter.com" target="_blank">
+                  <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" class="social-icon">
+              </a>
+              </div>
+
+              <p class="copyright">© 2025 CrossingEats. All rights reserved.</p>
+      </footer>
     </div>
-
-    <script src="script.js"></script>
   </body>
 </html>
