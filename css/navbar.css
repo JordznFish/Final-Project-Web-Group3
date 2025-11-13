@@ -7,6 +7,12 @@
   transition: margin-left 0.3s ease, width 0.3s ease;
 }
 
+
+/* Header-banner */
+#header-banner {
+  display: none;
+}
+
 /* ===========================
    🌿 NAVBAR BASE DESIGN
    =========================== */
@@ -38,8 +44,8 @@
 }
 
 .logo .nav-icon {
-  width: 50px;
-  height: 50px;
+  width: 35px;
+  height: 35px;
   margin: 0 auto;
   padding: 6px;
   border-radius: 10px;
@@ -293,6 +299,103 @@
   }
 }
 
+/* NEWSLETTER MODAL POPUP */
+#newsletter {
+  display: none;               
+  position: fixed;
+  z-index: 999;                 
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.30); /* Dim background */
+  justify-content: center;
+  align-items: center;
+}
+
+#newsletter.show {              
+  display: flex !important;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+#newsletter .modal-content {
+  background: #e7fae3;
+  padding: 32px 28px;
+  border-radius: 14px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.18);
+  text-align: center;
+  position: relative;
+  min-width: 280px;
+  max-width: 320px;
+  transform: scale(0.8);
+  opacity: 0;
+  animation: popOut 0.5s cubic-bezier(.23,1.63,.42,.96) forwards;
+}
+
+.modal-close {
+  position: absolute;
+  right: 28px;
+  top: 0px;
+  font-size: 50px;
+  cursor: pointer;
+  color: #666;
+  transition: all 0.3s ease;
+}
+
+.modal-close:hover {
+  color: #ff7070;
+  transform: rotate(90deg) scale(1.2);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes popOut {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+  80% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.newsletter-input {
+  width: 90%;
+  padding: 10px;
+  margin-bottom: 22px;
+  border: 1px solid #d1d1d1;
+  font-family: "schoolbell";
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.newsletter-subscribe {
+  background: #e74c3c;
+  font-family: "schoolbell";
+  color: #fff;
+  padding: 12px 36px;
+  border: none;
+  border-radius: 6px;
+  font-size: 17px;
+  cursor: pointer;
+  margin-bottom: 4px;
+  transition: background 0.2s;
+}
+
+.newsletter-subscribe:hover {
+  background: #c0392b;
+}
 /* ===========================
    🌿 RESPONSIVE BREAKPOINTS
    =========================== */
@@ -305,6 +408,12 @@
   .background-wrapper {
     margin-left: 100px;
     width: calc(100% - 100px);
+  }
+
+  #newsletter .modal-content {
+    max-width: 420px; 
+    min-width: 300px;
+    padding: 40px 32px;
   }
 
   .nav-links .nav-icon,
@@ -329,13 +438,21 @@
     margin-left: 75px;
     width: calc(100% - 75px);
   }
- 
+
   .nav-links .nav-icon,
-  .user-info .nav-icon {
+  .user-info .nav-icon,
+  .logo .nav-icon {
     width: 30px;
     height: 30px;
     z-index: 100;
   }
+
+  #newsletter .modal-content {
+    max-width: 320px;  
+    min-width: 180px;
+    padding: 20px 14px;
+  }
+
   .event-banner {
     width: 85%;
     padding: 18px 10px;
@@ -355,33 +472,115 @@
   }
 }
 
-/* 📱 Mobile ≤375px */
+/* 📱 Mobile ≤500px */
 @media (max-width: 500px) {
-  #navbar {
-    width: 55px;
+  #header-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 18px;
+    background-color: #38B24D;
+    background-image: radial-gradient(rgba(2, 124, 20, 0.931) 10%, transparent 11%);
+    background-size: 10px 10px;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 105;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  }
+
+  .ac-logo h1 {
+    font-family: "Fascinate", cursive;
+    font-size: 1.5rem;
+    margin: 0;
+  }
+
+  .ac-logo .eats {
+    color: #FFD65A;
+  }
+
+  .drop-down-icon {
+    padding-right: 50px;
+    font-size: 2rem;
+    color: #c9f7e3;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  #navbar {    
+    left: -240px;     
+    position: fixed;
+    width: 75px;
     height: 100vh;
+    top: 0;
+    transition: left 0.3s;
+    z-index: 102;
   }
+
+  #navbar.open {
+    left: 0;         
+  }
+
+  .menu-btn {
+    display: block;
+    position: fixed;
+    top: 18px;
+    right: 18px;
+    z-index: 103;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: #333;
+    cursor: pointer;
+  }
+
+  .sidebar-overlay {
+    display: none;
+    position: fixed;
+    left: 0; top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.28);
+    z-index: 101;
+  }
+
+  .sidebar-overlay.active {
+    display: block;
+  }
+
   .background-wrapper {
-    margin-left: 55px;
-    width: calc(100% - 55px);
+    margin-left: 0;
+    width: 100vw;
   }
+  
   .logo .nav-icon,
   .nav-links .nav-icon,
   .user-info .nav-icon {
     width: 24px;
     height: 24px;
   }
+
+  #newsletter .modal-content {  
+    min-width: 0;
+    padding: 14px 4vw;
+  }
+
   .event-banner {
     width: 90%;
     margin: 18px auto;
     padding: 14px 8px;
   }
+
   .event-banner h2 {
     font-size: 1.2em;
   }
+
   .event-banner p {
     font-size: 0.95em;
   }
+
 }
 
 /* Default for desktop */
@@ -403,5 +602,43 @@
   .background-wrapper {
     margin-left: 55px;
     width: calc(100% - 55px);
+  }
+
+  .background-wrapper {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+
+  .background-wrapper {
+    margin-top: 60px; /* pushes content below header banner */
+  }
+
+  #ac-logo-header {
+    font-family: "Fascinate", cursive;
+    padding: 6px;
+    border-radius: 10px;
+    background: linear-gradient(145deg, #9b7a4d, #7a5a36);
+    border: 3px solid #5b3a1c;
+    box-shadow:
+      inset 2px 2px 5px rgba(0, 0, 0, 0.3),
+      inset -2px -2px 5px rgba(255, 255, 255, 0.2),
+      0 4px 8px rgba(0, 0, 0, 0.4);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("../img/paperboard-texture.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+
+  #ac-logo-header h1 {
+    color: #ffae00;
+    font-size: 1.1rem;
+  }
+
+  #ac-logo-header .eats {
+    color: #279f27;
+    font-size: 1.1rem;
   }
 }

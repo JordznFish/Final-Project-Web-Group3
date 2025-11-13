@@ -1,7 +1,7 @@
 .top-bar {
   background-color: #e60012; 
   height: 60px;              
-  width: 100%;
+
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -379,7 +379,6 @@ h2 {
   }
   .character {
     position: static;
-    align-self: flex-start;
     margin-top: 8px;
     width: clamp(110px, 30vw, 150px);
   }
@@ -451,7 +450,6 @@ h2 {
   }
   .character {
     position: static;
-    align-self: flex-start;
     margin-top: 8px;
     width: clamp(110px, 35vw, 140px);
   }
