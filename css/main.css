@@ -71,7 +71,7 @@ CATEGORY SIGNBOARD
   }
 
 
-/* wooden pegs on corners */
+/* wooden pegs on corner */
 #menu-signboard::after {
   content: "";
   position: absolute;
@@ -116,8 +116,7 @@ CATEGORY BUTTONS
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-/* FOOD MENU SECTION */
-/* 375px MOBILE */
+/* Food menu section for 375px width as base design */
 #main-title {
   text-align: center;
   margin: 0 auto 10px auto;     
@@ -208,8 +207,7 @@ CATEGORY BUTTONS
 }
 
 
-
-/* Ipad: ≥750px */
+/* Width larger and equal to 750px (Ipad devices) */
 @media (min-width: 750px) {
   .menu-grid {
     grid-template-columns: repeat(2, 2fr); /* 2 columns */
@@ -230,7 +228,7 @@ CATEGORY BUTTONS
   }
 }
 
-/* Tablet: ≥1024px */
+/* Width larger and equal to 1100px */
 @media (min-width: 1100px) {
   .menu-grid {
     grid-template-columns: repeat(3, 2fr); /* 2 columns */
@@ -252,7 +250,7 @@ CATEGORY BUTTONS
 }
 
 
-/* Desktop: ≥1366px */
+/* Width larger and equal to 1366px */
 @media (min-width: 1366px) {
   .menu-grid {
     grid-template-columns: repeat(3, 2fr); 
@@ -273,13 +271,14 @@ CATEGORY BUTTONS
   }
 }
 
+/* >= 1600px optional cases */
 @media (min-width: 1600px) {
   .menu-grid {
     grid-template-columns: repeat(3, 0.5fr);
   }
 }
 
-/* Hover enlarge effect for food cards */
+/*  Enlarge effect for food cards when user hovers */
 .food-card {
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   cursor: pointer;
