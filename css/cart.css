@@ -1,4 +1,3 @@
-/* === BASE STYLES === */
 body {
   font-family: 'Schoolbell', sans-serif;
   color: #4a2c00;
@@ -22,7 +21,6 @@ body {
   margin: 0;
 }
 
-/* === Rope Between Header and Content === */
 #rope {
   width: 100%;
   height: 5px;
@@ -39,8 +37,6 @@ body {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
-
-/* === HEADER === */
 .cart-header {
   display: flex;
   align-items: center;
@@ -108,7 +104,6 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
 }
 
-/* === MAIN CONTENT === */
 .cart-page-content {
   position: relative;
   z-index: 1;
@@ -129,7 +124,6 @@ body {
   box-sizing: border-box;
 }
 
-/* === LEFT COLUMN: ITEMS === */
 .cart-items-section {
   flex: 2.2;
   min-width: 0;
@@ -140,7 +134,6 @@ body {
   margin-bottom: 20px;
 }
 
-/* Item Card */
 .cart-item {
   background: #fffdf8;
   border-radius: 14px;
@@ -236,7 +229,7 @@ body {
   background-color: #e57f00;
 }
 
-/* === RIGHT COLUMN: COUPONS + SUMMARY === */
+
 .cart-sidebar {
   flex: 1;
   max-width: 340px;
@@ -245,7 +238,7 @@ body {
   gap: 20px;
 }
 
-/* Coupon Box */
+
 .coupon-box {
   background-color: #fffdf5;
   border-radius: 12px;
@@ -337,12 +330,12 @@ body {
 #site-footer {
   color:black;
   font-family: "Comic+Relief", cursive;
-  position: relative;
+  position: static;
   background-image: url('img/background/footerzz.jpg');
   background-repeat: no-repeat;
   background-size: cover; 
   background-position: bottom; 
-  bottom: -150px;
+  bottom:-300px;
   text-align: center;
   width: 100%;
   padding: 40px 20px 20px 20px; 
@@ -392,18 +385,12 @@ body {
   font-size: 16px;
 }
 
-
-/* ============================ */
-/* 🌿 RESPONSIVE ADJUSTMENTS */
-/* ============================ */
-
 /* --- Mobile (≤575px) --- */
 @media (max-width: 575px) {
   .align {
     width: 85%;
   }
 
-  /* HEADER */
   .cart-header {
     flex-direction: column;
     align-items: center;
@@ -424,21 +411,21 @@ body {
     margin-left: 0;
   }
 
-  /* ROPE */
+  
   #rope {
     width: 98%;
     height: 4px;
     margin: 8px auto 15px;
   }
 
-  /* SUBTITLE */
+
   #Sub-title h2 {
     font-size: 22px;
     padding-left: 0;
     text-align: center;
   }
 
-  /* MAIN CONTENT */
+  
   .cart-layout {
     flex-direction: column;
     gap: 25px;
@@ -507,7 +494,7 @@ body {
     padding: 10px;
   }
 
-  /* FOOTER */
+ 
   #site-footer h2 {
     font-size: 22px;
   }
@@ -523,8 +510,6 @@ body {
   }
 }
 
-
-/* --- Tablet (481px–1024px) --- */
 @media (min-width: 575px) and (max-width: 815px) {
   .cart-layout {
     flex-direction: column;
@@ -570,7 +555,6 @@ body {
   }
 }
 
-/* --- Desktop (≥1366px) --- */
 @media (min-width: 1025px) {
   .cart-layout {
     flex-direction: row;

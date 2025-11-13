@@ -474,7 +474,7 @@
    🌿 RESPONSIVE BREAKPOINTS
    =========================== */
 
-/* 🖥️ Desktop ≥1366px */
+/* Media for desktop ≥1366px */
 @media (min-width: 1366px) {
   #navbar {
     width: 100px;
@@ -508,7 +508,7 @@
   }
 }
 
-/* 💻 Tablet 501px–1024px */
+/* Media for tablet 501px–1024px */
 @media (min-width: 501px) and (max-width: 1024px) {
   #navbar {
     width: 75px;
@@ -551,7 +551,7 @@
   }
 }
 
-/* 📱 Mobile ≤500px */
+/* Media ≤500px */
 @media (max-width: 500px) {
   #header-banner {
     display: flex;
@@ -662,7 +662,7 @@
 
 }
 
-/* Default for desktop */
+/* Desktop */
 .background-wrapper {
   margin-left: 100px;   /* match navbar width */
   width: calc(100% - 100px);
@@ -689,7 +689,7 @@
   }
 
   .background-wrapper {
-    margin-top: 60px; /* pushes content below header banner */
+    margin-top: 60px; 
   }
 
   #ac-logo-header {
