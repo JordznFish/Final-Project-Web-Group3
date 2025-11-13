@@ -1,6 +1,3 @@
-/* ===============================
-   🟢 MAIN CONTENT BASE
-   =============================== */
 #main-content {
   background-image: url("../img/yellow-oil-paint-textured-background.jpg");
   background-size: cover;
@@ -12,7 +9,6 @@
   overflow-x: hidden;
 }
 
-/* Decorative bush + fruit banner */
 .bush-banner {
   background-image: url("../img/bushes.png");
   background-repeat: repeat-x;
@@ -20,67 +16,76 @@
   background-size: contain;
   width: 100%;
   height: 120px;
-  
-  /* display settings */
   position: relative;
   top: 98px;
-  z-index: 0;           /* must be positive to appear above background */
-  
-  /* flip vertically if you want it hanging down */
-  transform: rotateX(180deg);    /* cleaner vertical flip than rotate(180deg) */
+  z-index: 0;           
+  transform: rotateX(180deg);   
 }
 
-/* ===============================
-   🪵 CATEGORY SIGNBOARD
-   =============================== */
+/* 
+CATEGORY SIGNBOARD 
+*/
+#upper-menu {
+  width: 70%;
+  margin: 0 auto;
+}
+
 #menu-signboard {
   background-image: url("../img/wood.jpg");
-  background-repeat: repeat;
-  background-position-x: center;
-  border: 5px solid #4a2e1a;
+  background-position-x: 1%;
+  border: 5px solid #3c220f;
   border-radius: 16px;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25);
-  width: 60%;
-  margin: 60px auto 40px;
-  padding: 30px 0;
+  width: 50%;
+  margin: 90px auto 40px;
   text-align: center;
-  font-family: 'Schoolbell', cursive;
   font-weight: bold;
-  color: #fffdf5;
   position: relative;
   z-index: 2;
 }
 
-#menu-signboard::before,
+#menu-signboard h2 {
+  font-family: 'Caveat', cursive;
+  color: #ffae00;
+  font-size: 55px;
+  letter-spacing: 1.5px;
+
+  /* realistic depth shadow */
+  text-shadow:
+    0 2px 2px rgba(0, 0, 0, 0.6),   
+    0 4px 4px rgba(0, 0, 0, 0.5),   
+    0 6px 6px rgba(0, 0, 0, 0.4),   
+    0 -1px 1px rgba(255, 255, 255, 0.15); 
+}
+
+  @media (max-width: 700px) {
+    #menu-signboard {
+      width: 70%;
+    }
+  }
+
+  @media (max-width: 600px) {
+    #menu-signboard {
+      width: 100%
+    }
+  }
+
+
+/* wooden pegs on corners */
 #menu-signboard::after {
   content: "";
   position: absolute;
-  top: -81.5px;
-  width: 6px;
-  height: 85px;
-  background: repeating-linear-gradient(45deg, #5a4025 0, #5a4025 4px, #6e5234 4px, #6e5234 8px);
-  border-radius: 3px;
-  box-shadow: inset 0 0 4px rgba(0,0,0,0.3), 0 1px 2px rgba(0,0,0,0.3);
+  width: 12px;
+  height: 12px;
+  background: radial-gradient(circle, #6b3c16 20%, #3a1d0a 80%);
+  border-radius: 50%;
+  top: 10px;
+  left: 10px;
 }
 
-#menu-signboard::before { 
-  left: 28%; 
-  transform: rotate(6deg); 
-}
-#menu-signboard::after { 
-  right: 28%; 
-  transform: rotate(-6deg); 
-}
-
-#menu-signboard h2 {
-  font-size: 38px;
-  margin: 0;
-  letter-spacing: 1px;
-}
-
-/* ===============================
-   🟤 CATEGORY BUTTONS
-   =============================== */
+/*
+CATEGORY BUTTONS
+*/
 .category-buttons {
   display: flex;
   justify-content: center;
@@ -92,14 +97,15 @@
 .cat-btn {
   background-color: #f6e1bc;
   color: #4a2e1a;
-  border: 3px solid #b27745;
-  border-radius: 10px;
+  border: 4px solid #4a2e1a; 
+  border-radius: 36px; 
   padding: 10px 18px;
   font-family: 'Schoolbell', cursive;
-  font-size: 16px;
+  font-size: 18px;
+  font-weight: bold;
   cursor: pointer;
-  transition: all 0.25s ease;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .cat-btn:hover { background-color: #ffcf77; transform: scale(1.05); }
@@ -112,9 +118,6 @@
 
 /* FOOD MENU SECTION */
 /* 375px MOBILE */
-/* ========================= */
-/* 📱 Base: 375px (Mobile)   */
-/* ========================= */
 #main-title {
   text-align: center;
   margin: 0 auto 10px auto;     
@@ -128,7 +131,7 @@
 
 .menu-grid {
   display: grid;
-  grid-template-columns: 2fr;     /* 1 column for small phones */
+  grid-template-columns: 2fr;     
   justify-items: center;
   row-gap: 20px;
   column-gap: 0;
@@ -137,7 +140,7 @@
 }
 
 #food-menu .food-card {
-  width: 90%;                     /* fit nicely inside mobile screen */
+  width: 90%;                     
   max-width: 230px;
   height: 320px;
   /* background: #fff9e2; */
@@ -146,8 +149,8 @@
   border-radius: 20px;
   padding: 1rem 1rem 0.8rem 1rem;
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
-  border: 10px solid #f6e1bc;     /* beige outer frame */
-  outline: 4px solid #0e8253;     /* darker frame */
+  border: 10px solid #f6e1bc;     
+  outline: 4px solid #0e8253;     
   outline-offset: -15px;
   text-align: center;
   transition: all 0.3s ease;
@@ -171,7 +174,6 @@
   font-size: 15px;
 }
 
-/* image stays centered and small on mobile */
 .food-card img {
   width: 180px;
   height: 130px;
@@ -181,10 +183,9 @@
 }
 
 .food-card {
-  position: relative; /* ensure button positions relative to card */
+  position: relative; /* button positions relative to card */
 }
 
-/* Cozy dotted price tag background */
 .food-card .price {
   position: absolute;
   bottom: 1px;
@@ -197,7 +198,6 @@
   border: 3px solid #b27745;
   border-radius: 12px 4px 12px 4px;
 
-  /* beige paper + dotted overlay */
   background:
     radial-gradient(circle at 1px 1px, rgba(90, 60, 20, 0.15) 1px, transparent 0) repeat,
     #f6e1bc;
@@ -209,9 +209,7 @@
 
 
 
-/* =========================
-/* Ipad: ≥750px       */
-/* ========================= */
+/* Ipad: ≥750px */
 @media (min-width: 750px) {
   .menu-grid {
     grid-template-columns: repeat(2, 2fr); /* 2 columns */
@@ -232,11 +230,8 @@
   }
 }
 
-
-/* =========================
-/* 💻 Tablet: ≥1024px        */
-/* ========================= */
-@media (min-width: 1024px) {
+/* Tablet: ≥1024px */
+@media (min-width: 1100px) {
   .menu-grid {
     grid-template-columns: repeat(3, 2fr); /* 2 columns */
     column-gap: 2rem;
@@ -256,9 +251,8 @@
   }
 }
 
-/* ========================= */
-/* 🖥️ Desktop: ≥1366px       */
-/* ========================= */
+
+/* Desktop: ≥1366px */
 @media (min-width: 1366px) {
   .menu-grid {
     grid-template-columns: repeat(3, 2fr); 
@@ -285,7 +279,7 @@
   }
 }
 
-/* ✨ Hover enlarge effect for food cards */
+/* Hover enlarge effect for food cards */
 .food-card {
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   cursor: pointer;

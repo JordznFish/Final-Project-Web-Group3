@@ -27,6 +27,9 @@
   margin: 0 !important;
   padding: 0 !important;
 }
+.menu-btn {
+  display: none;
+}
 
 .logo {
   width: 100%;
@@ -40,9 +43,24 @@
 .logo .nav-icon {
   width: 50px;
   height: 50px;
-  display: block;
   margin: 0 auto;
+  padding: 6px;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #9b7a4d, #7a5a36);
+  border: 3px solid #5b3a1c;
+  box-shadow:
+    inset 2px 2px 5px rgba(0, 0, 0, 0.3),
+    inset -2px -2px 5px rgba(255, 255, 255, 0.2),
+    0 4px 8px rgba(0, 0, 0, 0.4);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../img/paperboard-texture.jpg");
+  background-size: cover;
+  background-position: center;
 }
+
 
 .divider {
   width: 70%;
@@ -132,31 +150,35 @@
 /* ===========================
    🌿 NEWSLETTER MODAL POPUP
    =========================== */
-.modal {
-  display: none;             /* Hidden by default */
+
+#newsletter {
+  display: none;                /* Hidden initially */
   position: fixed;
-  z-index: 999;              /* Higher than navbar */
-  left: 0;                   /* Full screen overlay */
+  z-index: 999;                 /* Above navbar */
+  left: 0;
   top: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0,0,0,0.30); /* Dim background */
-  justify-content: center;   /* Center content horizontally */
-  align-items: center;       /* Center content vertically */
-  /* Use flex for centering */
-  display: flex;
-  /* When you want to show, set display:flex in JS */
+  background: rgba(0, 0, 0, 0.30); /* Dim background */
+  /* Do NOT set display:flex in initial CSS, only in JS when showing */
+}
+#newsletter.show {              /* Add this, or use directly in JS */
+  display: flex !important;     /* Show + center modal when triggered */
+  justify-content: center;
+  align-items: center;
 }
 
-.modal-content {
-  background: #fff;
+#newsletter .modal-content {
+  background: #e7fae3;
   padding: 32px 28px;
   border-radius: 14px;
   box-shadow: 0 6px 24px rgba(0,0,0,0.18);
   text-align: center;
   position: relative;
   min-width: 280px;
-  max-width: 90vw;
+  max-width: 300px;             /* Width is now limited */
+  width: 100%;
+  margin: 0;
 }
 
 .modal-close {
@@ -168,22 +190,21 @@
   color: #888;
   transition: color 0.2s;
 }
-
 .modal-close:hover {
   color: #ff7070;
 }
-
 .newsletter-input {
   width: 90%;
   padding: 10px;
   margin-bottom: 22px;
   border: 1px solid #d1d1d1;
+  font-family: "schoolbell";
   border-radius: 6px;
   font-size: 16px;
 }
-
 .newsletter-subscribe {
   background: #e74c3c;
+  font-family: "schoolbell";
   color: #fff;
   padding: 12px 36px;
   border: none;
@@ -193,7 +214,6 @@
   margin-bottom: 4px;
   transition: background 0.2s;
 }
-
 .newsletter-subscribe:hover {
   background: #c0392b;
 }
@@ -274,13 +294,11 @@
   color: #a7361d;
   font-weight: bold;
   padding: 12px 30px;
-  border-radius: 25px;
   font-family: inherit;
   box-shadow: 0 2px 8px rgba(255,157,35,0.10);
   transition: background 0.2s;
   font-size: 1.15em;
   margin: 20px auto 0 auto;
-  border: none;
   cursor: pointer;
   display: block;
   position: relative;
@@ -368,6 +386,11 @@
     width: 35px;
     height: 35px;
   }
+  #newsletter .modal-content {
+    max-width: 420px; /* Slightly wider for large desktops */
+    min-width: 300px;
+    padding: 40px 32px;
+  }
   .event-banner h2 {
     font-size: 1.8em;
   }
@@ -385,12 +408,17 @@
     margin-left: 75px;
     width: calc(100% - 75px);
   }
- 
+  
   .nav-links .nav-icon,
   .user-info .nav-icon {
     width: 30px;
     height: 30px;
     z-index: 100;
+  }
+  #newsletter .modal-content {
+    max-width: 320px;  /* Smaller box for tablets */
+    min-width: 180px;
+    padding: 20px 14px;
   }
   .event-banner {
     width: 85%;
@@ -413,19 +441,58 @@
 
 /* 📱 Mobile ≤375px */
 @media (max-width: 500px) {
-  #navbar {
-    width: 55px;
+#navbar {
+    width: 240px;     /* Define sidebar width for mobile overlay */
+    left: -240px;     /* Move sidebar off-screen by default */
+    position: fixed;
     height: 100vh;
+    top: 0;
+    background: #38B24D;
+    transition: left 0.3s;
+    z-index: 102;
+  }
+  #navbar.open {
+    left: 0;          /* Slide-in left when open */
+  }
+  .menu-btn {
+    display: block;
+    position: fixed;
+    top: 18px;
+    right: 18px;
+    z-index: 103;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: #333;
+    cursor: pointer;
+  }
+  .sidebar-overlay {
+    display: none;
+    position: fixed;
+    left: 0; top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.28);
+    z-index: 101;
+  }
+  .sidebar-overlay.active {
+    display: block;
   }
   .background-wrapper {
-    margin-left: 55px;
-    width: calc(100% - 55px);
+    margin-left: 0;
+    width: 100vw;
   }
+  
   .logo .nav-icon,
   .nav-links .nav-icon,
   .user-info .nav-icon {
     width: 24px;
     height: 24px;
+  }
+  #newsletter .modal-content {
+    max-width: 98vw;  /* Almost full width on mobile */
+    min-width: 0;
+    padding: 14px 4vw;
   }
   .event-banner {
     width: 90%;
