@@ -80,7 +80,7 @@
 
             <div class="sidebar-overlay"></div>
 
-            <!-- Newsletter Modal Here -->
+            <!-- Newsletter Modal -->
             <div id="newsletter" class="modal">
                 <div class="modal-content">
                     <span class="modal-close">&times;</span>
@@ -148,7 +148,7 @@
             <!-- ===================== -->
             <!-- ANIMAL CROSSING Monthly Events -->
             <!-- Owner: Patricia -->
-            <!-- Spinning Lucky wheel for prizes and discounts -->
+            <!-- Content: Event banner  -->
             <!-- ===================== -->
             <div class="event-banner">
                 <h2 class="feature-title">November 11.11 Kids Feast!</h2>
@@ -161,7 +161,7 @@
             <!-- ===================== -->
             <!-- MAIN CONTENT AREA -->
             <!-- Owner: Jordan -->
-            <!-- Contains: Category Nav + Food Menu Cards -->
+            <!-- Content: Category Nav + Food Menu Cards -->
             <!-- ===================== -->
             <div class="bush-banner"></div>
             <main id="main-content">
@@ -183,7 +183,7 @@
                 <!-- Food Menu Grid -->
                 <section id="food-menu">
                     <div class="menu-grid">
-                        <!-- Example Food Card -->
+                        <!-- Food Card Items-->
                         <div class="food-card main-dish">
                             <img src="img/Tomato_Curry.jpg" alt="Tomato Curry"/>
                             <h3>Tomato Curry Rice</h3>
@@ -308,8 +308,9 @@
             </main>
 
               <!-- ===================== -->
-            <!-- Choose either one AWARDS / REVIEWS SECTION -->
-            <!-- Owner: Steffani -->
+            <!-- REVIEWS SECTION -->
+            <!-- Owner: Steffani 
+            <!-- Content: Review section   
             <!-- ===================== -->
             <section id="reviews">
             <div class="review-title">Customers Love</div>
@@ -346,6 +347,7 @@
             <!-- ===================== -->
             <!-- FOOTER -->
             <!-- Owner: Steffani -->
+            <!-- Content: Our information  -->
             <!-- ===================== -->
             <footer id="site-footer"style="background-image: url('img/background/footerzz.png');
               background-size: 100% 100%;
@@ -376,8 +378,9 @@
 
         </div>
 
-        <!-- Optional JS -->
+        <!-- Functions -->
         <script>
+            // Category nav function
             const buttons = document.querySelectorAll('.cat-btn');
             const categoryTitle = document.getElementById('current-category');
             const foodCards = document.querySelectorAll('.food-card');
@@ -408,52 +411,52 @@
                 });
             });
 
-            // 🟢 Automatically show "All" on first load
+            // show "All" on first load
             window.addEventListener('DOMContentLoaded', () => {
                 document.querySelector('.cat-btn[data-category="all"]').classList.add('active');
                 filterCategory('all');
             });
 
-            // NEWSLETTER MODAL 
+            // Newsletter function
             document.addEventListener("DOMContentLoaded", function() {
                 const newsletterBtn = document.getElementById('newsletter-btn');
-                const newsletterModal = document.getElementById('newsletter');
+                const newsletterWindow = document.getElementById('newsletter');
                 const closeBtn = document.querySelector('.modal-close');
                 const subscribeBtn = document.getElementById('subscribe-btn');
 
-                //  Show modal
+                //  Show newsletter
                 if (newsletterBtn) {
                     newsletterBtn.addEventListener('click', () => {
-                    newsletterModal.classList.add('show');
+                    newsletterWindow.classList.add('show');
                     });
                 }
 
-                //  Close modal via X button
+                //  Close newsletter by clicking 'x' button
                 if (closeBtn) {
                     closeBtn.addEventListener('click', () => {
-                    newsletterModal.classList.remove('show');
+                    newsletterWindow.classList.remove('show');
                     });
                 }
 
-                //  Close modal via subscribe button
+                //  Close newsletter via subscribe button
                 if (subscribeBtn) {
                     subscribeBtn.addEventListener('click', () => {
-                    newsletterModal.classList.remove('show');
+                    newsletterWindow.classList.remove('show');
                     });
                 }
 
-                //  Close modal by clicking outside
-                if (newsletterModal) {
+                //  Close newsletter by clicking outside
+                if (newsletterWindow) {
                     window.addEventListener('click', (event) => {
-                    if (event.target === newsletterModal) {
-                        newsletterModal.classList.remove('show');
+                    if (event.target === newsletterWindow) {
+                        newsletterWindow.classList.remove('show');
                     }
                     });
                 }
             });
 
-            // NAVBAR ON SMALL DEVICE
-            // Responsive Navbar Toggle (Mobile)
+            // Navbar on small devices (smaller than 500px)
+            // Responsive Navbar Toggle
             document.addEventListener("DOMContentLoaded", () => {
             const menuToggle = document.getElementById("menu-toggle");
             const navbar = document.getElementById("navbar");
