@@ -1,6 +1,4 @@
-/* ===========================
-   🌿 GLOBAL LAYOUT BASE
-   =========================== */
+/*GLOBAL LAYOUT BASE*/
 .background-wrapper {
   width: calc(100% - 100px); /* default: beside navbar */
   margin-left: 100px;
@@ -8,14 +6,12 @@
 }
 
 
-/* Header-banner */
+/*Header-banner*/
 #header-banner {
   display: none;
 }
 
-/* ===========================
-   🌿 NAVBAR BASE DESIGN
-   =========================== */
+/* NAVBAR BASE DESIGN */
 #navbar {
   position: fixed;
   left: 0;
@@ -75,9 +71,7 @@
   margin: 0 auto 18px auto;
 }
 
-/* ===========================
-   🌿 NAV-LINKS
-   =========================== */
+/*NAV-LINKS*/
 .nav-links {
   list-style: none;
   padding: 0;
@@ -130,9 +124,7 @@
   transform: scale(1.05);
 }
 
-/* ===========================
-   🌿 TOOLTIP
-   =========================== */
+/* TOOLTIP */
 .tooltip {
   display: none;
   position: absolute;
@@ -153,23 +145,20 @@
   display: block;
 }
 
-/* ===========================
-   🌿 NEWSLETTER MODAL POPUP
-   =========================== */
+/*NEWSLETTER MODAL POPUP */
 
 #newsletter {
-  display: none;                /* Hidden initially */
+  display: none;                
   position: fixed;
-  z-index: 999;                 /* Above navbar */
+  z-index: 999;                 
   left: 0;
   top: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.30); /* Dim background */
-  /* Do NOT set display:flex in initial CSS, only in JS when showing */
+  background: rgba(0, 0, 0, 0.30); 
 }
-#newsletter.show {              /* Add this, or use directly in JS */
-  display: flex !important;     /* Show + center modal when triggered */
+#newsletter.show {              
+  display: flex !important;     
   justify-content: center;
   align-items: center;
 }
@@ -182,7 +171,7 @@
   text-align: center;
   position: relative;
   min-width: 280px;
-  max-width: 300px;             /* Width is now limited */
+  max-width: 300px;             
   width: 100%;
   margin: 0;
 }
@@ -225,9 +214,7 @@
 }
 
 
-/* ===========================
-   🌿 USER ICONS (BOTTOM)
-   =========================== */
+/*USER ICONS (BOTTOM)*/
 .user-info {
   position: relative;
   margin-top: auto;
@@ -248,9 +235,7 @@
   display: block;
 }
 
-/* ===========================
-   🌿 EVENT BANNER
-   =========================== */
+/* EVENT BANNER */
 .event-banner {
   width: 92%;
   margin: 36px auto;
@@ -352,9 +337,7 @@
   animation: popOut 0.8s cubic-bezier(.23,1.63,.42,.96) backwards;
 }
 
-/* ===========================
-   🌿 POP ANIMATION
-   =========================== */
+/*POP ANIMATION*/
 @keyframes popOut {
   0% {
     transform: scale(0.8);
@@ -470,9 +453,7 @@
 .newsletter-subscribe:hover {
   background: #c0392b;
 }
-/* ===========================
-   🌿 RESPONSIVE BREAKPOINTS
-   =========================== */
+/*RESPONSIVE BREAKPOINTS */
 
 /* Media for desktop ≥1366px */
 @media (min-width: 1366px) {
@@ -664,7 +645,7 @@
 
 /* Desktop */
 .background-wrapper {
-  margin-left: 100px;   /* match navbar width */
+  margin-left: 100px;  
   width: calc(100% - 100px);
 }
 
