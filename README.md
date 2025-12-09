@@ -11,19 +11,19 @@ VERSION CONTROL RULES FOR PHASE 2 !Very Important!
 
 <h2>Rule 2: Each task = 1 branch</h2>
 Analogy: Think of branch as a task, multiple task = task checklist <br>
-<b>Naming Rules: feature/ what-you-are-doing-branch</b>
+<b>Naming Rules: feature/ what-you-are-doing-branch/teammate name</b>
 <br>
 Examples: <br>
 <ul>
-  <li>feature/login-ui</li>
-  <li>feature/add-expense-function</li>
-  <li>feature/add-food-item</li>
-  <li>feature/delete-food-item</li>
-  <li>feature/search-bar</li>
-  <li>feature/update-index-php</li>
-  <li>bugfix/date-format</li>
-  <li>bugfix/sql-error</li>
-  <li>style/navbar-update</li>
+  <li>feature/login-ui/jordan</li>
+  <li>feature/add-expense-function/eric</li>
+  <li>feature/add-food-item/eli</li>
+  <li>feature/delete-food-item/cia</li>
+  <li>feature/search-bar/eric</li>
+  <li>feature/update-index-php/jordan</li>
+  <li>bugfix/date-format/cia</li>
+  <li>bugfix/sql-error/jordan</li>
+  <li>style/navbar-update/stef</li>
   <li>might get up to 20-50 branches... but IT IS EXPECTED AND HEALTHY PRACTICE</li>
 </ul>
 =>No one modifies the same files/content at the same time, from preventing merge conflicts <br>
