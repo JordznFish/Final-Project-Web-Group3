@@ -1,4 +1,4 @@
-# VERSION CONTROL RULES FOR PHASE 2 !VERY IMPORTANT!
+# VERSION CONTROL RULES FOR PHASE 2 (VERY IMPORTANT)
 <p>Jordan here~ I hope everyone read this thoroughly so that we all are in the same page and it will 100% clear our confusion from phase 1</p>
 
 <h2>Rule 1: Main branch = NEVER touch directly</h2>
