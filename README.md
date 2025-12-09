@@ -29,7 +29,7 @@ Examples: <br>
 =>No one modifies the same files/content at the same time, from preventing merge conflicts <br>
 =>Everyone can develop safely in parallel
 
-<h2>Rule 3: Before coding each day: ALWAYS PULL MAIN</h2>
+<h2>Rule 3: Before coding each day/each merge update in main: ALWAYS PULL MAIN</h2>
 =>This ensures your branch is not outdated (when others updated something on main branch)
 
 <h2>Rule 4: Work only inside your feature branch</h2>
