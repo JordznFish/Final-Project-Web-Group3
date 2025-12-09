@@ -68,5 +68,6 @@ teammate that merged this branch deletes the feature branch <br>
 ONLY THEN continue working (Never continue working on an outdated branch. <br>
 OR ELSE Outdated branch will cause <b>merge conflicts</b> (not scary but troublesome) 
 
+<h2>Rule 7: Happy coding guys! </h2>
 
 
