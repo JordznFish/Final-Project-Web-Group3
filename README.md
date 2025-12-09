@@ -16,9 +16,14 @@ Examples: <br>
 <ul>
   <li>feature/login-ui</li>
   <li>feature/add-expense-function</li>
-  <li>feature/cart-modify</li>
+  <li>feature/add-food-item</li>
+  <li>feature/delete-food-item</li>
+  <li>feature/search-bar</li>
+  <li>feature/update-index-php</li>
   <li>bugfix/date-format</li>
+  <li>bugfix/sql-error</li>
   <li>style/navbar-update</li>
+  <li>might get up to 20-50 branches...</li>
 </ul>
 =>No one modifies the same files/content at the same time, from preventing merge conflicts <br>
 =>Everyone can develop safely in parallel
