@@ -23,7 +23,7 @@ Examples: <br>
   <li>bugfix/date-format</li>
   <li>bugfix/sql-error</li>
   <li>style/navbar-update</li>
-  <li>might get up to 20-50 branches...</li>
+  <li>might get up to 20-50 branches... but IT IS EXPECTED AND HEALTHY PRACTICE</li>
 </ul>
 =>No one modifies the same files/content at the same time, from preventing merge conflicts <br>
 =>Everyone can develop safely in parallel
