@@ -10,6 +10,7 @@ VERSION CONTROL RULES FOR PHASE 2 !Very Important!
 =><i>Ensures our project never breaks even after multiple updates
 
 <h2>Rule 2: Each task = 1 branch</h2>
+Analogy: Think of branch as a task, multiple task = task checklist <br>
 <b>Naming Rules: feature/ what-you-are-doing-branch</b>
 <br>
 Examples: <br>
