@@ -1,6 +1,4 @@
-/* ===========================
-   🌿 GLOBAL LAYOUT BASE
-   =========================== */
+/*GLOBAL LAYOUT BASE*/
 .background-wrapper {
   width: calc(100% - 100px); /* default: beside navbar */
   margin-left: 100px;
@@ -8,14 +6,12 @@
 }
 
 
-/* Header-banner */
+/*Header-banner*/
 #header-banner {
   display: none;
 }
 
-/* ===========================
-   🌿 NAVBAR BASE DESIGN
-   =========================== */
+/* NAVBAR BASE DESIGN */
 #navbar {
   position: fixed;
   left: 0;
@@ -32,6 +28,9 @@
   z-index: 100;
   margin: 0 !important;
   padding: 0 !important;
+}
+.menu-btn {
+  display: none;
 }
 
 .logo {
@@ -72,9 +71,7 @@
   margin: 0 auto 18px auto;
 }
 
-/* ===========================
-   🌿 NAV-LINKS
-   =========================== */
+/*NAV-LINKS*/
 .nav-links {
   list-style: none;
   padding: 0;
@@ -127,9 +124,7 @@
   transform: scale(1.05);
 }
 
-/* ===========================
-   🌿 TOOLTIP
-   =========================== */
+/* TOOLTIP */
 .tooltip {
   display: none;
   position: absolute;
@@ -150,10 +145,76 @@
   display: block;
 }
 
+/*NEWSLETTER MODAL POPUP */
 
-/* ===========================
-   🌿 USER ICONS (BOTTOM)
-   =========================== */
+#newsletter {
+  display: none;                
+  position: fixed;
+  z-index: 999;                 
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.30); 
+}
+#newsletter.show {              
+  display: flex !important;     
+  justify-content: center;
+  align-items: center;
+}
+
+#newsletter .modal-content {
+  background: #e7fae3;
+  padding: 32px 28px;
+  border-radius: 14px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.18);
+  text-align: center;
+  position: relative;
+  min-width: 280px;
+  max-width: 300px;             
+  width: 100%;
+  margin: 0;
+}
+
+.modal-close {
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  font-size: 28px;
+  cursor: pointer;
+  color: #888;
+  transition: color 0.2s;
+}
+.modal-close:hover {
+  color: #ff7070;
+}
+.newsletter-input {
+  width: 90%;
+  padding: 10px;
+  margin-bottom: 22px;
+  border: 1px solid #d1d1d1;
+  font-family: "schoolbell";
+  border-radius: 6px;
+  font-size: 16px;
+}
+.newsletter-subscribe {
+  background: #e74c3c;
+  font-family: "schoolbell";
+  color: #fff;
+  padding: 12px 36px;
+  border: none;
+  border-radius: 6px;
+  font-size: 17px;
+  cursor: pointer;
+  margin-bottom: 4px;
+  transition: background 0.2s;
+}
+.newsletter-subscribe:hover {
+  background: #c0392b;
+}
+
+
+/*USER ICONS (BOTTOM)*/
 .user-info {
   position: relative;
   margin-top: auto;
@@ -174,9 +235,7 @@
   display: block;
 }
 
-/* ===========================
-   🌿 EVENT BANNER
-   =========================== */
+/* EVENT BANNER */
 .event-banner {
   width: 92%;
   margin: 36px auto;
@@ -278,9 +337,7 @@
   animation: popOut 0.8s cubic-bezier(.23,1.63,.42,.96) backwards;
 }
 
-/* ===========================
-   🌿 POP ANIMATION
-   =========================== */
+/*POP ANIMATION*/
 @keyframes popOut {
   0% {
     transform: scale(0.8);
@@ -396,11 +453,9 @@
 .newsletter-subscribe:hover {
   background: #c0392b;
 }
-/* ===========================
-   🌿 RESPONSIVE BREAKPOINTS
-   =========================== */
+/*RESPONSIVE BREAKPOINTS */
 
-/* 🖥️ Desktop ≥1366px */
+/* Media for desktop ≥1366px */
 @media (min-width: 1366px) {
   #navbar {
     width: 100px;
@@ -421,6 +476,11 @@
     width: 35px;
     height: 35px;
   }
+  #newsletter .modal-content {
+    max-width: 420px; /* Slightly wider for large desktops */
+    min-width: 300px;
+    padding: 40px 32px;
+  }
   .event-banner h2 {
     font-size: 1.8em;
   }
@@ -429,7 +489,7 @@
   }
 }
 
-/* 💻 Tablet 501px–1024px */
+/* Media for tablet 501px–1024px */
 @media (min-width: 501px) and (max-width: 1024px) {
   #navbar {
     width: 75px;
@@ -472,7 +532,7 @@
   }
 }
 
-/* 📱 Mobile ≤500px */
+/* Media ≤500px */
 @media (max-width: 500px) {
   #header-banner {
     display: flex;
@@ -583,9 +643,9 @@
 
 }
 
-/* Default for desktop */
+/* Desktop */
 .background-wrapper {
-  margin-left: 100px;   /* match navbar width */
+  margin-left: 100px;  
   width: calc(100% - 100px);
 }
 
@@ -610,7 +670,7 @@
   }
 
   .background-wrapper {
-    margin-top: 60px; /* pushes content below header banner */
+    margin-top: 60px; 
   }
 
   #ac-logo-header {
