@@ -76,5 +76,23 @@ OR ELSE Outdated branch will cause <b>merge conflicts</b> (not scary but trouble
 
 
 <h2>Rule 7: Happy coding guys! </h2>
-
+<p>Not related but good to know when setting up your local environment</p>
+<p>
+  Imagine your website is a restaurant:
+  
+  PHP = the chef
+  
+  MySQL = the fridge (food storage)
+  
+  Apache = the kitchen
+  
+  htdocs folder = the physical room where the chef must work
+  
+  You MUST put the chef (PHP) inside the kitchen (htdocs)
+  so he can reach the fridge (MySQL).
+  
+  If the chef is in a random building (folder outside htdocs),
+  he cannot cook anything → website breaks.
+  
+</p>
 
