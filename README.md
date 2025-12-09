@@ -1,35 +1,66 @@
 # Final-Project-Web-Group3
-Kind reminder if you are confused, 
+VERSION CONTROL RULES FOR PHASE 2 !Very Important!
 
-Remote:
+<h2>Rule 1: Main branch = NEVER touch directly</h2>
+<ol>
+  <li>no committing directly to main</li>
+  <li>only merge into main through PRs (Pull requests)</li>
+</i>
+</ol>
+=><i>Ensures our project never breaks even after multiple updates
 
-1) Main branch
-2) Patricia-branch (Published)
-3) Eric-branch (Published)
-4) Jordan-branch (Published)
-5) Steffeni-branch (Published)
+<h2>Rule 2: Each task = 1 branch</h2>
+<b>Naming Rules: feature/ what-you-are-doing-branch</b>
+<br>
+Examples: <br>
+<ul>
+  <li>feature/login-ui</li>
+  <li>feature/add-expense-function</li>
+  <li>feature/cart-modify</li>
+  <li>bugfix/date-format</li>
+  <li>style/navbar-update</li>
+</ul>
+=>No one modifies the same files/content at the same time, from preventing merge conflicts
+=>Everyone can develop safely in parallel
 
-Local:
+<h2>Rule 3: Before coding each day: ALWAYS PULL MAIN</h2>
+=>This ensures your branch is not outdated (when others updated something on main branch)
 
-Patricia's computer has two branches 
--> main branch + Patricia-branch 
-Responsible: Nav-bar, monthly event banner section
+<h2>Rule 4: Work only inside your feature branch</h2>
+You can freely do these in your <b>local branch</b>:
+<ol>
+  <li>commit</li>
+  <li>test</li>
+  <li>update files</li>
+</ol>
+BUT:
+❌ Do NOT edit another developer’s feature work.
+(Unless coordinated)
 
-Eric's computer has two branches 
--> main branch + Eric-branch 
-Responsible: Main Banner & search bar section
+<h2>Rule 5-1: When done + push onto remote self-branch → Create a Pull Request (PR)</h2>
+New Pull Request → Compare: feature branch → main
+<br>
+The PR allows:
+<ol>
+  <li>conflict checking</li>
+  <li>teammate review</li>
+  <li>discussion</li>
+</ol>
+=>Find out issues early
 
-Jordan's computer has two branches 
--> main branch + Jordan-branch 
-Responsible: Menu section
+<h2>Rule 5-2: Merge PR into main</h2>
+only merge if: <br>
+<ul>
+  <li>No conflicts</li>
+  <li>Project runs successfully</li>
+</ul>
+After merging: <br>
+branch becomes part of the official code <br>
+teammate that merged this branch deletes the feature branch <br>
 
-Stefani's computer has two branches 
--> main branch + Steffeni-branch 
-Responsible: Checkout-cart, award/cst review section, footer section
+<h2>Rule 6: Everyone updates after a merge like Rule 3</h2>
+ONLY THEN continue working (Never continue working on an outdated branch. <br>
+OR ELSE Outdated branch will cause <b>merge conflicts</b> (not scary but troublesome) 
 
-
-ps. 
-- local main branch: (we won't modify this until final merging phase)
-- we only have to do "sync changes" locally to update the newest version onto GitHub, NO NEED to Pull Request! (IMPORTANT)
 
 
