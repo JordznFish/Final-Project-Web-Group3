@@ -20,7 +20,7 @@ Examples: <br>
   <li>bugfix/date-format</li>
   <li>style/navbar-update</li>
 </ul>
-=>No one modifies the same files/content at the same time, from preventing merge conflicts
+=>No one modifies the same files/content at the same time, from preventing merge conflicts <br>
 =>Everyone can develop safely in parallel
 
 <h2>Rule 3: Before coding each day: ALWAYS PULL MAIN</h2>
