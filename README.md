@@ -33,6 +33,15 @@ Examples: <br>
 
 
 <h2>Rule 3: Before coding each day/each merge update in main: ALWAYS PULL MAIN</h2>
+<p>⭐ Git merges based on <b>CONTENT BLOCKS</b>, NOT <b>LINE NUMBERS.</b> (NO CONFLICT)</p>
+<p>
+  Person 1 deletes lines 1–60. <br>
+  Person 2 works on the food grid (originally lines 80–100)<br>
+  Person 2's job is NOT touching lines 1–60.<br>
+  ✔ Even though line numbers shifted<br>
+  ✔ Content blocks A(line1-60) and B(line80-100) don’t overlap
+</p>
+
 <p>=>This ensures your branch is not outdated (when others updated something on main branch)</p>
 
 <h2>Rule 4: Work only inside your feature branch</h2>
