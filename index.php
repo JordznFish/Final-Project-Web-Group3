@@ -99,6 +99,10 @@
             <!-- Owner: Eric -->
             <!-- Contains: Theme banner -->
             <!-- ===================== -->
+            <div class="top-bar">
+                 <h1 class="logo">Welcome to Crossing Eats!</h1>
+            </div>
+
             <header id="header-banner">
                 <a href="#banner" style="text-decoration:none">
                     <div id="ac-logo-header">
