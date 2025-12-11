@@ -382,5 +382,7 @@
 
         <!-- Functions -->
         <script src="functions.js"></script>
+
+        <!-- TEST BY JORDAN -->
     </body>
 </html>
