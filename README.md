@@ -3,7 +3,7 @@
 
 <h1>Quick Glance SOP when you are lost</h1>
 <p>
-  <b>Procedures:</b> <br>
+  <h3>Procedures:</h3>
   1. Pull remote main INTO local main <br>
   2. Push working branch TO GitHub <br>
   3. Open Pull Request (PR) using the working branch <br>
@@ -11,7 +11,7 @@
   5. Pull remote main INTO local main 
 </p>
 <p>
-  <b>In terminal commands:</b> <br>
+  <h3>In terminal commands:</h3>
   1)git checkout main <br>
   1)git pull origin main <br>
   
