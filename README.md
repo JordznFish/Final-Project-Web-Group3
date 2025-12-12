@@ -10,19 +10,27 @@
   4. Merge PR INTO remote main <br>
   5. Pull remote main INTO local main 
 </p>
-<p>
   <h3>In terminal commands:</h3>
-  1)git checkout main <br>
-  1)git pull origin main <br>
+  <p>
+    
+     1. Sync local main
+    git checkout main
+    git pull origin main
+    
+     2. Sync working branch with main (IMPORTANT)
+    git checkout feature/your-branch
+    git merge main          # <-- conflict happens HERE if any
   
-  2)git checkout feature/your-branch <br>
-  2)git push origin feature/your-branch <br>
-  3)# open PR on GitHub <br>
-  4)# merge PR <br>
+     3. Publish working branch
+    git push -u origin feature/your-branch
+    
+     4. Open PR on GitHub
+     5. Merge PR on GitHub
   
-  5)git checkout main <br>
-  5)git pull origin main <br>
-</p>
+     6. Update local main after merge
+    git checkout main
+    git pull origin main
+  </p>
 
 
 <h2>Rule 1: Main branch = NEVER touch directly</h2>
