@@ -12,16 +12,16 @@
 </p>
 <p>
   In terminal commands: <br>
-  1)git checkout main
-  1)git pull origin main
+  1)git checkout main <br>
+  1)git pull origin main <br>
   
-  2)git checkout feature/your-branch
-  2)git push origin feature/your-branch
-  3)# open PR on GitHub
-  4)# merge PR
+  2)git checkout feature/your-branch <br>
+  2)git push origin feature/your-branch <br>
+  3)# open PR on GitHub <br>
+  4)# merge PR <br>
   
-  5)git checkout main
-  5)git pull origin main
+  5)git checkout main <br>
+  5)git pull origin main <br>
 </p>
 
 
