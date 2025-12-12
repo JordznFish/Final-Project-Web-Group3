@@ -1,9 +1,9 @@
 # VERSION CONTROL RULES FOR PHASE 2 (VERY IMPORTANT)
 <p>Jordan here~ I hope everyone read this thoroughly so that we all are in the same page and it will 100% clear our confusion from phase 1</p>
 
-<h1>Quick Glance SOP when you are lost</p>
+<h1>Quick Glance SOP when you are lost</h1>
 <p>
-  Procedures: <br>
+  <b>Procedures:</b> <br>
   1. Pull remote main INTO local main <br>
   2. Push working branch TO GitHub <br>
   3. Open Pull Request (PR) using the working branch <br>
@@ -11,7 +11,7 @@
   5. Pull remote main INTO local main 
 </p>
 <p>
-  In terminal commands: <br>
+  <b>In terminal commands:</b> <br>
   1)git checkout main <br>
   1)git pull origin main <br>
   
