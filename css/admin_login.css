@@ -1,0 +1,170 @@
+html, body { 
+    height: auto; 
+    min-height: 100%; 
+    margin: 0; 
+    padding: 0; 
+    overflow-x: 
+    hidden; 
+} 
+
+body { 
+    font-family: 'Schoolbell', cursive; 
+    font-weight: bold; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+.background-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  
+  background-color: #FFE0AF;
+  background-image:
+  linear-gradient(45deg, #FFDD88 25%, transparent 25%, transparent 75%, #FFDD88 75%, #FFDD88), 
+  linear-gradient(45deg, #FFDD88 25%, transparent 25%, transparent 75%, #FFDD88 75%, #FFDD88),
+  linear-gradient(45deg, transparent, transparent 50%, #FFC87F 50%, #FFC87F);
+  background-size: 100px 100px;
+  background-position: 0 0, 50px 50px, 50px 0px;
+  -webkit-animation: scroll 15s linear infinite;
+}
+
+@-webkit-keyframes scroll {
+  from { background-position: 0 0, 50px 50px, 50px 0; }
+  to { background-position: -100px -100px, -50px -50px, -50px -100px; }
+}
+
+/* ------------------------------
+   LOGIN CARD (CENTER)
+------------------------------ */
+.login-container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+
+.login-card {
+    width: 380px;
+    background: rgba(255, 255, 255, 0.431);
+    padding: 40px 30px;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    text-align: center;
+    color: white;
+}
+
+/* ------------------------------
+   LOGO LOGO
+------------------------------ */
+.login-logo {
+    margin: 20px;
+    font-size: 40px;
+    color: grey;
+}
+
+/* ------------------------------
+   LOGO ICON
+------------------------------ */
+.login-icon {
+    font-size: 60px;
+    margin-bottom: 25px;
+}
+
+/* ------------------------------
+   INPUT TITLES
+------------------------------ */
+.input-title {
+    text-align: left;
+    font-size: 20px;
+    color: grey;
+    padding-left: 5px;
+}
+
+/* ------------------------------
+   INPUT BOXES
+------------------------------ */
+.input-group {
+    width: 94%;
+    background: rgb(255, 255, 255);
+    padding: 12px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.input-group i {
+    margin-right: 12px;
+    font-size: 18px;
+    color: #e0e0e0;
+}
+
+.input-group input {
+    font-family: 'Schoolbell', cursive; 
+    width: 100%;
+    background: none;
+    border: none;
+    outline: none;
+    color: #020000;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+}
+
+/* Placeholder color */
+input::placeholder {
+    color: #cfd8dc;
+}
+
+/* ------------------------------
+   LOGIN BUTTON
+------------------------------ */
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background: #02b854;
+    color: #eaeaea;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.login-btn:hover {
+    background: #02891f;
+}
+
+/* Error message */
+.error {
+    margin-top: 35px;
+    color: #bb0000;
+    font-size: 14px;
+}
+
+/* ------------------------------
+   RESPONSIVE DESIGN
+------------------------------ */
+@media (max-width: 480px) {
+    .login-card {
+        width: 300px;
+        padding: 30px 20px;
+    }
+    .login-icon {
+        font-size: 50px;
+    }
+    .login-btn {
+        font-size: 14px;
+    }
+    .input-group {
+        width: 90%;
+    }
+}
