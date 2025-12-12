@@ -1,6 +1,30 @@
 # VERSION CONTROL RULES FOR PHASE 2 (VERY IMPORTANT)
 <p>Jordan here~ I hope everyone read this thoroughly so that we all are in the same page and it will 100% clear our confusion from phase 1</p>
 
+<h1>Quick Glance SOP when you are lost</h1>
+<p>
+  <h3>Procedures:</h3>
+  1. Pull remote main INTO local main <br>
+  2. Push working branch TO GitHub <br>
+  3. Open Pull Request (PR) using the working branch <br>
+  4. Merge PR INTO remote main <br>
+  5. Pull remote main INTO local main 
+</p>
+<p>
+  <h3>In terminal commands:</h3>
+  1)git checkout main <br>
+  1)git pull origin main <br>
+  
+  2)git checkout feature/your-branch <br>
+  2)git push origin feature/your-branch <br>
+  3)# open PR on GitHub <br>
+  4)# merge PR <br>
+  
+  5)git checkout main <br>
+  5)git pull origin main <br>
+</p>
+
+
 <h2>Rule 1: Main branch = NEVER touch directly</h2>
 <ol>
   <li>no committing directly to main</li>
