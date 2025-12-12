@@ -15,12 +15,12 @@
         <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
 
         <!-- CSS -->
-        <link rel="stylesheet" href="css/global.css" />
+        <link rel="stylesheet" href="../css/global.css" />
         <!-- Team-specific CSS -->
-        <link rel="stylesheet" href="css/navbar.css" />       <!-- Patricia -->
-        <link rel="stylesheet" href="css/header.css" />       <!-- Eric -->
-        <link rel="stylesheet" href="css/main.css" />         <!-- Jordan -->
-        <link rel="stylesheet" href="css/cart-footer.css" />  <!-- Steffani -->
+        <link rel="stylesheet" href="../css/navbar.css" />       <!-- Patricia -->
+        <link rel="stylesheet" href="../css/header.css" />       <!-- Eric -->
+        <link rel="stylesheet" href="../css/main.css" />         <!-- Jordan -->
+        <link rel="stylesheet" href="../css/cart-footer.css" />  <!-- Steffani -->
     </head>
 
     <body>
@@ -30,38 +30,38 @@
             <nav id="navbar">
                 <div class="logo">
                     <a href="#banner">
-                        <img src="img/compass1.png" alt="Logo" class="nav-icon"/>
+                        <img src="../img/compass1.png" alt="Logo" class="nav-icon"/>
                     </a>
                 </div>
                 <hr class="divider">
                 <ul class="nav-links">
                     <li>
                         <a href="#main-content">
-                            <img src="img/menu_final.png" alt="Menu Icon" class="nav-icon"/>
+                            <img src="../img/menu_final.png" alt="Menu Icon" class="nav-icon"/>
                             <span class="tooltip">Menu</span>
                         </a>
                     </li>
                     <li>
                         <a href="#reviews">
-                            <img src="img/awards_final.png" alt="Awards Icon" class="nav-icon"/>
+                            <img src="../img/awards_final.png" alt="Awards Icon" class="nav-icon"/>
                             <span class="tooltip">Reviews</span>
                         </a>
                     </li>
                     <li>
                         <a href="#site-footer">
-                            <img src="img/contact_final.png" alt="Contact Icon" class="nav-icon"/>
+                            <img src="../img/contact_final.png" alt="Contact Icon" class="nav-icon"/>
                             <span class="tooltip">Contact</span>
                         </a>
                     </li>
                     <li>
                         <a href="cart.php">
-                            <img src="img/cart_final.png" alt="Cart Icon" class="nav-icon"/>
+                            <img src="../img/cart_final.png" alt="Cart Icon" class="nav-icon"/>
                             <span class="tooltip">Cart</span>
                         </a>
                     </li>
                     <li>
                         <a href="javascript:void(0);" id="newsletter-btn">
-                            <img src="img/newsletter_final.png" alt="Newsletter Icon" class="nav-icon"/>
+                            <img src="../img/newsletter_final.png" alt="Newsletter Icon" class="nav-icon"/>
                             <span class="tooltip">Newsletter</span>
                         </a>
                     </li>
@@ -70,11 +70,11 @@
                 <div class="user-info">
                     <hr class="divider">
                     <a href="profile.html">
-                        <img src="img/user.png" alt="Profile Icon" class="nav-icon"/>
+                        <img src="../img/user.png" alt="Profile Icon" class="nav-icon"/>
                         <span class="tooltip">Profile</span>
                     </a>
                     <a href="settings.html">
-                        <img src="img/settings_final.png" alt="Settings Icon" class="nav-icon"/>
+                        <img src="../img/settings_final.png" alt="Settings Icon" class="nav-icon"/>
                         <span class="tooltip">Settings</span>
                     </a>
                 </div>
@@ -116,7 +116,7 @@
 
             <div id="banner"></div>
             <section class="banner">
-                <img src="img/banner.jpg" alt="Animal Crossing Banner">
+                <img src="../img/banner.jpg" alt="Animal Crossing Banner">
             </section>
 
             <div class="ac-logo">
@@ -147,7 +147,7 @@
                         <span class="ribbon-sub">Order now and enjoy island-fresh flavor anytime 🌴</span>
                     </a>
 
-                    <img src="img/happy.png" alt="Mascot" class="character">
+                    <img src="../img/happy.png" alt="Mascot" class="character">
                 </div>
             </section>
 
@@ -191,7 +191,7 @@
                     <div class="menu-grid">
                         <!-- Food Card Items-->
                         <div class="food-card main-dish">
-                            <img src="img/Tomato_Curry.jpg" alt="Tomato Curry"/>
+                            <img src="../img/Tomato_Curry.jpg" alt="Tomato Curry"/>
                             <h3>Tomato Curry Rice</h3>
                             <p class="desc">A hearty curry simmered with fresh tomatoes and a touch of island spice.</p>
                             <p class="price">NT$ 139</p>
@@ -199,7 +199,7 @@
                         </div>
                         
                         <div class="food-card main-dish">
-                            <img src="img/sea-bass-pie.jpg" alt="Sea-Bass Pie" />
+                            <img src="../img/sea-bass-pie.jpg" alt="Sea-Bass Pie" />
                             <h3>Sea-Bass Pie</h3>
                             <p class="desc">Flaky crust stuffed with tender sea bass and creamy filling — a seaside comfort favorite.</p>
                             <p class="price">NT$ 199</p>
@@ -207,7 +207,7 @@
                         </div>
                         
                         <div class="food-card main-dish">
-                            <img src="img/minestrone soup.jpg" alt="Minestrone Soup" />
+                            <img src="../img/minestrone soup.jpg" alt="Minestrone Soup" />
                             <h3>Minestrone Soup</h3>
                             <p class="desc">A colorful vegetable soup bursting with warmth, perfect for a cozy evening.</p>
                             <p class="price">NT$ 119</p>
@@ -215,7 +215,7 @@
                         </div>
                         
                         <div class="food-card main-dish">
-                            <img src="img/aji fry.jpg" alt="Aji Fry" />
+                            <img src="../img/aji fry.jpg" alt="Aji Fry" />
                             <h3>Aji Fry teishoku</h3>
                             <p class="desc">Golden-fried horse mackerel paired with fluffy rice, miso soup, and crisp seasonal greens.</p>
                             <p class="price">NT$ 199</p>
@@ -223,7 +223,7 @@
                         </div>
 
                         <div class="food-card snacks">
-                            <img src="img/french-fries.jpg" alt="French Fries" />
+                            <img src="../img/french-fries.jpg" alt="French Fries" />
                             <h3>French Fries</h3>
                             <p class="desc">Crispy, golden fries with just the right amount of salt — everyone’s favorite bite.</p>
                             <p class="price">NT$ 89</p>
@@ -231,7 +231,7 @@
                         </div>
 
                         <div class="food-card snacks">
-                            <img src="img/sandwich.jpg" alt="Sandwich" />
+                            <img src="../img/sandwich.jpg" alt="Sandwich" />
                             <h3>Sandwich</h3>
                             <p class="desc">Freshly made with soft bread, crisp veggies, and a generous layer of filling.</p>
                             <p class="price">NT$ 129</p>
@@ -239,7 +239,7 @@
                         </div>
 
                         <div class="food-card snacks">
-                            <img src="img/potato croquettes.jpg" alt="Potato Croquettes" />
+                            <img src="../img/potato croquettes.jpg" alt="Potato Croquettes" />
                             <h3>Potato Croquettes</h3>
                             <p class="desc">Crunchy on the outside, fluffy inside — a classic comfort snack.</p>
                             <p class="price">NT$ 99</p>
@@ -247,7 +247,7 @@
                         </div>
 
                         <div class="food-card desserts">
-                            <img src="img/carrot-cake.jpg" alt="Carrot Cake" />
+                            <img src="../img/carrot-cake.jpg" alt="Carrot Cake" />
                             <h3>Carrot Cake</h3>
                             <p class="desc">Sweet and moist cake with grated carrots and a touch of cinnamon.</p>
                             <p class="price">NT$ 149</p>
@@ -255,7 +255,7 @@
                         </div>
 
                         <div class="food-card desserts">
-                            <img src="img/apple-pie.jpg" alt="Apple Pie" />
+                            <img src="../img/apple-pie.jpg" alt="Apple Pie" />
                             <h3>Apple Pie</h3>
                             <p class="desc">Buttery crust filled with caramelized apples — a timeless homemade dessert.</p>
                             <p class="price">NT$ 139</p>
@@ -263,7 +263,7 @@
                         </div>
 
                         <div class="food-card desserts">
-                            <img src="img/fruit-tart.jpg" alt="Fruit Tart" />
+                            <img src="../img/fruit-tart.jpg" alt="Fruit Tart" />
                             <h3>Fruit Tart</h3>
                             <p class="desc">A colorful medley of fruits over smooth custard — as cheerful as it is delicious.</p>
                             <p class="price">NT$ 99</p>
@@ -271,7 +271,7 @@
                         </div>
 
                         <div class="food-card soups">
-                            <img src="img/mushroom-soup.jpg" alt="Mushroom Soup" />
+                            <img src="../img/mushroom-soup.jpg" alt="Mushroom Soup" />
                             <h3>Mushroom Soup</h3>
                             <p class="desc">Earthy, creamy, and aromatic — a bowl of pure woodland comfort.</p>
                             <p class="price">NT$ 49</p>
@@ -279,7 +279,7 @@
                         </div>
 
                         <div class="food-card soups">
-                            <img src="img/carrot-pottage.jpg" alt="Carrot Potage" />
+                            <img src="../img/carrot-pottage.jpg" alt="Carrot Potage" />
                             <h3>Carrot Potage</h3>
                             <p class="desc">Smooth, sweet carrot soup that feels like a warm hug on a cool day.</p>
                             <p class="price">NT$ 49</p>
@@ -287,7 +287,7 @@
                         </div>
 
                         <div class="food-card beverages">
-                            <img src="img/strawberry-smoothie.jpg" alt="Strawberry Smoothie" />
+                            <img src="../img/strawberry-smoothie.jpg" alt="Strawberry Smoothie" />
                             <h3>Strawberry Smoothie</h3>
                             <p class="desc">A refreshing blend of ripe strawberries and creamy milk.</p>
                             <p class="price">NT$ 79</p>
@@ -295,7 +295,7 @@
                         </div>
 
                         <div class="food-card beverages">
-                            <img src="img/banana-smoothie.jpg" alt="Banana Smoothie" />
+                            <img src="../img/banana-smoothie.jpg" alt="Banana Smoothie" />
                             <h3>Banana Smoothie</h3>
                             <p class="desc">Thick, creamy, and naturally sweet — an all-time classic.</p>
                             <p class="price">NT$ 79</p>
@@ -303,7 +303,7 @@
                         </div>
 
                         <div class="food-card beverages">
-                            <img src="img/mango-smoothie.jpg" alt="Mango Smoothie" />
+                            <img src="../img/mango-smoothie.jpg" alt="Mango Smoothie" />
                             <h3>Mango Smoothie</h3>
                             <p class="desc">Rich, velvety mango blended to perfection — a sweet tropical escape in every sip.</p>
                             <p class="price">NT$ 79</p>
@@ -324,7 +324,7 @@
            <div class="review-container">
                
                 <div class="review-card">
-                    <img src="img/avatar/Avatar1.jpg" alt="Customer 1">
+                    <img src="../img/avatar/Avatar1.jpg" alt="Customer 1">
                     <h3>Tom Nook</h3>
                     <div class="stars">★★★★☆</div>
                     <p>Amazing food and fast delivery! 🍕</p>
@@ -332,7 +332,7 @@
                 </div>
 
                 <div class="review-card">
-                    <img src="img/avatar/Avatar2.jpg" alt="Customer 2">
+                    <img src="../img/avatar/Avatar2.jpg" alt="Customer 2">
                     <h3>Isabelle, Town Mayor</h3>
                     <div class="stars">★★★★★</div>
                     <p>Best curry in the island! 🥘 I order every week.</p>
@@ -340,7 +340,7 @@
                 </div>
 
                 <div class="review-card">
-                    <img src="img/avatar/Avatar3.jpg" alt="Customer 3">
+                    <img src="../img/avatar/Avatar3.jpg" alt="Customer 3">
                     <h3>Alfonso</h3>
                     <div class="stars">★★★★☆</div>
                     <p>Loved the Sea-Bass Pie! Warm, tasty, and fun to share with friends!</p>
@@ -355,7 +355,7 @@
             <!-- Owner: Steffani -->
             <!-- Content: Our information  -->
             <!-- ===================== -->
-            <footer id="site-footer"style="background-image: url('img/background/footerzz.png');
+            <footer id="site-footer"style="background-image: url('../img/background/footerzz.png');
               background-size: 100% 100%;
               background-position: center;
               background-repeat: no-repeat;
@@ -386,5 +386,7 @@
 
         <!-- Functions -->
         <script src="functions.js"></script>
+
+        <!-- TEST BY JORDAN -->
     </body>
 </html>

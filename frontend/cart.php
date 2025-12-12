@@ -13,8 +13,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/global.css" />
-    <link rel="stylesheet" href="css/cart.css" />
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../css/cart.css" />
   </head>
 
   <body>
@@ -37,7 +37,7 @@
             <section class="cart-items-section">
               <!-- Tomato Curry -->
               <div class="cart-item">
-                <img src="img/foods/Tomato_Curry.jpeg" alt="Tomato Curry" />
+                <img src="../img/foods/Tomato_Curry.jpeg" alt="Tomato Curry" />
                 <div class="item-info">
                   <h3>Tomato Curry</h3>
                   <p>A hearty curry simmered with fresh tomatoes and a touch of island spice.</p>
@@ -57,7 +57,7 @@
 
               <!-- Sea Bass Pie -->
               <div class="cart-item">
-                <img src="img/foods/sea-bass-pie.jpeg" alt="Sea Bass Pie" />
+                <img src="../img/foods/sea-bass-pie.jpeg" alt="Sea Bass Pie" />
                 <div class="item-info">
                   <h3>Sea Bass Pie</h3>
                   <p>Flaky crust stuffed with tender sea bass and creamy filling — a seaside comfort favorite.</p>
@@ -76,7 +76,7 @@
               </div>
 
               <div class="cart-item">
-                <img src="img/carrot-pottage.jpg" alt="Carrot pottage" />
+                <img src="../img/carrot-pottage.jpg" alt="Carrot pottage" />
                 <div class="item-info">
                   <h3>Carrot pottage</h3>
                   <p>Smooth, sweet carrot soup that feels like a warm hug on a cool day.</p>
@@ -128,7 +128,7 @@
         </main>
       </div>
 
-      <footer id="site-footer"style="background-image: url('img/background/footerzz.png');
+      <footer id="site-footer"style="background-image: url('../img/background/footerzz.png');
               background-size: 100% 100%;
               background-position: center;
               background-repeat: no-repeat;
