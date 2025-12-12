@@ -24,7 +24,8 @@ Examples: <br>
   <li>bugfix/date-format/cia</li>
   <li>bugfix/sql-error/jordan</li>
   <li>style/navbar-update/stef</li>
-  <li>might get up to 20-50 branches... but IT IS EXPECTED AND HEALTHY PRACTICE</li>
+  <li>might end up to 20-50 merged branches... but IT IS EXPECTED AND HEALTHY PRACTICE</li>
+  <li>Keep at most 4-5 working branches, finish one work at a time</li>
 </ul>
 <p>
   =>No one modifies the same files/content at the same time, from preventing merge conflicts <br>
