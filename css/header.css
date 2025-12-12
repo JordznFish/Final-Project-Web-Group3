@@ -1,9 +1,9 @@
 .top-bar {
-  background-color: #e60012; 
+  background-color: #efe417; 
   height: 50px;              
   width: 100%;
   display: flex;
-  align-items: center;
+  align-items: left;
   justify-content: flex-start;
   padding: 0 30px;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
