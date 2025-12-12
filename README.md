@@ -5,10 +5,11 @@
 <p>
   <h3>Procedures:</h3>
   1. Pull remote main INTO local main <br>
-  2. Push working branch TO GitHub <br>
-  3. Open Pull Request (PR) using the working branch <br>
-  4. Merge PR INTO remote main <br>
-  5. Pull remote main INTO local main 
+  2. Check if there's any merge conflict locally
+  3. Push working branch TO GitHub <br>
+  4. Open Pull Request (PR) using the working branch <br>
+  5. Merge PR INTO remote main <br>
+  6. Pull remote main INTO local main 
 </p>
   <h3>In terminal commands:</h3>
   <p>
@@ -22,7 +23,8 @@
     git merge main          # <-- conflict happens HERE if any
   
      3. Publish working branch
-    git push -u origin feature/your-branch
+    git push -u origin feature/your-branch (first time publishing) 
+    git push (for later pushes you just need to type this)
     
      4. Open PR on GitHub
      5. Merge PR on GitHub
