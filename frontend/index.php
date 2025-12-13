@@ -120,7 +120,7 @@
             <header id="header-banner">
                 <a href="#banner" style="text-decoration:none">
                     <div id="ac-logo-header">
-                        <h1>Crossing <span class="eats">Eats</span></h1>
+                        <h1>CROSSING<span class="eats">EATS</span></h1>
                     </div>
 
                     <a href="javascript:void(0)" class="drop-down-icon" id="menu-toggle">&#9776;</a>

@@ -31,20 +31,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Login</title>
+    <link rel="stylesheet" type="text/css" href="../css/admin_login.css">
 </head>
 <body>
-    <div class="login-box">
-        <h2>Crossing Eats Admin Login</h2>
 
-        <form action="" method="POST">
-            <label>Username:</label><br>
-            <input type="text" name="username" required><br>
+    <div class="background-wrapper"></div>
+    <div class="login-container">
+        <div class="login-card">
+            <div class="login-logo">ADMIN LOGIN</div>
+            <form action="" method="POST">
+                <div class="input-title">Username</div>
+                <div class="input-group">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" name="username" placeholder="username" required>
+                </div>
 
-            <label>Password:</label><br>
-            <input type="password" name="password" required><br>
+                <div class="input-title">Password</div>
+                <div class="input-group">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" name="password" placeholder="password" required>
+                </div>
 
-            <button type="submit">Login</button>
-        </form>
+                <button type="submit" class="login-btn">LOGIN</button>
+                <?php if (!empty($error)): ?>
+                    <p class="error"><?= $error ?></p>
+                <?php endif; ?>
+            </form>
+        </div>
     </div>
 </body>
 </html>
