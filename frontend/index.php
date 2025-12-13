@@ -18,7 +18,7 @@
         <link rel="stylesheet" href="../css/global.css" />
         <!-- Team-specific CSS -->
         <link rel="stylesheet" href="../css/navbar.css" />       <!-- Patricia -->
-        <link rel="stylesheet" href="../css/header.css" />       <!-- Eric -->
+        <link rel="stylesheet" href="../css/eric_header.css" />  <!-- Eric -->
         <link rel="stylesheet" href="../css/main.css" />         <!-- Jordan -->
         <link rel="stylesheet" href="../css/cart-footer.css" />  <!-- Steffani -->
     </head>
@@ -99,8 +99,22 @@
             <!-- Owner: Eric -->
             <!-- Contains: Theme banner -->
             <!-- ===================== -->
+                <!-- ===================== -->
+            <!-- HEADER SECTION -->
+            <!-- Owner: Eric -->
+            <!-- Contains: Theme banner -->
+            <!-- ===================== -->
             <div class="top-bar">
-                 <h1 class="logo">Welcome to Crossing Eats!</h1>
+                <h1 class="bar-logo">Crossing Eats</h1>
+
+                <div class="top-icons">
+                    <a href="search.php" class="icon search">
+                        <img src="../img/search-icon.png" alt="Search Icon" class="top-right-icon"/>
+                    </a>
+                    <a href="cart.php" class="icon cart">
+                        <img src="../img/cart_final.png" alt="Cart Icon" class="top-right-icon"/>
+                    </a>
+                </div>
             </div>
 
             <header id="header-banner">
@@ -124,32 +138,30 @@
             </div>
 
             <section class="brown-box">
-                <div class="left-col">
-                    <h2 class="title">Food Made With Love!</h2>
+                <div class="brown-image">
+                    <img src="../img/feature-image.jpg" alt="Featured Food">
+                </div>
 
-                    <div class="delivery-row">
-                        <div class="pill delivery-pill">
-                            <span class="label">Estimated Delivery:</span>
-                            <span class="time">09:00</span> to <span class="time">21:00</span>
-                        </div>
+                <div class="brown-info">
+                    <div class="white-ac-box">
+                        <h2 class="title">Food Made With Love!</h2>
 
-                        <div class="pill fee-pill">
-                            
-                            <span class="fee-label">Delivery Fee</span>
-                            <span class="price">NT$  <strong>39</strong></span>
-                            <span class="free-tag">FREE over NT$ 299</span>
+                        <div class="delivery-row">
+                            <div class="pill delivery-pill">
+                                <span class="label">Estimated Delivery:</span>
+                                <span class="time">09:00</span> to <span class="time">21:00</span>
+                            </div>
+
+                            <div class="pill fee-pill">
+                                <span class="fee-label">Delivery Fee</span>
+                                <span class="price">NT$ <strong>39</strong></span>
+                                <span class="free-tag">FREE over NT$ 299</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="right-col promo">
-                    <a href="cart.php" class="ribbon">Click me to bring the 'NOM' to your home!
-                        <span class="ribbon-sub">Order now and enjoy island-fresh flavor anytime 🌴</span>
-                    </a>
-
-                    <img src="../img/happy.png" alt="Mascot" class="character">
-                </div>
             </section>
+
 
             <!-- ===================== -->
             <!-- ANIMAL CROSSING Monthly Events -->

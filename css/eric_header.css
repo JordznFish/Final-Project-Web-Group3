@@ -1,12 +1,49 @@
 .top-bar {
-  background-color: #efe417; 
+  background-color: #f1ed97; 
   height: 50px;              
-  width: 100%;
+  width: auto;
   display: flex;
-  align-items: left;
-  justify-content: flex-start;
-  padding: 0 30px;
+  align-items: center;
+  padding: 0 32px;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+
+.bar-logo {
+  margin: 0;
+  font-size: 26px;
+  font-family: "Comic+Relief", cursive;
+  color: #000;
+  white-space: nowrap;
+}
+
+.top-icons {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin-left: auto;
+}
+
+.top-icons .icon {
+  font-size: 22px;
+  text-decoration: none;
+  color: #000;
+  transition: transform 0.2s ease;
+}
+
+.top-icons .icon:hover {
+  transform: scale(1.15);
+}
+
+.top-right-icon {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+.search img{
+  width: 17px;
+  height: 17px;
 }
 
 .banner {
@@ -59,12 +96,110 @@ h2 {
   align-items: flex-start;
   justify-content: space-between;
   border-radius: 22px;
-  gap: clamp(16px, 3vw, 40px);
-  padding: 23px 18px;
   text-align: left;
   background-image: radial-gradient(#8e785f 1.2px, transparent 1.2px);
   background-size: 10px 10px;
   box-shadow: 0 12px 24px rgba(0,0,0,.18);
+  padding: clamp(20px, 3vw, 30px);
+  align-items: stretch;
+  display: flex;
+  gap: 30px; 
+}
+
+/* Left image */
+.brown-image {
+  display: flex;
+  justify-content: center;
+  flex: 1 1 50%;
+  align-self: stretch; 
+  align-items: center; 
+}
+
+.brown-image img {
+  width: 100%;
+  height: 100%;       
+  object-fit: cover;  
+  border-radius: 35px; 
+  max-width: none; 
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* Right content */
+.brown-info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1 1 50%; 
+}
+
+.white-ac-box {
+  background-color: #fffbf3; 
+  background-image: radial-gradient(#e6e2d3 1.5px, transparent 1.5px);
+  background-size: 18px 18px;
+  border-radius: 35px; 
+  box-shadow: 
+  inset 0 2px 10px rgba(0,0,0,0.05), 0 8px 20px rgba(0,0,0,0.15); 
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  box-sizing: border-box; 
+  padding: clamp(18px, 3vw, 28px);  
+  height: auto;                     
+  flex: 0 0 auto;                   
+  max-width: 95%;                   
+  margin: 0 auto; 
+}
+
+.white-ac-box h2.title {
+  color: #00867d; 
+  text-shadow: none; 
+  margin-top: 0;
+  font-size: clamp(2rem, 4vw, 2.8rem); 
+  text-align: left;
+}
+
+.white-ac-box h2.title::after {
+  background: #7ad0c7; 
+  margin-top: 15px;
+  margin-bottom: 25px;
+  width: 80px;
+}
+
+.ac-description {
+  color: #7f6951; 
+  font-size: 1.1rem;
+  line-height: 1.5;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+.white-ac-box .delivery-row {
+  margin-top: auto; 
+  width: 100%;
+}
+
+.white-ac-box .pill {
+  background: #00867d; 
+  color: #fff; 
+  box-shadow: 0 6px 12px rgba(0, 134, 125, 0.4); 
+  border: 2px solid #006d66; 
+}
+
+.white-ac-box .fee-pill {
+  background: linear-gradient(to bottom right, #009b90, #00867d);
+}
+
+
+.white-ac-box .pill .time,
+.white-ac-box .pill .price {
+  color: #00867d; 
+  font-weight: 700;
+}
+
+.white-ac-box .free-tag {
+  background: #ffd76b;
+  color: #5d3d1e;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
 /* Columns */
@@ -196,35 +331,41 @@ h2 {
 .title { margin: 0 0 8px; }
 
 .delivery-row {
-  display: flex;
-  flex-wrap: nowrap;
-  gap: 16px;
-  align-items: center;
   margin-top: clamp(10px, 2vw, 18px);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: stretch; 
 }
 
 .delivery-row .pill {
-  display: inline-flex;
+  display: flex; 
   align-items: center;
-  gap: 10px;
-  padding: 12px 16px;
-  border-radius: 14px;
+  gap: 6px;
   background: #eaf8ef;
   box-shadow: 0 6px 12px rgba(0,0,0,.18);
   color: #5d3d1e;
   font-weight: 800;
-  min-width: 260px;
-  flex: 1 1 0;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  padding: 6px 12px;
+  width: 100%; 
+  flex: 1 1 auto; 
+  min-width: unset;
+  max-width: 100%;
+  box-sizing: border-box; 
 }
 
-.delivery-pill .label { opacity: .9; }
+.delivery-pill .label { 
+  opacity: .9; 
+}
 
 .delivery-pill .time {
   background: #fff;
   border-radius: 8px;
   padding: 4px 10px;
   font-family: "Courier New", monospace;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   box-shadow: inset 0 0 4px rgba(0,0,0,.12);
 }
 
@@ -261,6 +402,12 @@ h2 {
   padding: 3px 8px;
   border-radius: 6px;
   box-shadow: 0 4px 8px rgba(0,0,0,.15);
+}
+
+.delivery-pill .time,
+.fee-pill .price {
+  padding: 3px 8px;
+  font-size: 0.85rem;
 }
 
 .ac-logo {
@@ -449,21 +596,109 @@ h2 {
 
 @media (max-width: 600px) {
   .brown-box {
-    width: 88%;                /* add left/right breathing room */
-    margin: -80px auto 60px;   /* center it horizontally */
-    padding: 18px 14px;        /* slightly reduced padding */
-    border-radius: 20px;       /* smoother edges */
-  }
+    width: 88%;                
+    margin: -80px auto 60px;   
+    padding: 18px 14px;        
+    border-radius: 20px;  
+  }     
 }
 
 @media (max-width: 375px) {
   .brown-box {
-    width: 84%;                /* extra margin on very small screens */
-    margin: -60px auto 50px;   /* adjust overlap position */
+    width: 84%;                
+    margin: -60px auto 50px;   
     padding: 14px 12px;
     border-radius: 18px;
   }
 }
 
+/* Mobile behavior */
+@media (max-width: 900px) {
+  .brown-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
+  .brown-image img {
+    max-width: 100%;
+  }
+
+  .brown-info {
+    width: 100%;
+  }
+}
+
+/* =========================================
+   RESPONSIVE TWEAKS
+   ========================================= */
+
+@media (max-width: 900px) {
+  .brown-box {
+    /* Reset alignments for mobile stack view */
+    align-items: center;
+  }
+  .white-ac-box {
+    /* Remove fixed height on mobile so it just fits content */
+    height: auto; 
+    align-items: center;
+    text-align: center;
+  }
+  .white-ac-box h2.title {
+      text-align: center;
+  }
+  .white-ac-box h2.title::after {
+      margin-left: auto;
+      margin-right: auto;
+  }
+  
+  /* Ensure pills stack nicely inside the white box on mobile */
+  .white-ac-box .delivery-row {
+      flex-direction: column;
+  }
+   .white-ac-box .pill {
+       width: 100%;
+       justify-content: center;
+   }
+}
+
+/* Tiny tweak for the delivery time pill layout on smaller screens */
+@media (max-width: 420px) {
+    .white-ac-box .delivery-pill {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+
+/* =========================================
+   4. Mobile (Adjusted for Clean Stacking)
+   ========================================= */
+@media (max-width: 900px) {
+    .brown-box {
+        flex-direction: column; /* Stack vertically on smaller screens */
+        gap: 20px; /* Reduced gap between stacked items */
+        padding: 20px;
+    }
+
+    .brown-image, 
+    .brown-info {
+        flex: 1 1 auto; /* Reset flex to auto for vertical stacking */
+        width: 100%;    /* Take full width */
+    }
+    
+    .brown-image {
+        height: 300px; /* Give a fixed height for the image wrapper */
+        align-self: center;
+    }
+    
+    .brown-image img {
+        height: 100%;
+        max-width: 100%;
+    }
+
+    .white-ac-box {
+        height: auto; /* Let text dictate height on mobile */
+        min-height: 250px;
+        padding: 25px;
+    }
+}
 
