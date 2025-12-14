@@ -1,34 +1,3 @@
-// Category nav function
-const buttons = document.querySelectorAll('.cat-btn');
-const categoryTitle = document.getElementById('current-category');
-const foodCards = document.querySelectorAll('.food-card');
-
-function filterCategory(category) {
-    foodCards.forEach(card => {
-        card.style.display = 'none';
-        card.classList.remove('show');
-
-        if (category === 'all' || card.classList.contains(category)) {
-            card.style.display = 'block';
-            setTimeout(() => card.classList.add('show'), 50);
-        }
-    });
-
-    categoryTitle.textContent =
-    category === 'all'
-        ? 'All Menu'
-        : category.replace('-', ' ').replace(/\b\w/g, c => c.toUpperCase());
-}
-
-buttons.forEach(btn => {
-    btn.addEventListener('click', () => {
-        buttons.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const category = btn.dataset.category;
-        filterCategory(category);
-    });
-});
-
 // show "All" on first load
 window.addEventListener('DOMContentLoaded', () => {
     document.querySelector('.cat-btn[data-category="all"]').classList.add('active');
@@ -92,3 +61,87 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+
+// Popping up window menu
+            const modal = document.getElementById("food-modal");
+            const modalImg = document.getElementById("modal-img");
+            const modalTitle = document.getElementById("modal-title");
+            const modalDesc = document.getElementById("modal-desc");
+            const qtyCount = document.getElementById("qty-count");
+
+            let currentItem = {};
+            let qty = 1;
+
+// Open modal
+    document.querySelectorAll(".add-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+        currentItem = {
+        name: btn.dataset.name,
+        price: Number(btn.dataset.price.replace(/[^\d.]/g, "")),
+        img: btn.dataset.img,
+        desc: btn.dataset.desc
+        };
+
+        modalImg.src = currentItem.img;
+        modalTitle.textContent = currentItem.name;
+        modalDesc.textContent = currentItem.desc;
+
+        qty = 1;
+        qtyCount.textContent = qty;
+
+        modal.classList.add("show");
+        });
+        });
+
+ // Close
+        document.querySelector(".close-modal").onclick = () =>
+        modal.classList.remove("show");
+
+// Qty control
+        document.getElementById("qty-plus").onclick = () => {
+        qty++;
+        qtyCount.textContent = qty;
+        };
+
+        document.getElementById("qty-minus").onclick = () => {
+        if (qty > 1) {
+            qty--;
+            qtyCount.textContent = qty;
+        }
+        };
+
+// Add to cart
+        document.getElementById("add-to-cart-btn").onclick = () => {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        const existing = cart.find(i => i.name === currentItem.name);
+
+        if (existing) {
+            existing.qty += qty;
+            if (existing.qty < 1) existing.qty = 1;
+        } else {
+            cart.push({ ...currentItem, qty });
+        }
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+        updateCartBadge();
+        modal.classList.remove("show");
+        };
+
+        function updateCartBadge() {
+        const badge = document.getElementById("cart-badge");
+        if (!badge) return;
+
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+
+        if (totalQty > 0) {
+            badge.textContent = totalQty;
+            badge.style.display = "inline-block";
+        } else {
+            badge.style.display = "none";
+        }
+        }
+
+        /*  Refresh on page load */
+        document.addEventListener("DOMContentLoaded", updateCartBadge);

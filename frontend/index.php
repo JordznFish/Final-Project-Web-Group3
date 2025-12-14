@@ -54,10 +54,12 @@
                         </a>
                     </li>
                     <li>
-                        <a href="cart.php">
+                        <a href="cart.php" class="cart-link">
                             <img src="../img/cart_final.png" alt="Cart Icon" class="nav-icon"/>
+                            <span id="cart-count" class="cart-count">0</span>
                             <span class="tooltip">Cart</span>
                         </a>
+
                     </li>
                     <li>
                         <a href="javascript:void(0);" id="newsletter-btn">
@@ -170,18 +172,10 @@
                 <!-- Signboard and Category Buttons -->
                 <section id="upper-menu">
                     <div id="menu-signboard">
-                        <h2 id="current-category">All Menu</h2>
-                    </div>
-
-                    <div class="category-buttons">
-                        <button class="cat-btn active" data-category="all">All</button>
-                        <button class="cat-btn" data-category="main-dish">Main Dishes</button>
-                        <button class="cat-btn" data-category="snacks">Snacks</button>
-                        <button class="cat-btn" data-category="soups">Soups</button>
-                        <button class="cat-btn" data-category="desserts">Desserts</button>
-                        <button class="cat-btn" data-category="beverages">Beverages</button>
+                        <h2 id="current-category">Top Menu</h2>
                     </div>
                 </section>
+                
                 <!-- Food Menu Grid -->
                 <section id="food-menu">
                     <div class="menu-grid">
@@ -191,7 +185,11 @@
                             <h3>Tomato Curry Rice</h3>
                             <p class="desc">A hearty curry simmered with fresh tomatoes and a touch of island spice.</p>
                             <p class="price">NT$ 139</p>
-                            <button class="add-btn">+</button>
+                            <button class="add-btn"
+                            data-name= "Tomato Curry Rice"
+                            data-price="NT$ 139"
+                            data-img="../img/Tomato_Curry.jpg"
+                            data-desc="A hearty curry simmered with fresh tomateos and a touch of island spice">+</button>
                         </div>
                         
                         <div class="food-card main-dish">
@@ -199,7 +197,11 @@
                             <h3>Sea-Bass Pie</h3>
                             <p class="desc">Flaky crust stuffed with tender sea bass and creamy filling — a seaside comfort favorite.</p>
                             <p class="price">NT$ 199</p>
-                            <button class="add-btn">+</button>
+                            <button class="add-btn"
+                            data-name="Sea-Bass Pie"
+                            data-price="NT$ 199"
+                            data-img="../img/sea-bass-pie.jpg"
+                            data-desc="Flaky crust stuffed with tender sea bass and creamy filling">+</button>
                         </div>
                         
                         <div class="food-card main-dish">
@@ -207,7 +209,11 @@
                             <h3>Minestrone Soup</h3>
                             <p class="desc">A colorful vegetable soup bursting with warmth, perfect for a cozy evening.</p>
                             <p class="price">NT$ 119</p>
-                            <button class="add-btn">+</button>
+                            <button class="add-btn"
+                            data-name="Minestrone Soup"
+                            data-price="NT$ 119"
+                            data-img="../img/minestrone soup.jpg"
+                            data-desc="A colorful vegetable soup bursting with warmth, perfect for a cozy evening">+</button>
                         </div>
                         
                         <div class="food-card main-dish">
@@ -215,7 +221,11 @@
                             <h3>Aji Fry teishoku</h3>
                             <p class="desc">Golden-fried horse mackerel paired with fluffy rice, miso soup, and crisp seasonal greens.</p>
                             <p class="price">NT$ 199</p>
-                            <button class="add-btn">+</button>
+                            <button class="add-btn"
+                            data-name="Aji Fry"
+                            data-price="NT$ 199"
+                            data-img="../img/aji fry.jpg"
+                            data-desc="Golden-fried horse mackerel paired with fluffy rice, miso soup, and crisp seasonal greens">+</button>
                         </div>
 
                         <div class="food-card snacks">
@@ -223,7 +233,11 @@
                             <h3>French Fries</h3>
                             <p class="desc">Crispy, golden fries with just the right amount of salt — everyone’s favorite bite.</p>
                             <p class="price">NT$ 89</p>
-                            <button class="add-btn">+</button>
+                            <button class="add-btn"
+                            data-name="French Fries"
+                            data-price="NT$ 89"
+                            data-img="../img/french-fries.jpg"
+                            data-desc="Crispy, golden fries with just with the right amount of salt">+</button>
                         </div>
 
                         <div class="food-card snacks">
@@ -231,7 +245,11 @@
                             <h3>Sandwich</h3>
                             <p class="desc">Freshly made with soft bread, crisp veggies, and a generous layer of filling.</p>
                             <p class="price">NT$ 129</p>
-                            <button class="add-btn">+</button>
+                            <button class="add-btn"
+                             data-name="Sandwich"
+                            data-price="NT$ 129"
+                            data-img="../img/sandwich.jpg"
+                            data-desc="Freshly made with soft bread, crisp veggies, and a generous layer of filling">+</button>
                         </div>
 
                         <div class="food-card snacks">
@@ -239,7 +257,11 @@
                             <h3>Potato Croquettes</h3>
                             <p class="desc">Crunchy on the outside, fluffy inside — a classic comfort snack.</p>
                             <p class="price">NT$ 99</p>
-                            <button class="add-btn">+</button>
+                            <button class="add-btn"
+                            data-name="Sandwich"
+                            data-price="NT$ 129"
+                            data-img="../img/potato croquettes.jpg"
+                            data-desc="Freshly made with soft bread, crisp veggies, and a generous layer of filling">+</button>
                         </div>
 
                         <div class="food-card desserts">
@@ -247,7 +269,11 @@
                             <h3>Carrot Cake</h3>
                             <p class="desc">Sweet and moist cake with grated carrots and a touch of cinnamon.</p>
                             <p class="price">NT$ 149</p>
-                            <button class="add-btn">+</button>
+                            <button class="add-btn"
+                            data-name="Carrot Cake"
+                            data-price="NT$ 149"
+                            data-img="../img/carrot-cake.jpg"
+                            data-desc="Sweet and moist cake with grated carrots and a touch of cinnamon">+</button>
                         </div>
 
                         <div class="food-card desserts">
@@ -255,7 +281,11 @@
                             <h3>Apple Pie</h3>
                             <p class="desc">Buttery crust filled with caramelized apples — a timeless homemade dessert.</p>
                             <p class="price">NT$ 139</p>
-                            <button class="add-btn">+</button>
+                            <button class="add-btn"
+                            data-name="Apple Pie"
+                            data-price="NT$ 139"
+                            data-img="../img/apple-pie.jpg"
+                            data-desc="Buttery crust filled with caramelized apples">+</button>
                         </div>
 
                         <div class="food-card desserts">
@@ -263,7 +293,11 @@
                             <h3>Fruit Tart</h3>
                             <p class="desc">A colorful medley of fruits over smooth custard — as cheerful as it is delicious.</p>
                             <p class="price">NT$ 99</p>
-                            <button class="add-btn">+</button>
+                            <button class="add-btn"
+                            data-name="Fruit Tart"
+                            data-price="NT$ 99"
+                            data-img="../img/fruit-tart.jpg"
+                            data-desc="A colorful medley of fruits over smooth custard">+</button>
                         </div>
 
                         <div class="food-card soups">
@@ -271,7 +305,11 @@
                             <h3>Mushroom Soup</h3>
                             <p class="desc">Earthy, creamy, and aromatic — a bowl of pure woodland comfort.</p>
                             <p class="price">NT$ 49</p>
-                            <button class="add-btn">+</button>
+                            <button class="add-btn"
+                            data-name="Mushroom Soup"
+                            data-price="NT$ 49"
+                            data-img="../img/mushroom-soup.jpg"
+                            data-desc="Earthy, creamy, and aromatic">+</button>
                         </div>
 
                         <div class="food-card soups">
@@ -279,7 +317,11 @@
                             <h3>Carrot Potage</h3>
                             <p class="desc">Smooth, sweet carrot soup that feels like a warm hug on a cool day.</p>
                             <p class="price">NT$ 49</p>
-                            <button class="add-btn">+</button>
+                            <button class="add-btn"
+                            data-name="Carrot Potage"
+                            data-price="NT$ 49"
+                            data-img="../img/carrot-pottage.jpg"
+                            data-desc="Smooth, sweet carrot soup that feels like a warm hug on a cool day">+</button>
                         </div>
 
                         <div class="food-card beverages">
@@ -287,7 +329,11 @@
                             <h3>Strawberry Smoothie</h3>
                             <p class="desc">A refreshing blend of ripe strawberries and creamy milk.</p>
                             <p class="price">NT$ 79</p>
-                            <button class="add-btn">+</button>
+                            <button class="add-btn"
+                            data-name="Strawberry Smoothie"
+                            data-price="NT$ 79"
+                            data-img="../img/strawberry-smoothie.jpg"
+                            data-desc="A refreshing blend of ripe strawberries and creamy milk">+</button>
                         </div>
 
                         <div class="food-card beverages">
@@ -295,7 +341,11 @@
                             <h3>Banana Smoothie</h3>
                             <p class="desc">Thick, creamy, and naturally sweet — an all-time classic.</p>
                             <p class="price">NT$ 79</p>
-                            <button class="add-btn">+</button>
+                            <button class="add-btn"
+                            data-name="Banana Smoothie"
+                            data-price="NT$ 79"
+                            data-img="../img/banana-smoothie.jpg"
+                            data-desc="Thick, creamy, and naturally sweet">+</button>
                         </div>
 
                         <div class="food-card beverages">
@@ -303,16 +353,57 @@
                             <h3>Mango Smoothie</h3>
                             <p class="desc">Rich, velvety mango blended to perfection — a sweet tropical escape in every sip.</p>
                             <p class="price">NT$ 79</p>
-                            <button class="add-btn">+</button>
+                            <button class="add-btn"
+                            data-name="Mango Smoothie"
+                            data-price="NT$ 79"
+                            data-img="../img/mango-smoothie.jpg"
+                            data-desc="Rich, velvety mango blended to perfection">+</button>
                         </div>
                     </div>
+
+
+     <!-- FOOD DETAIL MODAL -->
+    
+            <div id="food-modal" class="food-modal">
+            <div class="food-modal-content">
+
+                <span class="close-modal">&times;</span>
+
+                <img id="modal-img" class="modal-img" alt="Food image">
+
+                <div class="modal-body">
+                <h2 id="modal-title"></h2>
+                <p id="modal-desc"></p>
+
+                <div class="modal-tabs">
+                    <button class="tab active">Options</button>
+                    <button class="tab">Details</button>
+                </div>
+
+                <textarea id="modal-note"
+                    placeholder="Special notes (no onions, less spicy...)"></textarea>
+                </div>
+
+                <div class="modal-footer">
+                <div class="modal-qty">
+                    <button id="qty-minus">−</button>
+                    <span id="qty-count">1</span>
+                    <button id="qty-plus">+</button>
+                </div>
+
+                <button id="add-to-cart-btn">Add to Cart</button>
+                </div>
+
+                </div>
+            </div>
+
                 </section>
             </main>
 
               <!-- ===================== -->
             <!-- REVIEWS SECTION -->
-            <!-- Owner: Steffani 
-            <!-- Content: Review section   
+            <!-- Owner: Steffani -->
+            <!-- Content: Review section -->  
             <!-- ===================== -->
             <section id="reviews">
             <div class="review-title">Customers Love</div>
