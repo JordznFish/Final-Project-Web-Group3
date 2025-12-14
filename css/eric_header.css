@@ -781,5 +781,58 @@ h2 {
 		width: 100%;
 		max-width: 100%;
 		box-sizing: border-box;
+		gap: 12px;
 	}
 }
+
+@media (max-width: 480px) {
+
+	/* Brown box should float with side gaps */
+	.brown-box {
+		width: calc(100% - 32px); /* 16px gap on each side */
+		max-width: 420px;        /* keeps it card-like */
+		margin: -70px auto 40px;
+		padding: 16px 14px;
+		border-radius: 18px;
+		box-sizing: border-box;
+	}
+
+	/* Ensure no child causes overflow */
+	.brown-box * {
+		max-width: 100%;
+		box-sizing: border-box;
+	}
+
+	/* Image fix */
+	.brown-image {
+		height: 240px;
+		margin-left: 0 !important;
+		transform: rotate(0deg) !important;
+	}
+
+	/* White content box */
+	.white-ac-box {
+		padding: 16px;
+	}
+
+	/* Pills stack cleanly */
+	.white-ac-box .delivery-pill {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 6px;
+	}
+
+	/* Time row stays horizontal */
+	.white-ac-box .delivery-pill .time-row {
+		display: flex;
+		flex-direction: row;
+		gap: 6px;
+	}
+
+	/* Free tag stays inside card */
+	.fee-pill .free-tag {
+		right: 6px;
+		top: -10px;
+	}
+}
+
