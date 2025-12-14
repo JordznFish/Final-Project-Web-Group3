@@ -133,9 +133,9 @@
                 <img src="../img/banner.jpg" alt="Animal Crossing Banner">
             </section>
 
-            <div class="ac-logo">
+            <!-- <div class="ac-logo">
                 <h1>Crossing <span class="eats">Eats</span></h1>
-            </div>
+            </div> -->
 
             <section class="brown-box">
                 <div class="brown-image">
