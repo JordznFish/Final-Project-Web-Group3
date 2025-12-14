@@ -506,12 +506,6 @@ h2 {
 	}
 }
 
-@media (max-width: 421px) {
-	.pill .delivery-pill {
-		height: 20px;
-	}
-}
-
 /* Max Width 1010px: Delivery row wrapping */
 @media (max-width: 1010px) {
 	.delivery-row {
@@ -719,7 +713,7 @@ h2 {
 	}
 
 	.white-ac-box .delivery-pill {
-		flex-direction: column;
+		flex-direction: column; 
 		gap: 4px;
 	}
 
@@ -733,5 +727,59 @@ h2 {
 		position: static;
 		display: inline-block;
 		margin-top: 5px;
+	}
+}
+
+@media (max-width: 480px) {
+
+	/* Reset forced column behavior */
+	.white-ac-box .delivery-pill {
+		flex-direction: column !important;
+		align-items: flex-start !important;
+		height: 40px;
+	}
+
+	/* Time row MUST stay horizontal */
+	.white-ac-box .delivery-pill .time-row {
+		display: flex !important;
+		flex-direction: row !important;
+		align-items: center;
+		gap: 6px;
+		white-space: nowrap;
+		width: 100%;
+		overflow: hidden;
+	}
+
+	/* Prevent wrapping + overflow */
+	.white-ac-box .delivery-pill .time,
+	.white-ac-box .delivery-pill .to {
+		flex: 0 0 auto;
+		white-space: nowrap;
+	}
+
+	.white-ac-box .delivery-pill .time {
+		font-size: 0.75rem;
+		padding: 3px 6px;
+	}
+}
+
+@media (max-width: 480px) {
+
+	/* Prevent rotated image overflow */
+	.brown-image {
+		margin-left: 0 !important;
+		transform: rotate(0deg) !important;
+	}
+
+	/* Prevent free tag from pushing page width */
+	.fee-pill .free-tag {
+		right: 0;
+	}
+
+	/* Ensure brown box never exceeds viewport */
+	.brown-box {
+		width: 100%;
+		max-width: 100%;
+		box-sizing: border-box;
 	}
 }

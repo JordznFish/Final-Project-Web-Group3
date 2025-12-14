@@ -149,7 +149,9 @@
                         <div class="delivery-row">
                             <div class="pill delivery-pill">
                                 <span class="label">Estimated Delivery:</span>
-                                <span class="time">09:00</span> to <span class="time">21:00</span>
+                                <div class="time-row">
+                                    <span class="time">09:00</span> to <span class="time">21:00</span>
+                                </div>
                             </div>
 
                             <div class="pill fee-pill">
