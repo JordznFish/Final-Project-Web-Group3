@@ -1,6 +1,40 @@
 # VERSION CONTROL RULES FOR PHASE 2 (VERY IMPORTANT)
 <p>Jordan here~ I hope everyone read this thoroughly so that we all are in the same page and it will 100% clear our confusion from phase 1</p>
 
+<h1>Quick Glance SOP when you are lost</h1>
+<p>
+  <h3>Procedures:</h3>
+  1. Pull remote main INTO local main <br>
+  2. Check if there's any merge conflict locally
+  3. Push working branch TO GitHub <br>
+  4. Open Pull Request (PR) using the working branch <br>
+  5. Merge PR INTO remote main <br>
+  6. Pull remote main INTO local main 
+</p>
+  <h3>In terminal commands:</h3>
+  <p>
+    
+     1. Sync local main
+    git checkout main
+    git pull origin main
+    
+     2. Sync working branch with main (IMPORTANT)
+    git checkout feature/your-branch
+    git merge main          # <-- conflict happens HERE if any
+  
+     3. Publish working branch
+    git push -u origin feature/your-branch (first time publishing) 
+    git push (for later pushes you just need to type this)
+    
+     4. Open PR on GitHub
+     5. Merge PR on GitHub
+  
+     6. Update local main after merge
+    git checkout main
+    git pull origin main
+  </p>
+
+
 <h2>Rule 1: Main branch = NEVER touch directly</h2>
 <ol>
   <li>no committing directly to main</li>
@@ -24,7 +58,8 @@ Examples: <br>
   <li>bugfix/date-format/cia</li>
   <li>bugfix/sql-error/jordan</li>
   <li>style/navbar-update/stef</li>
-  <li>might get up to 20-50 branches... but IT IS EXPECTED AND HEALTHY PRACTICE</li>
+  <li>might end up to 20-50 merged branches... but IT IS EXPECTED AND HEALTHY PRACTICE</li>
+  <li>Keep at most 4-5 working branches, finish one work at a time</li>
 </ul>
 <p>
   =>No one modifies the same files/content at the same time, from preventing merge conflicts <br>
