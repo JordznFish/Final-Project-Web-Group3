@@ -144,7 +144,7 @@
 
                 <div class="brown-info">
                     <div class="white-ac-box">
-                        <h2 class="title">Food Made With Love!</h2>
+                        <h2 class="title">Your cravings are on the way!</h2>
 
                         <div class="delivery-row">
                             <div class="pill delivery-pill">

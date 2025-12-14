@@ -1,704 +1,790 @@
+/* Headings */
+h2 {
+	font-size: 30px;
+	font-family: "Comic+Relief", cursive;
+}
+
+/* Top Bar */
 .top-bar {
-  background-color: #f1ed97; 
-  height: 50px;              
-  width: auto;
-  display: flex;
-  align-items: center;
-  padding: 0 32px;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
-  overflow: hidden;
+	background-color: #f1ed97;
+	height: 50px;
+	width: auto;
+	display: flex;
+	align-items: center;
+	padding: 0 32px;
+	box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+	background-image: radial-gradient(#fae035 1.2px, transparent 1.2px);
+	background-size: 10px 10px;
+	overflow: hidden;
 }
 
 .bar-logo {
-  margin: 0;
-  font-size: 26px;
-  font-family: "Comic+Relief", cursive;
-  color: #000;
-  white-space: nowrap;
+	margin: 0;
+	font-size: 26px;
+	font-family: "Comic+Relief", cursive;
+	color: #000;
+	white-space: nowrap;
 }
 
 .top-icons {
-  display: flex;
-  align-items: center;
-  gap: 22px;
-  margin-left: auto;
+	display: flex;
+	align-items: center;
+	gap: 22px;
+	margin-left: auto;
 }
 
 .top-icons .icon {
-  font-size: 22px;
-  text-decoration: none;
-  color: #000;
-  transition: transform 0.2s ease;
+	font-size: 22px;
+	text-decoration: none;
+	color: #000;
+	transition: transform 0.2s ease;
 }
 
 .top-icons .icon:hover {
-  transform: scale(1.15);
+	transform: scale(1.15);
 }
 
 .top-right-icon {
-  width: 24px;
-  height: 24px;
-  display: block;
+	width: 24px;
+	height: 24px;
+	display: block;
 }
 
-.search img{
-  width: 17px;
-  height: 17px;
-}
-
-.banner {
-  position: relative;
-  width: 100%;
-  height: 500px;
-  overflow: hidden;
-  border-bottom-left-radius: 100% 130px;
-  border-bottom-right-radius: 100% 130px;
-}
-
-.banner img {
-  width: 100%;
-  height: 140%;
-}
-
-.banner > img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 110%;
-  height: 110%;
-  object-fit: cover;
-  transform: translate(-50%, -50%) scale(1.08);
-  animation: panX 15s ease-in-out infinite alternate;
-}
-
-@keyframes panX {
-  0% { transform: translate(-56%, -50%) scale(1.08); }
-  100% { transform: translate(-44%, -50%) scale(1.08); }
-}
-
-/* headings */
-h2 {
-  font-size: 30px;
-  font-family: "Comic+Relief", cursive;
-}
-
-/* Brown box */
-.brown-box {
-  width: min(1000px, 80%);
-  height: auto;
-  margin: -110px auto 80px;
-  position: relative;
-  top: -15px;
-  z-index: 2;
-  background: #7f6951;
-  color: #fff;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  border-radius: 22px;
-  text-align: left;
-  background-image: radial-gradient(#8e785f 1.2px, transparent 1.2px);
-  background-size: 10px 10px;
-  box-shadow: 0 12px 24px rgba(0,0,0,.18);
-  padding: clamp(20px, 3vw, 30px);
-  align-items: stretch;
-  display: flex;
-  gap: 30px; 
-}
-
-/* Left image */
-.brown-image {
-  display: flex;
-  justify-content: center;
-  flex: 1 1 50%;
-  align-self: stretch; 
-  align-items: center; 
-}
-
-.brown-image img {
-  width: 100%;
-  height: 100%;       
-  object-fit: cover;  
-  border-radius: 35px; 
-  max-width: none; 
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-}
-
-/* Right content */
-.brown-info {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  flex: 1 1 50%; 
-}
-
-.white-ac-box {
-  background-color: #fffbf3; 
-  background-image: radial-gradient(#e6e2d3 1.5px, transparent 1.5px);
-  background-size: 18px 18px;
-  border-radius: 35px; 
-  box-shadow: 
-  inset 0 2px 10px rgba(0,0,0,0.05), 0 8px 20px rgba(0,0,0,0.15); 
-  display: flex;
-  flex-direction: column;
-  justify-content: center; 
-  box-sizing: border-box; 
-  padding: clamp(18px, 3vw, 28px);  
-  height: auto;                     
-  flex: 0 0 auto;                   
-  max-width: 95%;                   
-  margin: 0 auto; 
-}
-
-.white-ac-box h2.title {
-  color: #00867d; 
-  text-shadow: none; 
-  margin-top: 0;
-  font-size: clamp(2rem, 4vw, 2.8rem); 
-  text-align: left;
-}
-
-.white-ac-box h2.title::after {
-  background: #7ad0c7; 
-  margin-top: 15px;
-  margin-bottom: 25px;
-  width: 80px;
-}
-
-.ac-description {
-  color: #7f6951; 
-  font-size: 1.1rem;
-  line-height: 1.5;
-  margin-bottom: 30px;
-  font-weight: 600;
-}
-
-.white-ac-box .delivery-row {
-  margin-top: auto; 
-  width: 100%;
-}
-
-.white-ac-box .pill {
-  background: #00867d; 
-  color: #fff; 
-  box-shadow: 0 6px 12px rgba(0, 134, 125, 0.4); 
-  border: 2px solid #006d66; 
-}
-
-.white-ac-box .fee-pill {
-  background: linear-gradient(to bottom right, #009b90, #00867d);
-}
-
-
-.white-ac-box .pill .time,
-.white-ac-box .pill .price {
-  color: #00867d; 
-  font-weight: 700;
-}
-
-.white-ac-box .free-tag {
-  background: #ffd76b;
-  color: #5d3d1e;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+.search img {
+	width: 17px;
+	height: 17px;
 }
 
 /* Columns */
 .left-col,
 .right-col {
-  display: flex;
+	display: flex;
 }
 
 .left-col {
-  flex-direction: column;
-  flex: 1 1 58%;
-  min-width: 320px;
+	flex-direction: column;
+	flex: 1 1 58%;
+	min-width: 320px;
 }
 
 .right-col.promo {
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 16px;
-  flex: 1 1 42%;
-  min-width: 280px;
+	flex-direction: column;
+	align-items: flex-end;
+	gap: 16px;
+	flex: 1 1 42%;
+	min-width: 280px;
 }
 
 .right-col {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 12px;
-}
-
-
-.brown-box h2 {
-  font-size: clamp(2rem, 5vw, 3rem);
-  font-family: "Comic+Relief", cursive;
-  font-weight: 600;
-  margin: -10px 0 20px;
-  color: #fff;
-  text-align: left;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  position: relative;
-  padding-right: clamp(0px, 6vw, 120px);
-  text-shadow:
-    0 2px 2px #5d3d1e,   
-    0 4px 4px #5d3d1e,   
-    0 6px 6px #5d3d1e,   
-    0 -1px 1px #5d3d1e; 
-}
-
-.brown-box h2::after {
-  content: "";
-  display: block;
-  width: clamp(56px, 12vw, 100px);
-  height: 6px;
-  background: #eaf8ef;
-  border-radius: 3px;
-  margin-top: 10px;
-}
-
-/* Ribbon */
-.ribbon {
-  position: relative;
-  top: 0;
-  right: 0;
-  background-color: #eaf8ef;
-  color: #5d3d1e;
-  display: inline-block;
-  padding: 18px 24px;
-  border-radius: 12px;
-  width: auto;
-  max-width: clamp(260px, 32vw, 420px);
-  font-size: 1.3em;
-  font-weight: 600;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
-  text-decoration: none;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  line-height: 1.4;
-  flex: 0 0 auto;
-  overflow: visible;
-  z-index: 2;
-}
-
-.ribbon:link,
-.ribbon:visited,
-.ribbon:hover,
-.ribbon:active {
-  color: #5d3d1e;
-  text-decoration: none;
-}
-
-.ribbon::after {
-  content: "";
-  position: absolute;
-  right: 10px;
-  bottom: -12px;
-  pointer-events: none;
-  border-style: solid;
-  border-width: 12px 12px 0 12px;
-  border-color: #dfeee2 transparent transparent transparent;
-}
-
-.ribbon:hover {
-  transform: scale(1.05);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-}
-
-.ribbon-sub {
-  display: block;
-  font-size: 0.9em;
-  margin-top: 6px;
-  color: rgb(123, 122, 122);
-  font-style: italic;
-}
-
-/* fox sticker */
-.character {
-  position: static;
-  margin-top: 6px;
-  align-self: flex-end;
-  padding-bottom: 0;
-  bottom: -6px;
-  right: 0;
-  width: clamp(100px, 18vw, 180px);
-  height: auto;
-  z-index: 1;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	gap: 12px;
 }
 
 /* Information */
-.title { margin: 0 0 8px; }
-
-.delivery-row {
-  margin-top: clamp(10px, 2vw, 18px);
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  align-items: stretch; 
-}
-
-.delivery-row .pill {
-  display: flex; 
-  align-items: center;
-  gap: 6px;
-  background: #eaf8ef;
-  box-shadow: 0 6px 12px rgba(0,0,0,.18);
-  color: #5d3d1e;
-  font-weight: 800;
-  border-radius: 12px;
-  font-size: 0.9rem;
-  padding: 6px 12px;
-  width: 100%; 
-  flex: 1 1 auto; 
-  min-width: unset;
-  max-width: 100%;
-  box-sizing: border-box; 
-}
-
-.delivery-pill .label { 
-  opacity: .9; 
-}
-
-.delivery-pill .time {
-  background: #fff;
-  border-radius: 8px;
-  padding: 4px 10px;
-  font-family: "Courier New", monospace;
-  letter-spacing: 1px;
-  box-shadow: inset 0 0 4px rgba(0,0,0,.12);
-}
-
-.delivery-pill .to { opacity: .8; }
-
-/* Fee Pill */
-.fee-pill {
-  position: relative;
-  background: linear-gradient(#fefefe, #eefcf3);
-  padding-right: 18px;
-}
-
-.fee-pill .truck { font-size: 1.1em; transform: translateY(1px); }
-.fee-pill .fee-label { opacity: .9; }
-
-.fee-pill .price {
-  background: #fff;
-  border-radius: 999px;
-  padding: 4px 10px;
-  box-shadow: inset 0 0 3px rgba(0,0,0,.1);
-  font-weight: 900;
-}
-
-.fee-pill .price strong { font-size: 1.05em; }
-
-.fee-pill .free-tag {
-  position: absolute;
-  right: -6px;
-  top: -8px;
-  background: #ffd76b;
-  color: #5d3d1e;
-  font-weight: 900;
-  font-size: .72rem;
-  padding: 3px 8px;
-  border-radius: 6px;
-  box-shadow: 0 4px 8px rgba(0,0,0,.15);
-}
-
-.delivery-pill .time,
-.fee-pill .price {
-  padding: 3px 8px;
-  font-size: 0.85rem;
-}
-
-.ac-logo {
-  position: absolute;
-  top: clamp(120px, 14vh, 150px);
-  left: 50%;
-  transform: translateX(-50%);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  gap: 14px;
-  white-space: nowrap;                 /* prevent wrapping */
-  background-image: url("../img/wood.jpg");
-  background-size: cover;
-  background-position: center;
-  border: 4px solid #8b5a2b;
-  border-radius: 18px;
-  box-shadow: 0 10px 0 #5a3818, 0 12px 18px rgba(0, 0, 0, 0.3);
-  font-family: 'Fascinate', 'Comic Sans MS', cursive;
-  color: #ffae00;
-  text-shadow:
-    0 2px 2px rgba(0,0,0,0.6),
-    0 4px 4px rgba(0,0,0,0.5),
-    0 6px 6px rgba(0,0,0,0.4),
-    0 -1px 1px rgba(255,255,255,0.15);
-  opacity: 0.95;
-  transition: all 0.3s ease;
-  animation: float 3s ease-in-out infinite;
-  padding: clamp(10px, 1.2vw, 18px) clamp(22px, 2vw, 36px);
-  width: fit-content;                  /* key: auto width to fit text */
-  max-width: 90vw;                     /* keep safe margin on smaller screens */
-}
-
-.ac-logo h1 {
-  margin: 0;
-  font-size: clamp(2rem, 3.5vw, 2.8rem);
-  line-height: 1.1;
-}
-
-.ac-logo .eats {
-  color: #279f27;
-  font-size: clamp(1.8rem, 3vw, 2.6rem);
-}
-
-@media (max-width: 768px) {
-  .ac-logo {
-    padding: 10px 20px;
-    border-radius: 16px;
-    box-shadow: 0 8px 0 #5a3818, 0 10px 14px rgba(0, 0, 0, 0.25);
-    top: 150px;
-  }
-}
-
-
-@keyframes float {
-  0%, 100% { transform: translate(-50%, 0); }
-  50% { transform: translate(-50%, -5px); }
+.title {
+	margin: 0 0 8px;
 }
 
 /* Title + Ribbon Row */
 .title-row {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: clamp(12px, 2vw, 24px);
-  margin-bottom: clamp(10px, 2vw, 16px);
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: clamp(12px, 2vw, 24px);
+	margin-bottom: clamp(10px, 2vw, 16px);
 }
 
-/* Responsive */
+/*
+ * =========================================
+ * 2. BANNER SECTION
+ * =========================================
+ */
+
+.banner {
+	position: relative;
+	width: 100%;
+	height: 500px;
+	overflow: hidden;
+	border-bottom-left-radius: 100% 130px;
+	border-bottom-right-radius: 100% 130px;
+}
+
+.banner img {
+	width: 100%;
+	height: 140%;
+}
+
+.banner > img {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 110%;
+	height: 110%;
+	object-fit: cover;
+	transform: translate(-50%, -50%) scale(1.08);
+	animation: panX 15s ease-in-out infinite alternate;
+}
+
+@keyframes panX {
+	0% {
+		transform: translate(-56%, -50%) scale(1.08);
+	}
+	100% {
+		transform: translate(-44%, -50%) scale(1.08);
+	}
+}
+
+/* AC Logo (Wood Plaque) */
+.ac-logo {
+	position: absolute;
+	top: clamp(120px, 14vh, 150px);
+	left: 50%;
+	transform: translateX(-50%);
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: row;
+	gap: 14px;
+	white-space: nowrap;
+	background-image: url("../img/wood.jpg");
+	background-size: cover;
+	background-position: center;
+	border: 4px solid #8b5a2b;
+	border-radius: 18px;
+	box-shadow: 0 10px 0 #5a3818, 0 12px 18px rgba(0, 0, 0, 0.3);
+	font-family: 'Fascinate', 'Comic Sans MS', cursive;
+	color: #ffae00;
+	text-shadow: 0 2px 2px rgba(0, 0, 0, 0.6),
+		0 4px 4px rgba(0, 0, 0, 0.5),
+		0 6px 6px rgba(0, 0, 0, 0.4),
+		0 -1px 1px rgba(255, 255, 255, 0.15);
+	opacity: 0.95;
+	transition: all 0.3s ease;
+	animation: float 3s ease-in-out infinite;
+	padding: clamp(10px, 1.2vw, 18px) clamp(22px, 2vw, 36px);
+	width: fit-content;
+	max-width: 90vw;
+}
+
+.ac-logo h1 {
+	margin: 0;
+	font-size: clamp(2rem, 3.5vw, 2.8rem);
+	line-height: 1.1;
+}
+
+.ac-logo .eats {
+	color: #279f27;
+	font-size: clamp(1.8rem, 3vw, 2.6rem);
+}
+
+@keyframes float {
+	0%,
+	100% {
+		transform: translate(-50%, 0);
+	}
+	50% {
+		transform: translate(-50%, -5px);
+	}
+}
+
+/*
+ * =========================================
+ * 3. BROWN BOX SECTION
+ * =========================================
+ */
+
+/* Brown box container */
+.brown-box {
+	width: min(1000px, 80%);
+	height: auto;
+	margin: -110px auto 80px;
+	position: relative;
+	top: -15px;
+	z-index: 2;
+	background: #7f6951;
+	color: #fff;
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	border-radius: 22px;
+	text-align: left;
+	background-image: radial-gradient(#8e785f 1.2px, transparent 1.2px);
+	background-size: 10px 10px;
+	box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
+	padding: clamp(20px, 3vw, 30px);
+	align-items: center;
+	display: flex;
+	gap: 30px;
+}
+
+/* Brown box Title */
+.brown-box h2 {
+	font-size: clamp(2rem, 5vw, 3rem);
+	font-family: "Comic+Relief", cursive;
+	font-weight: 600;
+	margin: -10px 0 20px;
+	color: #fff;
+	text-align: left;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	position: relative;
+	padding-right: clamp(0px, 6vw, 120px);
+	text-shadow: 0 2px 2px #5d3d1e,
+		0 4px 4px #5d3d1e,
+		0 6px 6px #5d3d1e,
+		0 -1px 1px #5d3d1e;
+}
+
+.brown-box h2::after {
+	content: "";
+	display: block;
+	width: clamp(56px, 12vw, 100px);
+	height: 6px;
+	background: #eaf8ef;
+	border-radius: 3px;
+	margin-top: 10px;
+}
+
+/* Brown box Image */
+.brown-image {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex: 0 0 60%;
+	max-width: 60%;
+	height: 400px;
+	margin-top: -6px;
+	margin-left: -10px;
+	border: 20px solid #ffffff;
+	background-color: #ffffff;
+	transform: rotate(-3deg);
+	box-shadow: 10px 15px 30px rgba(0, 0, 0, 0.3);
+	box-sizing: border-box;
+	align-self: center;
+	transition: transform 0.3s ease;
+}
+
+.brown-image:hover {
+	transform: rotate(-2deg) scale(1.02);
+}
+
+.brown-image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+}
+
+.brown-info {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	flex: 0 0 36%;
+	max-width: 36%;
+}
+
+/*
+ * =========================================
+ * 4. WHITE AC BOX SECTION (Nested)
+ * =========================================
+ */
+
+.white-ac-box {
+	background-color: #fffbf3;
+	background-image: radial-gradient(#e6e2d3 1.5px, transparent 1.5px);
+	background-size: 18px 18px;
+	border-radius: 25px;
+	box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.05), 0 8px 20px rgba(0, 0, 0, 0.15);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	box-sizing: border-box;
+	padding: 20px;
+	height: auto;
+	flex: 0 0 auto;
+	max-width: 100%;
+	margin: 0 auto;
+	height: auto;
+	border: 4px solid #278678;
+}
+
+.white-ac-box h2.title {
+	color: #00867d;
+	text-shadow: none;
+	margin-top: 0;
+	font-size: 2.4rem;
+	text-align: left;
+	line-height: 1.2;
+}
+
+.white-ac-box h2.title::after {
+	background: #7ad0c7;
+	margin-top: 10px;
+	margin-bottom: 15px;
+	width: 60px;
+	height: 4px;
+}
+
+.ac-description {
+	color: #7f6951;
+	font-size: 1.1rem;
+	line-height: 1.5;
+	margin-bottom: 30px;
+	font-weight: 600;
+}
+
+.white-ac-box .delivery-row {
+	margin-top: auto;
+	width: 100%;
+}
+
+/* Generic Pill Styles */
+.white-ac-box .pill {
+	background: #00867d;
+	color: #fff;
+	box-shadow: 0 4px 8px rgba(0, 134, 125, 0.4);
+	border: 2px solid #006d66;
+	font-size: 0.8rem;
+	padding: 4px 10px;
+}
+
+.white-ac-box .pill .time,
+.white-ac-box .pill .price {
+	color: #00867d;
+	font-weight: 700;
+}
+
+/* Delivery Row (within Brown Box) */
+.delivery-row {
+	margin-top: clamp(10px, 2vw, 18px);
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
+	align-items: stretch;
+}
+
+.delivery-row .pill {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	background: #eaf8ef;
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.18);
+	color: #5d3d1e;
+	font-weight: 800;
+	border-radius: 12px;
+	font-size: 0.9rem;
+	padding: 6px 12px;
+	width: 100%;
+	flex: 1 1 auto;
+	min-width: unset;
+	max-width: 100%;
+	box-sizing: border-box;
+}
+
+/* Specific Delivery Pill Styles */
+.delivery-pill .label {
+	opacity: 0.9;
+}
+
+.delivery-pill .time {
+	background: #fff;
+	border-radius: 8px;
+	padding: 4px 10px;
+	font-family: "Courier New", monospace;
+	letter-spacing: 1px;
+	box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.12);
+}
+
+.delivery-pill .to {
+	opacity: 0.8;
+}
+
+.delivery-pill .time,
+.fee-pill .price {
+	padding: 3px 8px;
+	font-size: 0.85rem;
+}
+
+/* Specific Fee Pill Styles */
+.fee-pill {
+	position: relative;
+	background: linear-gradient(#fefefe, #eefcf3);
+	padding-right: 18px;
+}
+
+.fee-pill .truck {
+	font-size: 1.1em;
+	transform: translateY(1px);
+}
+.fee-pill .fee-label {
+	opacity: 0.9;
+}
+
+.fee-pill .price {
+	background: #fff;
+	border-radius: 999px;
+	padding: 4px 10px;
+	box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.1);
+	font-weight: 900;
+}
+
+.fee-pill .price strong {
+	font-size: 1.05em;
+}
+
+.fee-pill .free-tag {
+	position: absolute;
+	right: -6px;
+	top: -8px;
+	background: #ffd76b;
+	color: #5d3d1e;
+	font-weight: 900;
+	font-size: 0.72rem;
+	padding: 3px 8px;
+	border-radius: 6px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* White AC Box Pill Tweaks */
+.white-ac-box .fee-pill .price {
+	color: #00867d;
+}
+
+.white-ac-box .free-tag {
+	background: #ffd76b;
+	color: #5d3d1e;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.white-ac-box .delivery-pill .time,
+.white-ac-box .fee-pill .price {
+	padding: 2px 6px;
+	font-size: 0.8rem;
+}
+
+.white-ac-box .fee-pill .free-tag {
+	right: -4px;
+	top: -10px;
+	font-size: 0.65rem;
+	padding: 2px 6px;
+}
+
+/*
+ * =========================================
+ * 5. RESPONSIVE MEDIA QUERIES
+ * =========================================
+ */
+
+/* Max Width 1024px: Tablet/Mid-Screen Stack */
+@media (max-width: 1024px) {
+	/* Brown Box: Switch to Vertical Stack */
+	.brown-box {
+		flex-direction: column; /* Key: Stack items vertically */
+		gap: 20px;
+		width: 90%; /* Increase width slightly for better use of space */
+		margin: -80px auto 60px;
+		padding: 20px;
+		align-items: center; /* Center stacked items */
+	}
+
+	/* Brown Image: Reset TILT and fixed dimensions for stacking */
+	.brown-image {
+		flex: 1 1 auto; /* Take natural space */
+		width: 100%; /* Take full width of parent (brown-box) */
+		max-width: 100%;
+		height: 300px; /* Fixed height for visual consistency */
+		margin-top: 0;
+		margin-left: 0;
+		transform: rotate(0deg); /* Remove tilt on mobile/tablet */
+		border: 15px solid #ffffff; /* Slightly smaller border on mobile */
+		box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+		margin-bottom: 20px; /* Added from 900px block */
+	}
+
+	/* Brown Info: Take full width */
+	.brown-info {
+		flex: 1 1 auto;
+		width: 100%;
+		max-width: 100%;
+	}
+
+	/* White AC Box: Center content */
+	.white-ac-box {
+		height: auto; /* Let content dictate height */
+		min-height: unset;
+		padding: 20px;
+		text-align: center; /* Center-align text */
+		align-items: center;
+	}
+
+	.white-ac-box h2.title {
+		text-align: center; /* Center-align title */
+		font-size: clamp(1.8rem, 5vw, 2.4rem); /* Adjust font size */
+	}
+
+	/* Center the title underline */
+	.white-ac-box h2.title::after {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	/* Delivery Pills: Stack pills vertically and center content */
+	.white-ac-box .delivery-row {
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	.white-ac-box .pill {
+		width: 100%;
+		justify-content: center; /* Center content in pills */
+	}
+}
+
+@media (max-width: 502px) {
+	.top-bar {
+		margin-top: 28px;
+	}
+}
+
+@media (max-width: 421px) {
+	.pill .delivery-pill {
+		height: 20px;
+	}
+}
+
+/* Max Width 1010px: Delivery row wrapping */
 @media (max-width: 1010px) {
-  .delivery-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-  .delivery-row .pill {
-    flex: 1 1 100%;
-    min-width: 0;
-    max-width: 100%;
-    justify-content: left;
-  }
-  .delivery-pill { order: 1; }
-  .fee-pill { order: 2; }
+	.delivery-row {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 12px;
+	}
+	.delivery-row .pill {
+		flex: 1 1 100%;
+		min-width: 0;
+		max-width: 100%;
+		justify-content: left;
+	}
+	.delivery-pill {
+		order: 1;
+	}
+	.fee-pill {
+		order: 2;
+	}
 }
 
+/* Max Width 900px: Reset image flex/size and ensure proper stacking */
+@media (max-width: 900px) {
+	.brown-box {
+		/* Reset alignments for mobile stack view */
+		align-items: center;
+		flex-direction: column; /* Stack vertically on smaller screens (redundant, but keeping original rule) */
+		gap: 20px; /* Reduced gap between stacked items */
+		padding: 20px;
+	}
+
+	.brown-image,
+	.brown-info {
+		flex: 1 1 auto; /* Reset flex to auto for vertical stacking */
+		width: 100%; /* Take full width */
+		max-width: 100%;
+	}
+
+	.brown-image {
+		height: 300px; /* Give a fixed height for the image wrapper */
+		align-self: center;
+
+		/* RESET OVERFLOW MARGINS AND TILT ON MOBILE (from previous 1024px block, but keeping this specific rule) */
+		margin-top: 0;
+		margin-left: 0;
+		transform: rotate(0deg);
+		border: 15px solid #ffffff; /* Use standard border on mobile */
+		box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+		margin-bottom: 20px;
+	}
+
+	.brown-image img {
+		height: 100%;
+		max-width: 100%;
+	}
+
+	.white-ac-box {
+		/* Remove fixed height on mobile so it just fits content */
+		height: auto;
+		align-items: center;
+		text-align: center;
+		min-height: 250px;
+		padding: 25px;
+	}
+
+	.white-ac-box h2.title {
+		text-align: center;
+	}
+
+	.white-ac-box h2.title::after {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	/* Ensure pills stack nicely inside the white box on mobile */
+	.white-ac-box .delivery-row {
+		flex-direction: column;
+	}
+
+	.white-ac-box .pill {
+		width: 100%;
+		justify-content: center;
+	}
+}
+
+/* Max Width 890px: Ribbon and Character adjustments */
 @media (max-width: 890px) {
-  .brown-box {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .right-col {
-    align-items: flex-start;
-    width: 100%;
-    gap: 10px;
-  }
-  .ribbon {
-    flex: 0 0 auto;
-    width: auto;
-    max-width: 92%;
-    padding: 14px 18px;
-    overflow: visible;
-    margin: 6px 0 0;
-  }
-  .ribbon::after {
-    right: 16px;
-    bottom: -10px;
-  }
-  .character {
-    position: static;
-    margin-top: 8px;
-    width: clamp(110px, 30vw, 150px);
-  }
+	.brown-box {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	.right-col {
+		align-items: flex-start;
+		width: 100%;
+		gap: 10px;
+	}
 }
 
+/* Max Width 768px: AC Logo tweak */
+@media (max-width: 768px) {
+	.ac-logo {
+		padding: 10px 20px;
+		border-radius: 16px;
+		box-shadow: 0 8px 0 #5a3818, 0 10px 14px rgba(0, 0, 0, 0.25);
+		top: 150px;
+	}
+}
+
+/* Max Width 700px: Title/Ribbon stack and pill cleanup */
 @media (max-width: 700px) {
-  .title-row {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .ribbon {
-    width: 100%;
-  }
-  .delivery-row { gap: 10px; }
-  .pill { width: 100%; justify-content: center; }
-  .fee-pill .free-tag { right: 4px; top: -10px; }
+	.title-row {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	.delivery-row {
+		gap: 10px;
+	}
+	.pill {
+		width: 100%;
+		justify-content: center;
+	}
+	.fee-pill .free-tag {
+		right: 4px;
+		top: -10px;
+	}
 }
 
-@media (max-width: 420px) {
-  .brown-box {
-    width: 92%;
-    margin: -70px auto 40px;
-    padding: 14px 12px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-  }
-  .left-col, .right-col { width: 100%; min-width: 0; }
-  .delivery-row {
-    display: grid !important;
-    grid-template-columns: 1fr;
-    gap: 10px;
-    width: 100%;
-  }
-  .delivery-row > .pill {
-    min-width: 0 !important;
-    width: 100% !important;
-    flex: 0 0 auto !important;
-    padding: 10px 12px;
-    border-radius: 12px;
-    flex-wrap: wrap;
-    justify-content: left;
-    box-sizing: border-box;
-  }
-  .delivery-pill .label { flex: 1 1 100%; margin-bottom: 6px; }
-  .delivery-pill .time { padding: 4px 8px; letter-spacing: 1px; }
-  .fee-pill { row-gap: 8px; }
-  .fee-pill .price { padding: 4px 8px; }
-  .fee-pill .free-tag {
-    display: inline-block;
-    position: absolute;
-    top: -17px;
-    margin-left: 8px;
-    margin-top: 6px;
-  }
-  .right-col { align-items: flex-start; gap: 8px; }
-  .ribbon {
-    width: auto;
-    max-width: 92%;
-    padding: 12px 14px;
-    line-height: 1.35;
-    margin-top: 6px;
-    overflow: visible;
-  }
-  .ribbon::after {
-    right: 16px;
-    bottom: -10px;
-    border-width: 10px 10px 0 10px;
-  }
-  .character {
-    position: static;
-    margin-top: 8px;
-    width: clamp(110px, 35vw, 140px);
-  }
-}
-
+/* Max Width 600px: Brown box padding/margin tweak */
 @media (max-width: 600px) {
-  .brown-box {
-    width: 88%;                
-    margin: -80px auto 60px;   
-    padding: 18px 14px;        
-    border-radius: 20px;  
-  }     
+	.brown-box {
+		width: 88%;
+		margin: -80px auto 60px;
+		padding: 18px 14px;
+		border-radius: 20px;
+	}
 }
 
-@media (max-width: 375px) {
-  .brown-box {
-    width: 84%;                
-    margin: -60px auto 50px;   
-    padding: 14px 12px;
-    border-radius: 18px;
-  }
-}
-
-/* Mobile behavior */
-@media (max-width: 900px) {
-  .brown-box {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .brown-image img {
-    max-width: 100%;
-  }
-
-  .brown-info {
-    width: 100%;
-  }
-}
-
-/* =========================================
-   RESPONSIVE TWEAKS
-   ========================================= */
-
-@media (max-width: 900px) {
-  .brown-box {
-    /* Reset alignments for mobile stack view */
-    align-items: center;
-  }
-  .white-ac-box {
-    /* Remove fixed height on mobile so it just fits content */
-    height: auto; 
-    align-items: center;
-    text-align: center;
-  }
-  .white-ac-box h2.title {
-      text-align: center;
-  }
-  .white-ac-box h2.title::after {
-      margin-left: auto;
-      margin-right: auto;
-  }
-  
-  /* Ensure pills stack nicely inside the white box on mobile */
-  .white-ac-box .delivery-row {
-      flex-direction: column;
-  }
-   .white-ac-box .pill {
-       width: 100%;
-       justify-content: center;
-   }
-}
-
-/* Tiny tweak for the delivery time pill layout on smaller screens */
+/* Max Width 420px: Small mobile layout adjustments */
 @media (max-width: 420px) {
-    .white-ac-box .delivery-pill {
-        flex-direction: column;
-        gap: 5px;
-    }
+	.brown-box {
+		width: 92%;
+		margin: -70px auto 40px;
+		padding: 14px 12px;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 12px;
+	}
+	.left-col,
+	.right-col {
+		width: 100%;
+		min-width: 0;
+	}
+	.delivery-row {
+		display: grid !important;
+		grid-template-columns: 1fr;
+		gap: 10px;
+		width: 100%;
+	}
+	.delivery-row > .pill {
+		min-width: 0 !important;
+		width: 100% !important;
+		flex: 0 0 auto !important;
+		padding: 10px 12px;
+		border-radius: 12px;
+		flex-wrap: wrap;
+		justify-content: left;
+		box-sizing: border-box;
+	}
+	.delivery-pill .label {
+		flex: 1 1 100%;
+		margin-bottom: 6px;
+	}
+	.delivery-pill .time {
+		padding: 4px 8px;
+		letter-spacing: 1px;
+	}
+	.fee-pill {
+		row-gap: 8px;
+	}
+	.fee-pill .price {
+		padding: 4px 8px;
+	}
+	.fee-pill .free-tag {
+		display: inline-block;
+		position: absolute;
+		top: -17px;
+		margin-left: 8px;
+		margin-top: 6px;
+	}
+	.right-col {
+		align-items: flex-start;
+		gap: 8px;
+	}
+	.white-ac-box .delivery-pill {
+		flex-direction: column;
+		gap: 5px;
+	}
 }
 
-/* =========================================
-   4. Mobile (Adjusted for Clean Stacking)
-   ========================================= */
-@media (max-width: 900px) {
-    .brown-box {
-        flex-direction: column; /* Stack vertically on smaller screens */
-        gap: 20px; /* Reduced gap between stacked items */
-        padding: 20px;
-    }
+/* Max Width 375px: Extra small mobile adjustments */
+@media (max-width: 375px) {
+	.brown-box {
+		width: 95%; 
+		margin: -70px auto 40px; 
+		padding: 15px; 
+		border-radius: 18px; 
+	}
 
-    .brown-image, 
-    .brown-info {
-        flex: 1 1 auto; /* Reset flex to auto for vertical stacking */
-        width: 100%;    /* Take full width */
-    }
-    
-    .brown-image {
-        height: 300px; /* Give a fixed height for the image wrapper */
-        align-self: center;
-    }
-    
-    .brown-image img {
-        height: 100%;
-        max-width: 100%;
-    }
+	.brown-image {
+		height: 250px; 
+	}
 
-    .white-ac-box {
-        height: auto; /* Let text dictate height on mobile */
-        min-height: 250px;
-        padding: 25px;
-    }
+	.white-ac-box {
+		padding: 15px;
+	}
+
+	.white-ac-box .delivery-pill {
+		flex-direction: column;
+		gap: 4px;
+	}
+
+	.delivery-pill .label {
+		width: 100%;
+		text-align: center;
+		margin-bottom: 2px;
+	}
+
+	.fee-pill .free-tag {
+		position: static;
+		display: inline-block;
+		margin-top: 5px;
+	}
 }
-
