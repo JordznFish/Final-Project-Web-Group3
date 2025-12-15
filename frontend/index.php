@@ -133,10 +133,6 @@
                 <img src="../img/banner.jpg" alt="Animal Crossing Banner">
             </section>
 
-            <!-- <div class="ac-logo">
-                <h1>Crossing <span class="eats">Eats</span></h1>
-            </div> -->
-
             <section class="brown-box">
                 <div class="brown-image">
                     <img src="../img/feature-image.jpg" alt="Featured Food">
@@ -149,7 +145,9 @@
                         <div class="delivery-row">
                             <div class="pill delivery-pill">
                                 <span class="label">Estimated Delivery:</span>
-                                <span class="time">09:00</span> to <span class="time">21:00</span>
+                                <div class="time-row">
+                                    <span class="time">09:00</span> to <span class="time">21:00</span>
+                                </div>
                             </div>
 
                             <div class="pill fee-pill">
