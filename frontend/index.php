@@ -172,7 +172,7 @@
                 <!-- Signboard and Category Buttons -->
                 <section id="upper-menu">
                     <div id="menu-signboard">
-                        <h2 id="current-category">Top Menu</h2>
+                        <h2 id="current-category">Top Sellers</h2>
                     </div>
                 </section>
                 

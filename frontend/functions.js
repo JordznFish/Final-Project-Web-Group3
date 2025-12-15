@@ -128,20 +128,21 @@ document.addEventListener("DOMContentLoaded", () => {
         modal.classList.remove("show");
         };
 
+        
+
         function updateCartBadge() {
-        const badge = document.getElementById("cart-badge");
+        const badge = document.getElementById("cart-count");
         if (!badge) return;
 
         const cart = JSON.parse(localStorage.getItem("cart")) || [];
-        const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+        const totalQty = cart.reduce((sum, item) => sum + (item.qty || 0), 0);
 
-        if (totalQty > 0) {
-            badge.textContent = totalQty;
-            badge.style.display = "inline-block";
-        } else {
-            badge.style.display = "none";
-        }
+        badge.textContent = totalQty;
+
+        // optional: hide when 0
+        badge.style.display = totalQty > 0 ? "inline-block" : "none";
         }
 
-        /*  Refresh on page load */
+        // refresh on load
         document.addEventListener("DOMContentLoaded", updateCartBadge);
+
