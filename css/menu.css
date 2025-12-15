@@ -1,3 +1,147 @@
+:root{
+  --green:#2fa84f;
+  --deep-green:#1f7c3a;
+  --cream:#fff7e6;
+  --paper:#fffaf2;
+  --brown:#6b3f26;
+  --shadow: 0 10px 24px rgba(0,0,0,.12);
+  --radius: 18px;
+}
+
+/* Page */
+body{
+  margin: 0;
+  padding: 32px 18px 48px;
+  background: var(--cream);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background-color: #fff7e6;
+background-image:
+  linear-gradient(90deg, rgba(255, 210, 120, 0.25) 50%, transparent 50%),
+  linear-gradient(rgba(255, 210, 120, 0.25) 50%, transparent 50%);
+background-size: 40px 40px;
+}
+
+/* ===== Search bar ===== */
+.menu-search{
+  max-width: 1100px;
+  margin: 0 auto 22px;
+  display: flex;
+  justify-content: center;
+  position: relative; /* important */
+}
+
+.menu-search form{
+  width: 760px;                 /* big centered */
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+
+  padding: 10px;
+  background: var(--paper);
+  border-radius: 999px;
+  border: 3px solid rgba(47,168,79,.45);
+  box-shadow: 0 8px 18px rgba(0,0,0,.08);
+}
+
+.menu-search input{
+  border: 0;
+  outline: 0;
+  background: transparent;
+  font-size: 18px;
+  padding: 10px 14px;
+}
+
+.menu-search button{
+  border: 0;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: var(--green);
+  color: #fff;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 6px 12px rgba(0,0,0,.12);
+}
+
+/* ===== Cards grid ===== */
+.menu-container{
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  gap: 22px;
+
+  /* base grid (we can make it responsive later) */
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* Empty state */
+.no-result{
+  grid-column: 1 / -1;
+  text-align: center;
+  background: var(--paper);
+  border: 2px dashed rgba(107,63,38,.35);
+  padding: 18px;
+  border-radius: 14px;
+  color: rgba(0,0,0,.7);
+}
+
+/* ===== Card style ===== */
+.menu-card{
+  background: var(--paper);
+  border-radius: var(--radius);
+  border: 3px solid rgba(47,168,79,.35);
+  box-shadow: var(--shadow);
+  padding: 14px;
+
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 12px;
+
+  position: relative;   /* 👈 ADD THIS LINE */
+}
+
+.menu-card img{
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 2px solid rgba(0,0,0,.08);
+}
+
+.menu-info{
+  display: grid;
+  gap: 8px;
+  align-content: start;
+}
+
+.menu-info h3{
+  margin: 0;
+  display: inline-block;
+  width: fit-content;
+
+  background: var(--deep-green);
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 16px;
+}
+
+.menu-info p{
+  margin: 0;
+  color: rgba(0,0,0,.72);
+  line-height: 1.35;
+  font-size: 14px;
+}
+
+/* Price tag */
+.price{
+  width: fit-content;
+  font-weight: 900;
+  color: var(--brown);
+  background: #ffeab6;
+  padding: 6px 10px;
+  border-radius: 10px;
+  border: 2px dashed rgba(107,63,38,.35);
+}
 img {
     width: 70px;
     height: 70px;
