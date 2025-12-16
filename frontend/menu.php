@@ -41,14 +41,18 @@
         <?php } 
         else {?>
             <?php foreach ($foods as $food) {?>
-                <div class="menu-card">
-                    <img src="../img/<?= htmlspecialchars($food['image']) ?>" alt="<?= htmlspecialchars($food['name']) ?>">
-                    <div class="menu-info">
-                        <h3><?= htmlspecialchars($food['name']) ?></h3>
+            <div class="menu-card">
+                <img src="../img/<?= htmlspecialchars($food['image']) ?>" alt="<?= htmlspecialchars($food['name']) ?>">
+                <div class="menu-info">
+                    <h3><?= htmlspecialchars($food['name']) ?></h3>
+                    <p class="desc"><?= htmlspecialchars($food['description']) ?></p>
+
+                    <div class="menu-action">
                         <p class="price">$<?= htmlspecialchars($food['price']) ?></p>
-                        <p><?= htmlspecialchars($food['description']) ?></p>
+                        <button class="add-btn">+</button>
                     </div>
                 </div>
+            </div>
             <?php } ?>
         <?php } ?>
     </section>

@@ -1,151 +1,253 @@
-:root{
-  --green:#2fa84f;
-  --deep-green:#1f7c3a;
-  --cream:#fff7e6;
-  --paper:#fffaf2;
-  --brown:#6b3f26;
-  --shadow: 0 10px 24px rgba(0,0,0,.12);
-  --radius: 18px;
-}
-
-/* Page */
+/* ===== Page background (reuse main) ===== */
 body{
   margin: 0;
-  padding: 32px 18px 48px;
-  background: var(--cream);
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  background-color: #fff7e6;
-background-image:
-  linear-gradient(90deg, rgba(255, 210, 120, 0.25) 50%, transparent 50%),
-  linear-gradient(rgba(255, 210, 120, 0.25) 50%, transparent 50%);
-background-size: 40px 40px;
+  padding: 40px 18px 60px;
+  background-image: url("../img/v602-nunoon-14a-rippednotes.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: local;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  font-family: "Schoolbell", cursive;
 }
 
-/* ===== Search bar ===== */
+/* ===== Search area: “wood sign + pill search” ===== */
 .menu-search{
   max-width: 1100px;
-  margin: 0 auto 22px;
-  display: flex;
-  justify-content: center;
-  position: relative; /* important */
+  margin: 0 auto 26px;
+  text-align: center;
+  position: relative;
 }
 
+/* Optional: a small sign vibe WITHOUT copying your #menu-signboard */
+.menu-search::before{
+  content: "Search Menu";
+  display: block;
+  width: fit-content;
+  margin: 0 auto 14px;
+  padding: 10px 22px;
+
+  background-image: url("../img/wood.jpg");
+  background-position-x: 1%;
+  border: 4px solid #3c220f;
+  border-radius: 16px;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.22);
+
+  font-family: "Caveat", cursive;
+  color: #ffae00;
+  font-size: 40px;
+  letter-spacing: 1px;
+
+  text-shadow:
+    0 2px 2px rgba(0,0,0,0.55),
+    0 4px 4px rgba(0,0,0,0.35);
+}
+
+/* Search bar */
 .menu-search form{
-  width: 760px;                 /* big centered */
+  width: 880px;
+  margin: 0 auto;
+
   display: grid;
   grid-template-columns: 1fr auto;
-  gap: 10px;
+  gap: 14px;
 
-  padding: 10px;
-  background: var(--paper);
+  padding: 14px;
+  background: rgba(255, 253, 245, 0.9);
   border-radius: 999px;
-  border: 3px solid rgba(47,168,79,.45);
-  box-shadow: 0 8px 18px rgba(0,0,0,.08);
+  border: 4px solid rgba(14, 130, 83, 0.35);
+  box-shadow: 0 12px 26px rgba(0,0,0,0.10);
 }
 
 .menu-search input{
   border: 0;
   outline: 0;
   background: transparent;
-  font-size: 18px;
-  padding: 10px 14px;
+  font-size: 20px;
+  padding: 14px 20px;
+  border-radius: 999px;
+  font-family: "Schoolbell", cursive;
 }
 
 .menu-search button{
-  border: 0;
-  padding: 10px 18px;
+  border: 3px solid #0b5f3b;
+  background: #0e8253;
+  color: #fffdf5;
+  font-weight: bold;
   border-radius: 999px;
-  background: var(--green);
-  color: #fff;
-  font-weight: 800;
+  padding: 12px 26px;
   cursor: pointer;
-  box-shadow: 0 6px 12px rgba(0,0,0,.12);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.18);
+  font-family: "Schoolbell", cursive;
 }
 
-/* ===== Cards grid ===== */
+/* ===== Results: make it DIFFERENT from homepage card ===== */
+/* Use 2-column grid so it’s not identical to your homepage menu layout */
 .menu-container{
   max-width: 1100px;
   margin: 0 auto;
   display: grid;
-  gap: 22px;
-
-  /* base grid (we can make it responsive later) */
-  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: stretch;
 }
 
 /* Empty state */
 .no-result{
   grid-column: 1 / -1;
-  text-align: center;
-  background: var(--paper);
-  border: 2px dashed rgba(107,63,38,.35);
-  padding: 18px;
+  width: fit-content;
+  margin: 10px auto;
+  padding: 14px 18px;
+
+  background: #fffdf5;
+  border: 3px dashed rgba(74,46,26,0.35);
   border-radius: 14px;
-  color: rgba(0,0,0,.7);
+  color: #4a2e1a;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.10);
 }
 
-/* ===== Card style ===== */
+/* Horizontal “recipe listing” card */
 .menu-card{
-  background: var(--paper);
-  border-radius: var(--radius);
-  border: 3px solid rgba(47,168,79,.35);
-  box-shadow: var(--shadow);
-  padding: 14px;
+  /* paper texture same as homepage but NEW shape/layout */
+  background: rgba(255, 253, 245, 0.92);
+  background-image: radial-gradient(#8e785f 1.2px, transparent 1.2px);
+  background-size: 10px 10px;
+  color: #fff;
+  border-radius: 22px;
+  padding: 18px;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.14);
 
+  /* same cream + green system, but NOT identical to homepage border/outline */
+  border: 4px solid #f6e1bc;
+  outline: 2px solid #0e8253;
+  outline-offset: -10px;
+  box-shadow: 0 10px 22px rgba(0,0,0,.12);
   display: grid;
-  grid-template-rows: auto 1fr;
-  gap: 12px;
+  grid-template-columns: 170px 1fr; /* image left, text right */
+  gap: 16px;
+  align-items: center;
+  position: relative;
 
-  position: relative;   /* 👈 ADD THIS LINE */
+ /* subtle dots instead of brown fill */
+  background-image: radial-gradient(rgba(14,130,83,0.10) 1px, transparent 1px);
+  background-size: 18px 18px;
 }
 
+/* image thumbnail */
 .menu-card img{
-  width: 100%;
-  height: 170px;
+  width: 170px;
+  height: 125px;
   object-fit: cover;
   border-radius: 14px;
-  border: 2px solid rgba(0,0,0,.08);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.55);
+  border: 2px solid rgba(0,0,0,0.12);
 }
 
+/* right side info */
 .menu-info{
-  display: grid;
-  gap: 8px;
-  align-content: start;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
 .menu-info h3{
-  margin: 0;
+   margin: 0 0 10px 0;
   display: inline-block;
-  width: fit-content;
+  padding: 10px 26px;
+  position: relative;
 
-  background: var(--deep-green);
-  color: #fff;
-  padding: 6px 12px;
-  border-radius: 999px;
-  font-size: 16px;
+  /* typography */
+  font-family: "Caveat", cursive;
+  font-size: 42px;
+  letter-spacing: 1px;
+
+  /* NEW: wood sign colors */
+ background: linear-gradient(#0e8253, #0b5f3b);
+  color: #fffdf5;
+  border: 2px solid #063d25;
+  border-radius: 12px;
+  padding: 8px 14px;
+  font-family: "Caveat", cursive;
+  font-size: 18px;
+  text-shadow: 0 2px 2px rgba(0,0,0,.25);
 }
 
+.menu-info h3:hover{
+  overflow: visible;
+  white-space: normal;
+}
+
+/* description */
 .menu-info p{
-  margin: 0;
-  color: rgba(0,0,0,.72);
-  line-height: 1.35;
-  font-size: 14px;
+  margin: 8px 0;
+  color: #4a2e1a;
+  font-style: italic;
+  font-size: 15px;
+  line-height: 1.4;
 }
 
-/* Price tag */
-.price{
-  width: fit-content;
-  font-weight: 900;
-  color: var(--brown);
-  background: #ffeab6;
-  padding: 6px 10px;
-  border-radius: 10px;
-  border: 2px dashed rgba(107,63,38,.35);
+.menu-info .desc{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+
+  font-size: 14px;
+  line-height: 1.4;
+  color: #4a2e1a;
 }
-img {
-    width: 70px;
-    height: 70px;
-    object-fit: cover;
-    border-radius: 6px;
-    box-shadow: 2px 2px rgba(0, 0, 0, 0.574);
+.menu-action{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+/* price becomes a top-right sticker (different from homepage positioning) */
+.menu-action .price{
+  font-family: "Schoolbell", cursive;
+  font-size: 15px;
+  font-weight: bold;
+  color: #4a2e1a;
+
+  padding: 5px 12px;
+  border: 2px solid #b27745;
+  border-radius: 12px 4px 12px 4px;
+
+  background:
+    radial-gradient(circle at 1px 1px, rgba(90,60,20,0.15) 1px, transparent 0) repeat,
+    #f6e1bc;
+  background-size: 5px 5px, 100% 100%;
+
+  box-shadow: 0 4px 6px rgba(0,0,0,.18);
+}
+.menu-action .add-btn{
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 2px solid #063d25;
+
+  background-color: #0e8253;
+  color: #fffdf5;
+  font-size: 18px;
+  font-weight: bold;
+
+  cursor: pointer;
+  transition: transform .25s ease, background-color .25s ease, box-shadow .25s ease;
+}
+
+.menu-action .add-btn:hover{
+  background-color: #13a064;
+  transform: rotate(180deg) scale(1.1);
+  box-shadow: 0 6px 12px rgba(0,0,0,.25);
+}
+
+/* hover: softer than homepage (no glow, just lift) */
+.menu-card{
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+  cursor: pointer;
+}
+.menu-card:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.18);
 }
