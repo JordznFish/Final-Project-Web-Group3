@@ -139,7 +139,7 @@
 
             <section class="brown-box">
                 <div class="brown-image">
-                    <img src="../img/feature-image.jpg" alt="Featured Food">
+                    <img src="../img/aji fry.jpg" alt="Featured Food">
                 </div>
 
                 <div class="brown-info">
