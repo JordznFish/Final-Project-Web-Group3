@@ -3,13 +3,6 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
-<<<<<<<< HEAD:database/foods_final_db.sql
--- Generation Time: Dec 17, 2025 at 03:58 PM
-========
--- Generation Time: Dec 16, 2025 at 01:43 PM
->>>>>>>> main:database/crossing_eats_db_final.sql
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -92,6 +85,7 @@ INSERT INTO `foods` (`id`, `name`, `price`, `description`, `image`) VALUES
 (36, 'Vanilla Milkshake', 69.00, 'Smooth vanilla milkshake finished with whipped cream and a light sprinkle.', 'vanilla milkshake.jpg'),
 (37, 'Pumpkin Soup', 59.00, 'Warm pumpkin soup topped with cream, herbs, and crunchy seeds.', 'pumpkin-soup.jpg'),
 (38, 'Salmon Bowl', 159.00, 'Seared salmon with sesame on creamy mash, served with fresh broccoli.', 'salmon rice bowl.jpg');
+
 
 --
 -- Indexes for dumped tables
