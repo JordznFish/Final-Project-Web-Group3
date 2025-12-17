@@ -83,39 +83,6 @@ CATEGORY SIGNBOARD
   left: 10px;
 }
 
-/*
-CATEGORY BUTTONS
-*/
-.category-buttons {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-bottom: 40px;
-}
-
-.cat-btn {
-  background-color: #f6e1bc;
-  color: #4a2e1a;
-  border: 4px solid #4a2e1a; 
-  border-radius: 36px; 
-  padding: 10px 18px;
-  font-family: 'Schoolbell', cursive;
-  font-size: 18px;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.25);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.cat-btn:hover { background-color: #ffcf77; transform: scale(1.05); }
-.cat-btn.active {
-  background-color: #0e8253;
-  color: #fffdf5;
-  border-color: #0b5f3b;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-
 /* Food menu section for 375px width as base design */
 #main-title {
   text-align: center;
@@ -316,3 +283,105 @@ CATEGORY BUTTONS
   background-color: #13a064;
   transform: rotate(360deg) scale(1.1);
 }
+
+
+/* FOOD MODAL (overlay)*/
+.food-modal{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+.food-modal.show{ display: flex; }
+
+/*HORIZONTAL MODAL BOX */
+.food-modal-content{
+  position: relative;         
+  background: #fff;
+  border-radius: 20px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 16px;
+
+  width: 92vw;
+  max-width: 720px;
+
+  padding: 16px;
+}
+
+/* Put the X on top-right (NOT as a flex item) */
+.close-modal{
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  font-size: 28px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+/* Left image */
+.modal-img{
+  flex: 0 0 44%;
+  max-width: 300px;
+  height: 240px;             
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+/* Right side */
+.modal-body{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Footer */
+.modal-footer{
+  margin-top: 8px;
+}
+.modal-qty{
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin: 10px 0;
+}
+.modal-qty button{
+  width: 40px;
+  height: 40px;
+  font-size: 22px;
+}
+
+/* small (<=375px) still horizontal + smaller */
+@media (max-width: 375px){
+  .food-modal-content{
+    max-width: 340px;
+    gap: 12px;
+    padding: 12px;
+  }
+  .modal-img{
+    flex-basis: 42%;
+    height: 170px;
+  }
+  #modal-title{ font-size: 18px; }
+  #modal-desc{ font-size: 13px; }
+  #modal-note{ min-height: 48px; font-size: 13px; }
+}
+
+/* medium (<=1024px) */
+@media (min-width: 376px) and (max-width: 1024px){
+  .food-modal-content{ max-width: 600px; }
+  .modal-img{ height: 220px; }
+}
+
+/* large (>=1366px) */
+@media (min-width: 1366px){
+  .food-modal-content{ max-width: 720px; padding: 20px; }
+  .modal-img{ height: 260px; }
+}
+
