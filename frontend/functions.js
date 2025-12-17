@@ -64,6 +64,62 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  const nav = document.getElementById("navLinks");
+  if (!nav) return;
+
+  const parentLinks = nav.querySelectorAll(
+    ".nav-item.has-children > .nav-link"
+  );
+
+  function closeAll(except = null) {
+    nav.querySelectorAll(".nav-item.has-children.open").forEach((li) => {
+      if (li === except) return;
+      li.classList.remove("open");
+      li.querySelector(":scope > .nav-link")
+        ?.setAttribute("aria-expanded", "false");
+    });
+  }
+
+  parentLinks.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      const li = link.closest(".nav-item.has-children");
+      const isOpen = li.classList.contains("open");
+
+      closeAll(li);
+
+      if (isOpen) {
+        li.classList.remove("open");
+        link.setAttribute("aria-expanded", "false");
+      } else {
+        li.classList.add("open");
+        link.setAttribute("aria-expanded", "true");
+      }
+    });
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!nav.contains(e.target)) closeAll();
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeAll();
+  });
+});
+
+document.querySelectorAll(".nav-link").forEach((link) => {
+  link.addEventListener("click", () => {
+    document
+      .querySelectorAll(".nav-links li.active")
+      .forEach((li) => li.classList.remove("active"));
+
+    const li = link.closest("li");
+    if (li) li.classList.add("active");
+  });
+});
+
 // Popping up window menu
             const modal = document.getElementById("food-modal");
             const modalImg = document.getElementById("modal-img");
