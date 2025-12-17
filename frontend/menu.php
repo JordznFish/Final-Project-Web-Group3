@@ -26,6 +26,12 @@
     <link rel="stylesheet" type="text/css" href="../css/menu.css">
 </head>
 <body>
+    <header class="menu-header">
+        <div class="menu-header-inner">
+            <h1 class="menu-sign">Search Menu</h1>
+            <p class="menu-subtitle">Find your favorite dishes ✨</p>
+        </div>
+    </header>
     <!-- Form -->
     <section class="menu-search">
         <form method="GET">

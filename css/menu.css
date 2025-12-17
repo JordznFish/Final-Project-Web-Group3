@@ -1,7 +1,7 @@
 /* ===== Page background (reuse main) ===== */
 body{
   margin: 0;
-  padding: 40px 18px 60px;
+  padding: 0px 0px 60px;
   background-image: url("../img/v602-nunoon-14a-rippednotes.jpg");
   background-size: cover;
   background-position: center;
@@ -11,29 +11,72 @@ body{
   font-family: "Schoolbell", cursive;
 }
 
-/* ===== Search area: “wood sign + pill search” ===== */
-.menu-search{
-  max-width: 1100px;
-  margin: 0 auto 26px;
-  text-align: center;
-  position: relative;
+.menu-search,
+.menu-container {
+  padding: 0 18px;   /* ✅ keep your nice breathing space */
+  box-sizing: border-box;
 }
 
-/* Optional: a small sign vibe WITHOUT copying your #menu-signboard */
-.menu-search::before{
-  content: "Search Menu";
-  display: block;
+/* FULL-WIDTH header */
+.menu-header{
+  position: relative;
+  width: 100%;
+  background: #FFD65A;
+  min-height: 260px;         
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0 70px;         
+}
+
+.menu-header-inner{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateY(10px); /* try 0, 10, 20 */
+}
+
+.menu-sign{ margin: 0 0 10px; }
+.menu-subtitle{ margin: 0; }
+
+.menu-header::after{
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  width: 100%;
+  height: 60px;
+
+  background: radial-gradient(
+    circle at 50% 0%,
+    #FFD65A 60px,
+    transparent 41px
+  ) repeat-x;
+  background-size: 80px 80px;
+  transform: translateY(40px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.menu-search{
+  max-width: 1500px;
+  margin: 30px auto 26px;
+  padding: 0 18px;
+  position: relative;
+  z-index: 5;
+}
+
+.menu-sign{
   width: fit-content;
   margin: 0 auto 14px;
   padding: 10px 22px;
-
   background-image: url("../img/wood.jpg");
   background-position-x: 1%;
   border: 4px solid #3c220f;
   border-radius: 16px;
   box-shadow: 0 8px 15px rgba(0,0,0,0.22);
-
-  font-family: "Caveat", cursive;
+  font-family: "Schoolbell", cursive;
   color: #ffae00;
   font-size: 40px;
   letter-spacing: 1px;
@@ -43,7 +86,6 @@ body{
     0 4px 4px rgba(0,0,0,0.35);
 }
 
-/* Search bar */
 .menu-search form{
   width: 880px;
   margin: 0 auto;
@@ -81,8 +123,6 @@ body{
   font-family: "Schoolbell", cursive;
 }
 
-/* ===== Results: make it DIFFERENT from homepage card ===== */
-/* Use 2-column grid so it’s not identical to your homepage menu layout */
 .menu-container{
   max-width: 1100px;
   margin: 0 auto;
@@ -157,7 +197,7 @@ body{
   position: relative;
 
   /* typography */
-  font-family: "Caveat", cursive;
+  font-family: "Schoolbell", cursive;
   font-size: 42px;
   letter-spacing: 1px;
 
@@ -167,7 +207,7 @@ body{
   border: 2px solid #063d25;
   border-radius: 12px;
   padding: 8px 14px;
-  font-family: "Caveat", cursive;
+  font-family: "Schoolbell", cursive;
   font-size: 18px;
   text-shadow: 0 2px 2px rgba(0,0,0,.25);
 }
