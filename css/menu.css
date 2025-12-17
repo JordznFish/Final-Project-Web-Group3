@@ -1,7 +1,280 @@
-img {
-    width: 70px;
-    height: 70px;
-    object-fit: cover;
-    border-radius: 6px;
-    box-shadow: 2px 2px rgba(0, 0, 0, 0.574);
+body{
+  margin: 0;
+  padding: 0px 0px 60px;
+  background-image: url("../img/v602-nunoon-14a-rippednotes.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: local;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  font-family: "Schoolbell", cursive;
+}
+
+.menu-header{
+  position: relative;
+  width: 100%;
+  background: #FFD65A;
+  min-height: 260px;         
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 70px 18px 70px;        
+}
+
+.menu-header-inner{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-align: center;
+}
+
+.menu-subtitle{ margin: 0; }
+
+.menu-header::after{
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: radial-gradient(circle at 50% 0%,#FFD65A 60px,transparent 41px) repeat-x;
+  background-size: 80px 80px;
+  transform: translateY(40px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.menu-search{
+  max-width: 1500px;
+  margin: 30px auto 26px;
+  padding: 0 18px;
+  position: relative;
+  z-index: 5;
+  box-sizing: border-box;
+}
+
+.menu-sign{
+  width: fit-content;
+  margin: 0 auto 14px;
+  padding: 10px 22px;
+  background-image: url("../img/wood.jpg");
+  background-position-x: 1%;
+  border: 4px solid #3c220f;
+  border-radius: 16px;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.22);
+  font-family: 'Caveat', cursive;
+  color: #ffae00;
+  font-size: 55px;
+  font-weight: bold;
+  text-align: center ;
+  letter-spacing: 1px;
+  text-shadow:
+    0 2px 2px rgba(0,0,0,0.55),
+    0 4px 4px rgba(0,0,0,0.35);
+}
+
+.menu-subtitle{
+  font-family: 'Caveat', cursive;
+  font-size: 30px;
+  text-align: center;
+}
+
+.menu-search form{
+  width: min(880px, 92%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 14px;
+  padding: 14px;
+  background: rgba(255, 253, 245, 0.9);
+  border-radius: 999px;
+  border: 4px solid rgba(14, 130, 83, 0.35);
+  box-shadow: 0 12px 26px rgba(0,0,0,0.10);
+}
+
+.menu-search input{
+  border: 0;
+  outline: 0;
+  background: transparent;
+  font-size: 20px;
+  padding: 14px 20px;
+  border-radius: 999px;
+  font-family: "Schoolbell", cursive;
+}
+
+.menu-search button{
+  border: 3px solid #0b5f3b;
+  background: #0e8253;
+  color: #fffdf5;
+  font-weight: bold;
+  border-radius: 999px;
+  padding: 12px 26px;
+  cursor: pointer;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.18);
+  font-family: "Schoolbell", cursive;
+}
+
+.menu-container-wrap{
+  width: min(980px, 92%);
+  margin: 0 auto 60px;
+  padding: 28px 20px;
+  border-radius: 28px;
+  background: rgba(255, 253, 245, 0.88);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+  border: 2px solid rgba(14,130,83,0.18);
+  background-image: radial-gradient(rgba(14,130,83,0.08) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+
+.menu-container{
+  max-width: 100%;
+  margin: 0 auto;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: stretch;
+  padding: 0 18px;;
+  box-sizing: border-box;
+}
+
+.no-result{
+  grid-column: 1 / -1;
+  width: fit-content;
+  margin: 10px auto;
+  padding: 14px 18px;
+  background: #fffdf5;
+  border: 3px dashed rgba(74,46,26,0.35);
+  border-radius: 14px;
+  color: #4a2e1a;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.10);
+}
+
+.menu-card{
+  background: rgba(255, 253, 245, 0.92);
+  background-image: radial-gradient(rgba(14,130,83,0.10) 1px, transparent 1px);
+  background-size: 18px 18px;
+  border-radius: 22px;
+  padding: 18px;
+  border: 4px solid rgba(246,225,188,0.95);
+  outline: 3px solid rgba(14,130,83,0.55);
+  outline-offset: -12px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.10);
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  gap: 16px;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.menu-card img{
+  width: 170px;
+  height: 125px;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.55);
+  border: 2px solid rgba(0,0,0,0.12);
+}
+
+.menu-info{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.menu-info h3{
+  margin: 0;
+  display: inline-block;
+
+  padding: 8px 14px;
+  border-radius: 12px;
+
+  background: linear-gradient(#0e8253, #0b5f3b);
+  color: #fffdf5;
+  border: 2px solid #063d25;
+  font-family: "Schoolbell", cursive;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 2px rgba(0,0,0,.25);
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.menu-info p{
+  margin: 8px 0;
+  color: #4a2e1a;
+  font-style: italic;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.menu-info .desc{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.4;
+  color: #4a2e1a;
+}
+
+.menu-action{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.menu-action .price{
+  font-family: "Schoolbell", cursive;
+  font-size: 15px;
+  font-weight: bold;
+  color: #4a2e1a;
+  padding: 5px 12px;
+  border: 2px solid #b27745;
+  border-radius: 12px 4px 12px 4px;
+  background:radial-gradient(circle at 1px 1px, rgba(90,60,20,0.15) 1px, transparent 0) repeat,#f6e1bc;
+  background-size: 5px 5px, 100% 100%;
+  box-shadow: 0 4px 6px rgba(0,0,0,.18);
+}
+.menu-action .add-btn{
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 2px solid #063d25;
+  background-color: #0e8253;
+  color: #fffdf5;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform .25s ease, background-color .25s ease, box-shadow .25s ease;
+}
+
+.menu-action .add-btn:hover{
+  background-color: #13a064;
+  transform: rotate(180deg) scale(1.1);
+  box-shadow: 0 6px 12px rgba(0,0,0,.25);
+}
+
+.menu-card{
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+  cursor: pointer;
+}
+
+.menu-card:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.18);
+}
+
+*,
+*::before,
+*::after{
+  box-sizing: border-box;
 }
