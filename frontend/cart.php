@@ -57,10 +57,10 @@
                       <!-- description not stored in session yet -->
                       <p>Delicious item from our menu.</p>
 
-                      <div class="quantity-control">
-                        <button class="decrease" disabled>-</button>
+                      <div class="quantity-control" data-id="<?php $id ?>">
+                        <button class="decrease">-</button>
                         <input type="number" value="<?= $item['qty'] ?>" min="1" readonly />
-                        <button class="increase" disabled>+</button>
+                        <button class="increase">+</button>
                       </div>
 
                       <div class="item-bottom">

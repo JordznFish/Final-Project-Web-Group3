@@ -75,58 +75,57 @@ document.addEventListener("DOMContentLoaded", () => {
             let qty = 1;
 
 if (hasModal) {
-
   function openFoodModal(item) {
-  currentItem = item;
+    currentItem = item;
 
-  modalImg.src = item.img;
-  modalTitle.textContent = item.name;
-  modalDesc.textContent = item.desc;
+    modalImg.src = item.img;
+    modalTitle.textContent = item.name;
+    modalDesc.textContent = item.desc;
 
-  qty = 1;
-  qtyCount.textContent = qty;
+    qty = 1;
+    qtyCount.textContent = qty;
 
-  modal.classList.add("show");
-}
+    modal.classList.add("show");
+  }
 
-// Whole food card clickable
-document.querySelectorAll(".food-card").forEach(card => {
-  card.addEventListener("click", (e) => {
+  // Whole food card clickable
+  document.querySelectorAll(".food-card").forEach(card => {
+    card.addEventListener("click", (e) => {
 
-    // prevent button inside card from double triggering
-    if (e.target.closest("button")) return;
+      // prevent button inside card from double triggering
+      if (e.target.closest("button")) return;
 
-    const item = {
-      id: card.dataset.id,
-      name: card.dataset.name,
-      price: Number(card.dataset.price),
-      img: card.dataset.img,
-      desc: card.dataset.desc
-    };
+      const item = {
+        id: card.dataset.id,
+        name: card.dataset.name,
+        price: Number(card.dataset.price),
+        img: card.dataset.img,
+        desc: card.dataset.desc
+      };
 
-    openFoodModal(item);
+      openFoodModal(item);
+    });
   });
-});
 
-// Keep add button working too (optional but recommended)
-document.querySelectorAll(".add-btn").forEach(btn => {
-  btn.addEventListener("click", (e) => {
-    e.stopPropagation();
+  // Keep add button working too (optional but recommended)
+  document.querySelectorAll(".add-btn").forEach(btn => {
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
 
-    const card = btn.closest(".food-card");
-    if (!card) return;
+      const card = btn.closest(".food-card");
+      if (!card) return;
 
-    const item = {
-      id: card.dataset.id,
-      name: card.dataset.name,
-      price: Number(card.dataset.price),
-      img: card.dataset.img,
-      desc: card.dataset.desc
-    };
+      const item = {
+        id: card.dataset.id,
+        name: card.dataset.name,
+        price: Number(card.dataset.price),
+        img: card.dataset.img,
+        desc: card.dataset.desc
+      };
 
-    openFoodModal(item);
+      openFoodModal(item);
+    });
   });
-});
 
   document.querySelector(".close-modal").onclick = () =>
     modal.classList.remove("show");
@@ -164,7 +163,6 @@ document.querySelectorAll(".add-btn").forEach(btn => {
   };
 }
 
-
 function updateCartBadge(cart) {
     const badge = document.getElementById("cart-count");
     if (!badge) return;
@@ -178,7 +176,38 @@ function updateCartBadge(cart) {
     badge.style.display = total > 0 ? "inline-block" : "none";
 }
 
+//ADD and MINUS QTY
+document.addEventListener("click", function (e) {
 
+  if (!e.target.classList.contains("increase") &&
+      !e.target.classList.contains("decrease")) return;
+
+  const control = e.target.closest(".quantity-control");
+  const id = control.dataset.id;
+  const input = control.querySelector("input");
+
+  let qty = parseInt(input.value);
+
+  if (e.target.classList.contains("increase")) qty++;
+  if (e.target.classList.contains("decrease") && qty > 1) qty--;
+
+  fetch("../backend/cart_api.php", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams({
+      action: "update",
+      id: id,
+      qty: qty
+    })
+  })
+  .then(res => res.json())
+  .then(data => {
+    input.value = qty;
+
+    // Optional: update subtotal if you add a hook later
+    updateCartSummary(data.cart);
+  });
+});
 
 // Clear cart
 document.addEventListener("click", function (e) {
@@ -207,6 +236,7 @@ document.addEventListener("click", function (e) {
     })
     .then(() => location.reload());
   }
-
 });
+
+
 

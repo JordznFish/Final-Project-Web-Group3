@@ -52,5 +52,22 @@ if ($action === 'clear') {
     exit;
 }
 
+// update qty 
+if ($action === 'update') {
+    $id = $_POST['id'];
+    $qty = max(1, intval($_POST['qty']));
+
+    if (isset($_SESSION['cart'][$id])) {
+        $_SESSION['cart'][$id]['qty'] = $qty;
+    }
+
+    echo json_encode([
+        'status' => 'success',
+        'cart' => $_SESSION['cart']
+    ]);
+    exit;
+}
+
+
 /* ===== FALLBACK ===== */
 echo json_encode(['status' => 'invalid_action']);
