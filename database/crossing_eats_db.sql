@@ -3,6 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
+-- Generation Time: Dec 17, 2025 at 05:17 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -84,8 +87,8 @@ INSERT INTO `foods` (`id`, `name`, `price`, `description`, `image`) VALUES
 (35, 'Chocolate Milkshake', 69.00, 'Creamy chocolate milkshake topped with whipped cream and chocolate drizzle.', 'chocolate milkshake.jpg'),
 (36, 'Vanilla Milkshake', 69.00, 'Smooth vanilla milkshake finished with whipped cream and a light sprinkle.', 'vanilla milkshake.jpg'),
 (37, 'Pumpkin Soup', 59.00, 'Warm pumpkin soup topped with cream, herbs, and crunchy seeds.', 'pumpkin-soup.jpg'),
-(38, 'Salmon Bowl', 159.00, 'Seared salmon with sesame on creamy mash, served with fresh broccoli.', 'salmon rice bowl.jpg');
-
+(38, 'Salmon Bowl', 159.00, 'Seared salmon with sesame on creamy mash, served with fresh broccoli.', 'salmon rice bowl.jpg'),
+(39, 'Teriyaki Rice', 169.00, 'Juicy teriyaki chicken served with fluffy rice and soft scrambled egg', 'chicken_teriyaki.jpg');
 
 --
 -- Indexes for dumped tables
@@ -117,7 +120,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `foods`
 --
 ALTER TABLE `foods`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
