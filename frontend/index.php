@@ -207,7 +207,13 @@
                     <div class="menu-grid">
 
                         <?php foreach ($foods as $food): ?>
-                        <div class="food-card">
+                        <div class="food-card"
+                                class="add-btn"
+                                data-id="<?= $food['id'] ?>"
+                                data-name="<?= htmlspecialchars($food['name']) ?>"
+                                data-price="<?= $food['price'] ?>"
+                                data-img="../img/<?= htmlspecialchars($food['image']) ?>"
+                                data-desc="<?= htmlspecialchars($food['description']) ?>">
 
                             <img
                             src="../img/<?= htmlspecialchars($food['image']) ?>"
@@ -222,16 +228,7 @@
 
                             <p class="price">NT$ <?= $food['price'] ?></p>
 
-                            <button
-                            class="add-btn"
-                            data-id="<?= $food['id'] ?>"
-                            data-name="<?= htmlspecialchars($food['name']) ?>"
-                            data-price="<?= $food['price'] ?>"
-                            data-img="../img/<?= htmlspecialchars($food['image']) ?>"
-                            data-desc="<?= htmlspecialchars($food['description']) ?>"
-                            >
-                            +
-                            </button>
+                            <button class="add-btn">+</button>
 
                         </div>
                         <?php endforeach; ?>

@@ -76,26 +76,57 @@ document.addEventListener("DOMContentLoaded", () => {
 
 if (hasModal) {
 
-  document.querySelectorAll(".add-btn").forEach(btn => {
-    btn.addEventListener("click", () => {
-      currentItem = {
-        id: btn.dataset.id,
-        name: btn.dataset.name,
-        price: Number(btn.dataset.price),
-        img: btn.dataset.img,
-        desc: btn.dataset.desc
-      };
+  function openFoodModal(item) {
+  currentItem = item;
 
-      modalImg.src = currentItem.img;
-      modalTitle.textContent = currentItem.name;
-      modalDesc.textContent = currentItem.desc;
+  modalImg.src = item.img;
+  modalTitle.textContent = item.name;
+  modalDesc.textContent = item.desc;
 
-      qty = 1;
-      qtyCount.textContent = qty;
+  qty = 1;
+  qtyCount.textContent = qty;
 
-      modal.classList.add("show");
-    });
+  modal.classList.add("show");
+}
+
+// Whole food card clickable
+document.querySelectorAll(".food-card").forEach(card => {
+  card.addEventListener("click", (e) => {
+
+    // prevent button inside card from double triggering
+    if (e.target.closest("button")) return;
+
+    const item = {
+      id: card.dataset.id,
+      name: card.dataset.name,
+      price: Number(card.dataset.price),
+      img: card.dataset.img,
+      desc: card.dataset.desc
+    };
+
+    openFoodModal(item);
   });
+});
+
+// Keep add button working too (optional but recommended)
+document.querySelectorAll(".add-btn").forEach(btn => {
+  btn.addEventListener("click", (e) => {
+    e.stopPropagation();
+
+    const card = btn.closest(".food-card");
+    if (!card) return;
+
+    const item = {
+      id: card.dataset.id,
+      name: card.dataset.name,
+      price: Number(card.dataset.price),
+      img: card.dataset.img,
+      desc: card.dataset.desc
+    };
+
+    openFoodModal(item);
+  });
+});
 
   document.querySelector(".close-modal").onclick = () =>
     modal.classList.remove("show");
