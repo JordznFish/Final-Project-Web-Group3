@@ -122,7 +122,7 @@
                 <h1 class="bar-logo">Crossing Eats</h1>
 
                 <div class="top-icons">
-                    <a href="search.php" class="icon search">
+                    <a href="menu.php" class="icon search">
                         <img src="../img/search-icon.png" alt="Search Icon" class="top-right-icon"/>
                     </a>
                     <a href="cart.php" class="icon cart">
