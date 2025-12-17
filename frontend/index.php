@@ -1,3 +1,15 @@
+<?php
+    require_once "../backend/db-connect.php";
+
+    $stmt = $db->prepare("
+        SELECT id, name, price, image, description
+        FROM foods
+    ");
+    $stmt->execute();
+    $foods = $stmt->fetchAll();
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -193,191 +205,43 @@
                 <!-- Food Menu Grid -->
                 <section id="food-menu">
                     <div class="menu-grid">
-                        <!-- Food Card Items-->
-                        <div class="food-card main-dish">
-                            <img src="../img/Tomato_Curry.jpg" alt="Tomato Curry"/>
-                            <h3>Tomato Curry Rice</h3>
-                            <p class="desc">A hearty curry simmered with fresh tomatoes and a touch of island spice.</p>
-                            <p class="price">NT$ 139</p>
-                            <button class="add-btn"
-                            data-name= "Tomato Curry Rice"
-                            data-price="NT$ 139"
-                            data-img="../img/Tomato_Curry.jpg"
-                            data-desc="A hearty curry simmered with fresh tomateos and a touch of island spice">+</button>
-                        </div>
-                        
-                        <div class="food-card main-dish">
-                            <img src="../img/sea-bass-pie.jpg" alt="Sea-Bass Pie" />
-                            <h3>Sea-Bass Pie</h3>
-                            <p class="desc">Flaky crust stuffed with tender sea bass and creamy filling — a seaside comfort favorite.</p>
-                            <p class="price">NT$ 199</p>
-                            <button class="add-btn"
-                            data-name="Sea-Bass Pie"
-                            data-price="NT$ 199"
-                            data-img="../img/sea-bass-pie.jpg"
-                            data-desc="Flaky crust stuffed with tender sea bass and creamy filling">+</button>
-                        </div>
-                        
-                        <div class="food-card main-dish">
-                            <img src="../img/minestrone soup.jpg" alt="Minestrone Soup" />
-                            <h3>Minestrone Soup</h3>
-                            <p class="desc">A colorful vegetable soup bursting with warmth, perfect for a cozy evening.</p>
-                            <p class="price">NT$ 119</p>
-                            <button class="add-btn"
-                            data-name="Minestrone Soup"
-                            data-price="NT$ 119"
-                            data-img="../img/minestrone soup.jpg"
-                            data-desc="A colorful vegetable soup bursting with warmth, perfect for a cozy evening">+</button>
-                        </div>
-                        
-                        <div class="food-card main-dish">
-                            <img src="../img/aji fry.jpg" alt="Aji Fry" />
-                            <h3>Aji Fry teishoku</h3>
-                            <p class="desc">Golden-fried horse mackerel paired with fluffy rice, miso soup, and crisp seasonal greens.</p>
-                            <p class="price">NT$ 199</p>
-                            <button class="add-btn"
-                            data-name="Aji Fry"
-                            data-price="NT$ 199"
-                            data-img="../img/aji fry.jpg"
-                            data-desc="Golden-fried horse mackerel paired with fluffy rice, miso soup, and crisp seasonal greens">+</button>
-                        </div>
 
-                        <div class="food-card snacks">
-                            <img src="../img/french-fries.jpg" alt="French Fries" />
-                            <h3>French Fries</h3>
-                            <p class="desc">Crispy, golden fries with just the right amount of salt — everyone’s favorite bite.</p>
-                            <p class="price">NT$ 89</p>
-                            <button class="add-btn"
-                            data-name="French Fries"
-                            data-price="NT$ 89"
-                            data-img="../img/french-fries.jpg"
-                            data-desc="Crispy, golden fries with just with the right amount of salt">+</button>
-                        </div>
+                        <?php foreach ($foods as $food): ?>
+                        <div class="food-card">
 
-                        <div class="food-card snacks">
-                            <img src="../img/sandwich.jpg" alt="Sandwich" />
-                            <h3>Sandwich</h3>
-                            <p class="desc">Freshly made with soft bread, crisp veggies, and a generous layer of filling.</p>
-                            <p class="price">NT$ 129</p>
-                            <button class="add-btn"
-                             data-name="Sandwich"
-                            data-price="NT$ 129"
-                            data-img="../img/sandwich.jpg"
-                            data-desc="Freshly made with soft bread, crisp veggies, and a generous layer of filling">+</button>
-                        </div>
+                            <img
+                            src="../img/<?= htmlspecialchars($food['image']) ?>"
+                            alt="<?= htmlspecialchars($food['name']) ?>"
+                            />
 
-                        <div class="food-card snacks">
-                            <img src="../img/potato croquettes.jpg" alt="Potato Croquettes" />
-                            <h3>Potato Croquettes</h3>
-                            <p class="desc">Crunchy on the outside, fluffy inside — a classic comfort snack.</p>
-                            <p class="price">NT$ 99</p>
-                            <button class="add-btn"
-                            data-name="Sandwich"
-                            data-price="NT$ 129"
-                            data-img="../img/potato croquettes.jpg"
-                            data-desc="Freshly made with soft bread, crisp veggies, and a generous layer of filling">+</button>
-                        </div>
+                            <h3><?= htmlspecialchars($food['name']) ?></h3>
 
-                        <div class="food-card desserts">
-                            <img src="../img/carrot-cake.jpg" alt="Carrot Cake" />
-                            <h3>Carrot Cake</h3>
-                            <p class="desc">Sweet and moist cake with grated carrots and a touch of cinnamon.</p>
-                            <p class="price">NT$ 149</p>
-                            <button class="add-btn"
-                            data-name="Carrot Cake"
-                            data-price="NT$ 149"
-                            data-img="../img/carrot-cake.jpg"
-                            data-desc="Sweet and moist cake with grated carrots and a touch of cinnamon">+</button>
-                        </div>
+                            <p class="desc">
+                            <?= htmlspecialchars($food['description']) ?>
+                            </p>
 
-                        <div class="food-card desserts">
-                            <img src="../img/apple-pie.jpg" alt="Apple Pie" />
-                            <h3>Apple Pie</h3>
-                            <p class="desc">Buttery crust filled with caramelized apples — a timeless homemade dessert.</p>
-                            <p class="price">NT$ 139</p>
-                            <button class="add-btn"
-                            data-name="Apple Pie"
-                            data-price="NT$ 139"
-                            data-img="../img/apple-pie.jpg"
-                            data-desc="Buttery crust filled with caramelized apples">+</button>
-                        </div>
+                            <p class="price">NT$ <?= $food['price'] ?></p>
 
-                        <div class="food-card desserts">
-                            <img src="../img/fruit-tart.jpg" alt="Fruit Tart" />
-                            <h3>Fruit Tart</h3>
-                            <p class="desc">A colorful medley of fruits over smooth custard — as cheerful as it is delicious.</p>
-                            <p class="price">NT$ 99</p>
-                            <button class="add-btn"
-                            data-name="Fruit Tart"
-                            data-price="NT$ 99"
-                            data-img="../img/fruit-tart.jpg"
-                            data-desc="A colorful medley of fruits over smooth custard">+</button>
-                        </div>
+                            <button
+                            class="add-btn"
+                            data-id="<?= $food['id'] ?>"
+                            data-name="<?= htmlspecialchars($food['name']) ?>"
+                            data-price="<?= $food['price'] ?>"
+                            data-img="../img/<?= htmlspecialchars($food['image']) ?>"
+                            data-desc="<?= htmlspecialchars($food['description']) ?>"
+                            >
+                            +
+                            </button>
 
-                        <div class="food-card soups">
-                            <img src="../img/mushroom-soup.jpg" alt="Mushroom Soup" />
-                            <h3>Mushroom Soup</h3>
-                            <p class="desc">Earthy, creamy, and aromatic — a bowl of pure woodland comfort.</p>
-                            <p class="price">NT$ 49</p>
-                            <button class="add-btn"
-                            data-name="Mushroom Soup"
-                            data-price="NT$ 49"
-                            data-img="../img/mushroom-soup.jpg"
-                            data-desc="Earthy, creamy, and aromatic">+</button>
                         </div>
+                        <?php endforeach; ?>
 
-                        <div class="food-card soups">
-                            <img src="../img/carrot-pottage.jpg" alt="Carrot Potage" />
-                            <h3>Carrot Potage</h3>
-                            <p class="desc">Smooth, sweet carrot soup that feels like a warm hug on a cool day.</p>
-                            <p class="price">NT$ 49</p>
-                            <button class="add-btn"
-                            data-name="Carrot Potage"
-                            data-price="NT$ 49"
-                            data-img="../img/carrot-pottage.jpg"
-                            data-desc="Smooth, sweet carrot soup that feels like a warm hug on a cool day">+</button>
-                        </div>
-
-                        <div class="food-card beverages">
-                            <img src="../img/strawberry-smoothie.jpg" alt="Strawberry Smoothie" />
-                            <h3>Strawberry Smoothie</h3>
-                            <p class="desc">A refreshing blend of ripe strawberries and creamy milk.</p>
-                            <p class="price">NT$ 79</p>
-                            <button class="add-btn"
-                            data-name="Strawberry Smoothie"
-                            data-price="NT$ 79"
-                            data-img="../img/strawberry-smoothie.jpg"
-                            data-desc="A refreshing blend of ripe strawberries and creamy milk">+</button>
-                        </div>
-
-                        <div class="food-card beverages">
-                            <img src="../img/banana-smoothie.jpg" alt="Banana Smoothie" />
-                            <h3>Banana Smoothie</h3>
-                            <p class="desc">Thick, creamy, and naturally sweet — an all-time classic.</p>
-                            <p class="price">NT$ 79</p>
-                            <button class="add-btn"
-                            data-name="Banana Smoothie"
-                            data-price="NT$ 79"
-                            data-img="../img/banana-smoothie.jpg"
-                            data-desc="Thick, creamy, and naturally sweet">+</button>
-                        </div>
-
-                        <div class="food-card beverages">
-                            <img src="../img/mango-smoothie.jpg" alt="Mango Smoothie" />
-                            <h3>Mango Smoothie</h3>
-                            <p class="desc">Rich, velvety mango blended to perfection — a sweet tropical escape in every sip.</p>
-                            <p class="price">NT$ 79</p>
-                            <button class="add-btn"
-                            data-name="Mango Smoothie"
-                            data-price="NT$ 79"
-                            data-img="../img/mango-smoothie.jpg"
-                            data-desc="Rich, velvety mango blended to perfection">+</button>
-                        </div>
                     </div>
+                </section>
+                
 
 
      <!-- FOOD DETAIL MODAL -->
-    
             <div id="food-modal" class="food-modal">
             <div class="food-modal-content">
 

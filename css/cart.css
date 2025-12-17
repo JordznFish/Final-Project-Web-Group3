@@ -589,3 +589,19 @@ body {
   }
 }
 
+.clear-cart-btn {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  background: #ff6b6b;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.clear-cart-btn:hover {
+  background: #e74c3c;
+}
+
