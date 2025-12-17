@@ -46,55 +46,71 @@
                     </a>
                 </div>
                 <hr class="divider">
-                <ul class="nav-links">
-                    <li>
-                        <a href="#main-content">
-                            <img src="../img/menu_final.png" alt="Menu Icon" class="nav-icon"/>
-                            <span class="tooltip">Menu</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#reviews">
-                            <img src="../img/awards_final.png" alt="Awards Icon" class="nav-icon"/>
-                            <span class="tooltip">Reviews</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#site-footer">
-                            <img src="../img/contact_final.png" alt="Contact Icon" class="nav-icon"/>
-                            <span class="tooltip">Contact</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="cart.php" class="cart-link">
-                            <img src="../img/cart_final.png" alt="Cart Icon" class="nav-icon"/>
-                            <span id="cart-count" class="cart-count">0</span>
-                            <span class="tooltip">Cart</span>
-                        </a>
+                <ul class="nav-links" id="navLinks">
+                    <li class="nav-item has-children">
+                        <a href="#" class="nav-link" aria-expanded="false">Main Dishes</a>
 
+                        <ul class="submenu">
+                            <li><a href="#" class="sub-link">Tomato Curry Rice</a></li>
+                            <li><a href="#" class="sub-link">Sea-Bass Pie</a></li>
+                            <li><a href="#" class="sub-link">Minestrone Soup</a></li>
+                            <li><a href="#" class="sub-link">Aji Fry teishoku</a></li>
+                        </ul>
                     </li>
-                    <li>
-                        <a href="javascript:void(0);" id="newsletter-btn">
-                            <img src="../img/newsletter_final.png" alt="Newsletter Icon" class="nav-icon"/>
-                            <span class="tooltip">Newsletter</span>
-                        </a>
+
+                    <li class="nav-item has-children">
+                        <a href="#" class="nav-link" aria-expanded="false">Snacks</a>
+                    
+                        <ul class="submenu">
+                            <li><a href="#" class="sub-link">French Fries</a></li>
+                            <li><a href="#" class="sub-link">Sandwich</a></li>
+                            <li><a href="#" class="sub-link">Potato Croquettes</a></li>
+                        </ul>                 
+                    </li>
+
+                    <li class="nav-item has-children">
+                        <a href="#" class="nav-link" aria-expanded="false">Soups</a>
+
+                        <ul class="submenu">
+                            <li><a href="#" class="sub-link">Mushroom Soup</a></li>
+                            <li><a href="#" class="sub-link">Carrot Potage</a></li>
+                        </ul>                 
+                    </li>
+
+                    <li class="nav-item has-children">
+                        <a href="#" class="nav-link" aria-expanded="false">Desserts</a>
+
+                        <ul class="submenu">
+                            <li><a href="#" class="sub-link">Carrot Cake</a></li>
+                            <li><a href="#" class="sub-link">Apple Pie</a></li>
+                            <li><a href="#" class="sub-link">Fruit Tart</a></li>
+                        </ul>                 
+                    </li>
+
+                    <li class="nav-item has-children">
+                        <a href="#" class="nav-link" aria-expanded="false">Beverages</a>
+
+                        <ul class="submenu">
+                            <li><a href="#" class="sub-link">Strawberry Smoothie</a></li>
+                            <li><a href="#" class="sub-link">Banana Smoothie</a></li>
+                            <li><a href="#" class="sub-link">Mango Smoothie</a></li>
+                        </ul>                 
                     </li>
                 </ul>
 
                 <div class="user-info">
                     <hr class="divider">
-                    <a href="profile.html">
-                        <img src="../img/user.png" alt="Profile Icon" class="nav-icon"/>
-                        <span class="tooltip">Profile</span>
+                    <a href="#reviews">
+                        <img src="../img/awards_final.png" alt="Awards Icon" class="nav-icon"/>
                     </a>
-                    <a href="settings.html">
-                        <img src="../img/settings_final.png" alt="Settings Icon" class="nav-icon"/>
-                        <span class="tooltip">Settings</span>
+                    <a href="#site-footer">
+                        <img src="../img/contact_final.png" alt="Contact Icon" class="nav-icon"/>
+                    </a>
+                    <a href="javascript:void(0);" id="newsletter-btn">
+                        <img src="../img/newsletter_final.png" alt="Newsletter Icon" class="nav-icon"/>
                     </a>
                 </div>
             </nav>
-
-            <div class="sidebar-overlay"></div>
 
             <!-- Newsletter Modal -->
             <div id="newsletter" class="modal">
@@ -105,15 +121,9 @@
                     <p><input class="newsletter-input" type="text" placeholder="Enter e-mail"></p>
                     <button type="button" class="newsletter-subscribe">Subscribe</button>
                 </div>
-            </div>
-    
-            
+            </div> 
+
             <!-- ===================== -->
-            <!-- HEADER SECTION -->
-            <!-- Owner: Eric -->
-            <!-- Contains: Theme banner -->
-            <!-- ===================== -->
-                <!-- ===================== -->
             <!-- HEADER SECTION -->
             <!-- Owner: Eric -->
             <!-- Contains: Theme banner -->
@@ -147,9 +157,13 @@
                 <img src="../img/banner.jpg" alt="Animal Crossing Banner">
             </section>
 
+            <div class="ac-logo">
+                <h1>Crossing <span class="eats">Eats</span></h1>
+            </div>
+
             <section class="brown-box">
                 <div class="brown-image">
-                    <img src="../img/feature-image.jpg" alt="Featured Food">
+                    <img src="../img/aji fry.jpg" alt="Featured Food">
                 </div>
 
                 <div class="brown-info">
