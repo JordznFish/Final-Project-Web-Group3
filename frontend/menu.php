@@ -24,6 +24,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main menu</title>
     <link rel="stylesheet" type="text/css" href="../css/menu.css">
+    
+    <!-- Font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fascinate&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Quintessential&family=Schoolbell&display=swap" rel="stylesheet">
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="menu-header">
@@ -41,6 +50,7 @@
     </section>
 
     <!-- Display Section -->
+    <section class="menu-container-wrap">
     <section class="menu-container">
         <?php if (empty($foods)) {?>
             <p class="no-result">No results found.</p>
@@ -62,5 +72,6 @@
             <?php } ?>
         <?php } ?>
     </section>
+</section>
 </body>
 </html>
