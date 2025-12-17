@@ -16,6 +16,7 @@ h2 {
 	background-image: radial-gradient(#fae035 1.2px, transparent 1.2px);
 	background-size: 10px 10px;
 	overflow: hidden;
+	padding-left: 70px;
 }
 
 .bar-logo {
