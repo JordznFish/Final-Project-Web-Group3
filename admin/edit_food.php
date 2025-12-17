@@ -34,17 +34,22 @@
         $description = $_POST["description"];
         $imageName = $food["image"];  // default: keep old image
 
-        // -------- IMAGE HANDLING --------
-        if (!empty($_FILES["image"]["name"])) {
+        // 1️⃣ If file uploaded → highest priority
+        if (!empty($_FILES["image_file"]["name"])) {
 
-            $newImage = basename($_FILES["image"]["name"]);
+            $newImage = basename($_FILES["image_file"]["name"]);
             $targetFile = "../img/" . $newImage;
 
-            if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetFile)) {
-                $imageName = $newImage; // replace old image
-
+            if (move_uploaded_file($_FILES["image_file"]["tmp_name"], $targetFile)) {
+                $imageName = $newImage;
             } else {
                 $error = "Image upload failed!";
+            }
+
+        // 2️⃣ Else → use text input
+        } else {
+            if (!empty($_POST["image_text"])) {
+                $imageName = trim($_POST["image_text"]);
             }
         }
 
@@ -112,12 +117,16 @@
             <label>Description:</label>
             <textarea name="description" rows="4" required><?= htmlspecialchars($food['description']) ?></textarea><br><br>
 
-            <label>Current Image:</label><br>
+            <label>Current Image Filename:</label>
+            <input type="text" name="image_text"
+                value="<?= htmlspecialchars($food['image']) ?>"
+                required>
+
             <img src="../img/<?= htmlspecialchars($food['image']) ?>" class="food-img"><br><br>
 
             <label>Upload New Image (optional):</label>
-            <input type="file" name="image" accept="image/*"><br><br>
-
+            <input type="file" name="image_file" accept="image/*"><br><br>
+            
             <button type="submit" class="btn">Update Food</button>
 
         </form>

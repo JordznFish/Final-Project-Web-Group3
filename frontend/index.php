@@ -1,3 +1,15 @@
+<?php
+    require_once "../backend/db-connect.php";
+
+    $stmt = $db->prepare("
+        SELECT id, name, price, image, description
+        FROM foods
+    ");
+    $stmt->execute();
+    $foods = $stmt->fetchAll();
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -34,53 +46,71 @@
                     </a>
                 </div>
                 <hr class="divider">
-                <ul class="nav-links">
-                    <li>
-                        <a href="#main-content">
-                            <img src="../img/menu_final.png" alt="Menu Icon" class="nav-icon"/>
-                            <span class="tooltip">Menu</span>
-                        </a>
+                <ul class="nav-links" id="navLinks">
+                    <li class="nav-item has-children">
+                        <a href="#" class="nav-link" aria-expanded="false">Main Dishes</a>
+
+                        <ul class="submenu">
+                            <li><a href="#" class="sub-link">Tomato Curry Rice</a></li>
+                            <li><a href="#" class="sub-link">Sea-Bass Pie</a></li>
+                            <li><a href="#" class="sub-link">Minestrone Soup</a></li>
+                            <li><a href="#" class="sub-link">Aji Fry teishoku</a></li>
+                        </ul>
                     </li>
-                    <li>
-                        <a href="#reviews">
-                            <img src="../img/awards_final.png" alt="Awards Icon" class="nav-icon"/>
-                            <span class="tooltip">Reviews</span>
-                        </a>
+
+                    <li class="nav-item has-children">
+                        <a href="#" class="nav-link" aria-expanded="false">Snacks</a>
+                    
+                        <ul class="submenu">
+                            <li><a href="#" class="sub-link">French Fries</a></li>
+                            <li><a href="#" class="sub-link">Sandwich</a></li>
+                            <li><a href="#" class="sub-link">Potato Croquettes</a></li>
+                        </ul>                 
                     </li>
-                    <li>
-                        <a href="#site-footer">
-                            <img src="../img/contact_final.png" alt="Contact Icon" class="nav-icon"/>
-                            <span class="tooltip">Contact</span>
-                        </a>
+
+                    <li class="nav-item has-children">
+                        <a href="#" class="nav-link" aria-expanded="false">Soups</a>
+
+                        <ul class="submenu">
+                            <li><a href="#" class="sub-link">Mushroom Soup</a></li>
+                            <li><a href="#" class="sub-link">Carrot Potage</a></li>
+                        </ul>                 
                     </li>
-                    <li>
-                        <a href="cart.php">
-                            <img src="../img/cart_final.png" alt="Cart Icon" class="nav-icon"/>
-                            <span class="tooltip">Cart</span>
-                        </a>
+
+                    <li class="nav-item has-children">
+                        <a href="#" class="nav-link" aria-expanded="false">Desserts</a>
+
+                        <ul class="submenu">
+                            <li><a href="#" class="sub-link">Carrot Cake</a></li>
+                            <li><a href="#" class="sub-link">Apple Pie</a></li>
+                            <li><a href="#" class="sub-link">Fruit Tart</a></li>
+                        </ul>                 
                     </li>
-                    <li>
-                        <a href="javascript:void(0);" id="newsletter-btn">
-                            <img src="../img/newsletter_final.png" alt="Newsletter Icon" class="nav-icon"/>
-                            <span class="tooltip">Newsletter</span>
-                        </a>
+
+                    <li class="nav-item has-children">
+                        <a href="#" class="nav-link" aria-expanded="false">Beverages</a>
+
+                        <ul class="submenu">
+                            <li><a href="#" class="sub-link">Strawberry Smoothie</a></li>
+                            <li><a href="#" class="sub-link">Banana Smoothie</a></li>
+                            <li><a href="#" class="sub-link">Mango Smoothie</a></li>
+                        </ul>                 
                     </li>
                 </ul>
 
                 <div class="user-info">
                     <hr class="divider">
-                    <a href="profile.html">
-                        <img src="../img/user.png" alt="Profile Icon" class="nav-icon"/>
-                        <span class="tooltip">Profile</span>
+                    <a href="#reviews">
+                        <img src="../img/awards_final.png" alt="Awards Icon" class="nav-icon"/>
                     </a>
-                    <a href="settings.html">
-                        <img src="../img/settings_final.png" alt="Settings Icon" class="nav-icon"/>
-                        <span class="tooltip">Settings</span>
+                    <a href="#site-footer">
+                        <img src="../img/contact_final.png" alt="Contact Icon" class="nav-icon"/>
+                    </a>
+                    <a href="javascript:void(0);" id="newsletter-btn">
+                        <img src="../img/newsletter_final.png" alt="Newsletter Icon" class="nav-icon"/>
                     </a>
                 </div>
             </nav>
-
-            <div class="sidebar-overlay"></div>
 
             <!-- Newsletter Modal -->
             <div id="newsletter" class="modal">
@@ -91,15 +121,9 @@
                     <p><input class="newsletter-input" type="text" placeholder="Enter e-mail"></p>
                     <button type="button" class="newsletter-subscribe">Subscribe</button>
                 </div>
-            </div>
-    
-            
+            </div> 
+
             <!-- ===================== -->
-            <!-- HEADER SECTION -->
-            <!-- Owner: Eric -->
-            <!-- Contains: Theme banner -->
-            <!-- ===================== -->
-                <!-- ===================== -->
             <!-- HEADER SECTION -->
             <!-- Owner: Eric -->
             <!-- Contains: Theme banner -->
@@ -108,7 +132,7 @@
                 <h1 class="bar-logo">Crossing Eats</h1>
 
                 <div class="top-icons">
-                    <a href="search.php" class="icon search">
+                    <a href="menu.php" class="icon search">
                         <img src="../img/search-icon.png" alt="Search Icon" class="top-right-icon"/>
                     </a>
                     <a href="cart.php" class="icon cart">
@@ -133,9 +157,13 @@
                 <img src="../img/banner.jpg" alt="Animal Crossing Banner">
             </section>
 
+            <div class="ac-logo">
+                <h1>Crossing <span class="eats">Eats</span></h1>
+            </div>
+
             <section class="brown-box">
                 <div class="brown-image">
-                    <img src="../img/feature-image.jpg" alt="Featured Food">
+                    <img src="../img/aji fry.jpg" alt="Featured Food">
                 </div>
 
                 <div class="brown-info">
@@ -184,149 +212,87 @@
                 <!-- Signboard and Category Buttons -->
                 <section id="upper-menu">
                     <div id="menu-signboard">
-                        <h2 id="current-category">All Menu</h2>
-                    </div>
-
-                    <div class="category-buttons">
-                        <button class="cat-btn active" data-category="all">All</button>
-                        <button class="cat-btn" data-category="main-dish">Main Dishes</button>
-                        <button class="cat-btn" data-category="snacks">Snacks</button>
-                        <button class="cat-btn" data-category="soups">Soups</button>
-                        <button class="cat-btn" data-category="desserts">Desserts</button>
-                        <button class="cat-btn" data-category="beverages">Beverages</button>
+                        <h2 id="current-category">Top Sellers</h2>
                     </div>
                 </section>
+                
                 <!-- Food Menu Grid -->
                 <section id="food-menu">
                     <div class="menu-grid">
-                        <!-- Food Card Items-->
-                        <div class="food-card main-dish">
-                            <img src="../img/Tomato_Curry.jpg" alt="Tomato Curry"/>
-                            <h3>Tomato Curry Rice</h3>
-                            <p class="desc">A hearty curry simmered with fresh tomatoes and a touch of island spice.</p>
-                            <p class="price">NT$ 139</p>
-                            <button class="add-btn">+</button>
-                        </div>
-                        
-                        <div class="food-card main-dish">
-                            <img src="../img/sea-bass-pie.jpg" alt="Sea-Bass Pie" />
-                            <h3>Sea-Bass Pie</h3>
-                            <p class="desc">Flaky crust stuffed with tender sea bass and creamy filling — a seaside comfort favorite.</p>
-                            <p class="price">NT$ 199</p>
-                            <button class="add-btn">+</button>
-                        </div>
-                        
-                        <div class="food-card main-dish">
-                            <img src="../img/minestrone soup.jpg" alt="Minestrone Soup" />
-                            <h3>Minestrone Soup</h3>
-                            <p class="desc">A colorful vegetable soup bursting with warmth, perfect for a cozy evening.</p>
-                            <p class="price">NT$ 119</p>
-                            <button class="add-btn">+</button>
-                        </div>
-                        
-                        <div class="food-card main-dish">
-                            <img src="../img/aji fry.jpg" alt="Aji Fry" />
-                            <h3>Aji Fry teishoku</h3>
-                            <p class="desc">Golden-fried horse mackerel paired with fluffy rice, miso soup, and crisp seasonal greens.</p>
-                            <p class="price">NT$ 199</p>
-                            <button class="add-btn">+</button>
-                        </div>
 
-                        <div class="food-card snacks">
-                            <img src="../img/french-fries.jpg" alt="French Fries" />
-                            <h3>French Fries</h3>
-                            <p class="desc">Crispy, golden fries with just the right amount of salt — everyone’s favorite bite.</p>
-                            <p class="price">NT$ 89</p>
-                            <button class="add-btn">+</button>
-                        </div>
+                        <?php foreach ($foods as $food): ?>
+                        <div class="food-card"
+                                class="add-btn"
+                                data-id="<?= $food['id'] ?>"
+                                data-name="<?= htmlspecialchars($food['name']) ?>"
+                                data-price="<?= $food['price'] ?>"
+                                data-img="../img/<?= htmlspecialchars($food['image']) ?>"
+                                data-desc="<?= htmlspecialchars($food['description']) ?>">
 
-                        <div class="food-card snacks">
-                            <img src="../img/sandwich.jpg" alt="Sandwich" />
-                            <h3>Sandwich</h3>
-                            <p class="desc">Freshly made with soft bread, crisp veggies, and a generous layer of filling.</p>
-                            <p class="price">NT$ 129</p>
-                            <button class="add-btn">+</button>
-                        </div>
+                            <img
+                            src="../img/<?= htmlspecialchars($food['image']) ?>"
+                            alt="<?= htmlspecialchars($food['name']) ?>"
+                            />
 
-                        <div class="food-card snacks">
-                            <img src="../img/potato croquettes.jpg" alt="Potato Croquettes" />
-                            <h3>Potato Croquettes</h3>
-                            <p class="desc">Crunchy on the outside, fluffy inside — a classic comfort snack.</p>
-                            <p class="price">NT$ 99</p>
-                            <button class="add-btn">+</button>
-                        </div>
+                            <h3><?= htmlspecialchars($food['name']) ?></h3>
 
-                        <div class="food-card desserts">
-                            <img src="../img/carrot-cake.jpg" alt="Carrot Cake" />
-                            <h3>Carrot Cake</h3>
-                            <p class="desc">Sweet and moist cake with grated carrots and a touch of cinnamon.</p>
-                            <p class="price">NT$ 149</p>
-                            <button class="add-btn">+</button>
-                        </div>
+                            <p class="desc">
+                            <?= htmlspecialchars($food['description']) ?>
+                            </p>
 
-                        <div class="food-card desserts">
-                            <img src="../img/apple-pie.jpg" alt="Apple Pie" />
-                            <h3>Apple Pie</h3>
-                            <p class="desc">Buttery crust filled with caramelized apples — a timeless homemade dessert.</p>
-                            <p class="price">NT$ 139</p>
-                            <button class="add-btn">+</button>
-                        </div>
+                            <p class="price">NT$ <?= $food['price'] ?></p>
 
-                        <div class="food-card desserts">
-                            <img src="../img/fruit-tart.jpg" alt="Fruit Tart" />
-                            <h3>Fruit Tart</h3>
-                            <p class="desc">A colorful medley of fruits over smooth custard — as cheerful as it is delicious.</p>
-                            <p class="price">NT$ 99</p>
                             <button class="add-btn">+</button>
-                        </div>
 
-                        <div class="food-card soups">
-                            <img src="../img/mushroom-soup.jpg" alt="Mushroom Soup" />
-                            <h3>Mushroom Soup</h3>
-                            <p class="desc">Earthy, creamy, and aromatic — a bowl of pure woodland comfort.</p>
-                            <p class="price">NT$ 49</p>
-                            <button class="add-btn">+</button>
                         </div>
+                        <?php endforeach; ?>
 
-                        <div class="food-card soups">
-                            <img src="../img/carrot-pottage.jpg" alt="Carrot Potage" />
-                            <h3>Carrot Potage</h3>
-                            <p class="desc">Smooth, sweet carrot soup that feels like a warm hug on a cool day.</p>
-                            <p class="price">NT$ 49</p>
-                            <button class="add-btn">+</button>
-                        </div>
-
-                        <div class="food-card beverages">
-                            <img src="../img/strawberry-smoothie.jpg" alt="Strawberry Smoothie" />
-                            <h3>Strawberry Smoothie</h3>
-                            <p class="desc">A refreshing blend of ripe strawberries and creamy milk.</p>
-                            <p class="price">NT$ 79</p>
-                            <button class="add-btn">+</button>
-                        </div>
-
-                        <div class="food-card beverages">
-                            <img src="../img/banana-smoothie.jpg" alt="Banana Smoothie" />
-                            <h3>Banana Smoothie</h3>
-                            <p class="desc">Thick, creamy, and naturally sweet — an all-time classic.</p>
-                            <p class="price">NT$ 79</p>
-                            <button class="add-btn">+</button>
-                        </div>
-
-                        <div class="food-card beverages">
-                            <img src="../img/mango-smoothie.jpg" alt="Mango Smoothie" />
-                            <h3>Mango Smoothie</h3>
-                            <p class="desc">Rich, velvety mango blended to perfection — a sweet tropical escape in every sip.</p>
-                            <p class="price">NT$ 79</p>
-                            <button class="add-btn">+</button>
-                        </div>
                     </div>
+                </section>
+                
+
+
+     <!-- FOOD DETAIL MODAL -->
+            <div id="food-modal" class="food-modal">
+            <div class="food-modal-content">
+
+                <span class="close-modal">&times;</span>
+
+                <img id="modal-img" class="modal-img" alt="Food image">
+
+                <div class="modal-body">
+                <h2 id="modal-title"></h2>
+                <p id="modal-desc"></p>
+
+                <div class="modal-tabs">
+                    <button class="tab active">Options</button>
+                    <button class="tab">Details</button>
+                </div>
+
+                <textarea id="modal-note"
+                    placeholder="Special notes (no onions, less spicy...)"></textarea>
+                </div>
+
+                <div class="modal-footer">
+                <div class="modal-qty">
+                    <button id="qty-minus">−</button>
+                    <span id="qty-count">1</span>
+                    <button id="qty-plus">+</button>
+                </div>
+
+                <button id="add-to-cart-btn">Add to Cart</button>
+                </div>
+
+                </div>
+            </div>
+
                 </section>
             </main>
 
               <!-- ===================== -->
             <!-- REVIEWS SECTION -->
-            <!-- Owner: Steffani 
-            <!-- Content: Review section   
+            <!-- Owner: Steffani -->
+            <!-- Content: Review section -->  
             <!-- ===================== -->
             <section id="reviews">
             <div class="review-title">Customers Love</div>

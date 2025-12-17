@@ -1,3 +1,9 @@
+<?php
+  session_start();
+  $cart = $_SESSION['cart'] ?? [];
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -15,6 +21,7 @@
 
     <link rel="stylesheet" href="../css/global.css" />
     <link rel="stylesheet" href="../css/cart.css" />
+    <script src="functions.js"></script>
   </head>
 
   <body>
@@ -35,64 +42,38 @@
           <div class="cart-layout">
             <!-- Cart Items -->
             <section class="cart-items-section">
-              <!-- Tomato Curry -->
-              <div class="cart-item">
-                <img src="../img/foods/Tomato_Curry.jpeg" alt="Tomato Curry" />
-                <div class="item-info">
-                  <h3>Tomato Curry</h3>
-                  <p>A hearty curry simmered with fresh tomatoes and a touch of island spice.</p>
+              <?php if (empty($cart)): ?>
+                <p>Your cart is empty.</p>
+              <?php else: ?>
+                <?php foreach ($cart as $item): ?>
+                  <div class="cart-item">
 
-                  <div class="quantity-control">
-                    <button class="decrease">-</button>
-                    <input type="number" value="1" min="1" />
-                    <button class="increase">+</button>
+                    <img src="../img/<?= htmlspecialchars($item['image']) ?>" 
+                        alt="<?= htmlspecialchars($item['name']) ?>" />
+
+                    <div class="item-info">
+                      <h3><?= htmlspecialchars($item['name']) ?></h3>
+
+                      <!-- description not stored in session yet -->
+                      <p>Delicious item from our menu.</p>
+
+                      <div class="quantity-control" data-id="<?php $id ?>">
+                        <button class="decrease">-</button>
+                        <input type="number" value="<?= $item['qty'] ?>" min="1" readonly />
+                        <button class="increase">+</button>
+                      </div>
+
+                      <div class="item-bottom">
+                        <span class="item-price">
+                          NT$ <?= number_format($item['price'] * $item['qty'], 2) ?>
+                        </span>
+
+                        <button class="remove-btn" data-id="<?= $item['id'] ?>">Remove</button>
+                      </div>
+                    </div>
                   </div>
-
-                  <div class="item-bottom">
-                    <span class="item-price">NT$ 139.00</span>
-                    <button class="remove-btn">Remove</button>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Sea Bass Pie -->
-              <div class="cart-item">
-                <img src="../img/foods/sea-bass-pie.jpeg" alt="Sea Bass Pie" />
-                <div class="item-info">
-                  <h3>Sea Bass Pie</h3>
-                  <p>Flaky crust stuffed with tender sea bass and creamy filling — a seaside comfort favorite.</p>
-
-                  <div class="quantity-control">
-                    <button class="decrease">-</button>
-                    <input type="number" value="1" min="1" />
-                    <button class="increase">+</button>
-                  </div>
-
-                  <div class="item-bottom">
-                    <span class="item-price">NT$ 199.00</span>
-                    <button class="remove-btn">Remove</button>
-                  </div>
-                </div>
-              </div>
-
-              <div class="cart-item">
-                <img src="../img/carrot-pottage.jpg" alt="Carrot pottage" />
-                <div class="item-info">
-                  <h3>Carrot pottage</h3>
-                  <p>Smooth, sweet carrot soup that feels like a warm hug on a cool day.</p>
-
-                  <div class="quantity-control">
-                    <button class="decrease">-</button>
-                    <input type="number" value="1" min="1" />
-                    <button class="increase">+</button>
-                  </div>
-
-                  <div class="item-bottom">
-                    <span class="item-price">NT$ 49.00</span>
-                    <button class="remove-btn">Remove</button>
-                  </div>
-                </div>
-              </div> 
+                <?php endforeach; ?>
+              <?php endif; ?>
             </section>
 
             <!-- Coupon + Summary -->
@@ -122,6 +103,7 @@
                   <strong>NT$ 19.99</strong>
                 </div>
                 <button class="checkout-btn">Proceed to Payment</button>
+                <button class="clear-cart-btn">Clear Cart</button>
               </div>
             </aside>
           </div>
