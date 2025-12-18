@@ -55,6 +55,8 @@
                             <li><a href="#" class="sub-link">Sea-Bass Pie</a></li>
                             <li><a href="#" class="sub-link">Minestrone Soup</a></li>
                             <li><a href="#" class="sub-link">Aji Fry teishoku</a></li>
+                            <li><a href="#" class="sub-link">Teriyaki Rice</a></li>>
+                            <li><a href="#" class="sub-link">Salmon Bowl</a></li>
                         </ul>
                     </li>
 
@@ -65,6 +67,7 @@
                             <li><a href="#" class="sub-link">French Fries</a></li>
                             <li><a href="#" class="sub-link">Sandwich</a></li>
                             <li><a href="#" class="sub-link">Potato Croquettes</a></li>
+                            <li><a href="#" class="sub-link">Mozarella Sticks</a></li>
                         </ul>                 
                     </li>
 
@@ -74,6 +77,10 @@
                         <ul class="submenu">
                             <li><a href="#" class="sub-link">Mushroom Soup</a></li>
                             <li><a href="#" class="sub-link">Carrot Potage</a></li>
+                            <li><a href="#" class="sub-link">Miso Soup</a></li>
+                            <li><a href="#" class="sub-link">Corn Chowder</a></li>
+                            <li><a href="#" class="sub-link">Chicken Tenders</a></li>
+                            <li><a href="#" class="sub-link">Pumpkin Soup</a></li>
                         </ul>                 
                     </li>
 
@@ -84,6 +91,9 @@
                             <li><a href="#" class="sub-link">Carrot Cake</a></li>
                             <li><a href="#" class="sub-link">Apple Pie</a></li>
                             <li><a href="#" class="sub-link">Fruit Tart</a></li>
+                            <li><a href="#" class="sub-link">Berry French Toast</a></li>
+                            <li><a href="#" class="sub-link">Strawberry Roll Cake</a></li>
+                            <li><a href="#" class="sub-link">Chocolate Waffle</a></li>
                         </ul>                 
                     </li>
 
@@ -94,6 +104,9 @@
                             <li><a href="#" class="sub-link">Strawberry Smoothie</a></li>
                             <li><a href="#" class="sub-link">Banana Smoothie</a></li>
                             <li><a href="#" class="sub-link">Mango Smoothie</a></li>
+                            <li><a href="#" class="sub-link">Berry Smoothie</a></li>
+                            <li><a href="#" class="sub-link">Vanilla Milkshake</a></li>
+                            <li><a href="#" class="sub-link">Chocolate Milkshake</a></li>
                         </ul>                 
                     </li>
                 </ul>
