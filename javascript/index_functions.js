@@ -402,3 +402,122 @@ document.addEventListener("DOMContentLoaded", () => {
   const title = document.getElementById("current-category");
   if (title) title.textContent = "Top Sellers";
 });
+
+
+// Coupon popup (Learn More)
+document.addEventListener("DOMContentLoaded", function () {
+  const couponBtn = document.querySelector(".learn-btn");
+  const couponWindow = document.getElementById("coupon-modal");
+  const closeBtn = document.querySelector("#coupon-modal .modal-close");
+
+  if (couponBtn) {
+    couponBtn.addEventListener("click", () => {
+      couponWindow.classList.add("show");
+    });
+  }
+
+  if (closeBtn) {
+    closeBtn.addEventListener("click", () => {
+      couponWindow.classList.remove("show");
+    });
+  }
+
+  if (couponWindow) {
+    window.addEventListener("click", (event) => {
+      if (event.target === couponWindow) {
+        couponWindow.classList.remove("show");
+      }
+    });
+  }
+
+  // Coupon popup (Learn More) + Copy Code
+document.addEventListener("DOMContentLoaded", function () {
+  const couponBtn = document.querySelector(".learn-btn");
+  const couponWindow = document.getElementById("coupon-modal");
+  const closeBtn = document.querySelector("#coupon-modal .modal-close");
+
+  const copyBtn = document.getElementById("copy-coupon");
+  const couponInput = document.getElementById("coupon-input");
+
+  // open
+  if (couponBtn) {
+    couponBtn.addEventListener("click", () => {
+      couponWindow.classList.add("show");
+    });
+  }
+
+  // close
+  if (closeBtn) {
+    closeBtn.addEventListener("click", () => {
+      couponWindow.classList.remove("show");
+    });
+  }
+
+  // click outside closes
+  if (couponWindow) {
+    window.addEventListener("click", (event) => {
+      if (event.target === couponWindow) couponWindow.classList.remove("show");
+    });
+  }
+
+  // COPY CODE
+  if (copyBtn && couponInput) {
+    copyBtn.addEventListener("click", async () => {
+      const code = couponInput.value;
+
+      try {
+        await navigator.clipboard.writeText(code);
+        copyBtn.textContent = "Copied! ✅";
+        setTimeout(() => (copyBtn.textContent = "Copy Code"), 1200);
+      } catch (err) {
+        // fallback for older browsers / http
+        couponInput.focus();
+        couponInput.select();
+        document.execCommand("copy");
+        copyBtn.textContent = "Copied! ✅";
+        setTimeout(() => (copyBtn.textContent = "Copy Code"), 1200);
+      }
+    });
+  }
+});
+});
+
+// Coupon popup + copy (scoped, reliable)
+document.addEventListener("DOMContentLoaded", function () {
+  const couponBtn = document.querySelector(".learn-btn");
+  const couponWindow = document.getElementById("coupon-modal");
+  const closeBtn = document.querySelector("#coupon-modal .modal-close");
+
+  const copyBtn = document.getElementById("copy-coupon");
+  const couponInput = document.getElementById("coupon-input");
+
+  if (!couponBtn || !couponWindow) return;
+
+  // open
+  couponBtn.addEventListener("click", () => couponWindow.classList.add("show"));
+
+  // close X
+  closeBtn?.addEventListener("click", () => couponWindow.classList.remove("show"));
+
+  // close outside
+  window.addEventListener("click", (e) => {
+    if (e.target === couponWindow) couponWindow.classList.remove("show");
+  });
+
+  // copy (super reliable fallback)
+  copyBtn?.addEventListener("click", () => {
+    const code = couponInput?.value || "KIDS1111";
+
+    // Create temp input to guarantee copy on most browsers
+    const temp = document.createElement("input");
+    temp.value = code;
+    document.body.appendChild(temp);
+    temp.select();
+    temp.setSelectionRange(0, 99999); // mobile support
+    document.execCommand("copy");
+    document.body.removeChild(temp);
+
+    copyBtn.textContent = "Copied! ✅";
+    setTimeout(() => (copyBtn.textContent = "Copy Code"), 1200);
+  });
+});

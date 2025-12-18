@@ -139,6 +139,7 @@
                     <button type="button" class="newsletter-subscribe">Subscribe</button>
                 </div>
             </div> 
+            
 
             <!-- ===================== -->
             <!-- HEADER SECTION -->
@@ -229,6 +230,7 @@
                 <button class="learn-btn">
                     Learn More <span class="arrow">&rarr;</span></button>
             </div>
+
             
             <!-- ===================== -->
             <!-- MAIN CONTENT AREA -->
@@ -385,5 +387,24 @@
         <script src="../javascript/index_functions.js"></script>
 
         <!-- TEST BY JORDAN -->
+
+        <!-- COUPON MODAL (put near bottom of body) -->
+<div id="coupon-modal" class="modal">
+  <div class="modal-content">
+    <span class="modal-close">&times;</span>
+
+    <h2 class="w3-wide">COUPON</h2>
+    <p>Use this code at checkout:</p>
+
+    <p>
+      <input class="newsletter-input" id="coupon-input" type="text" value="KIDS1111" readonly>
+    </p>
+
+    <button type="button" class="newsletter-subscribe" id="copy-coupon">
+      Copy Code
+    </button>
+  </div>
+</div>
+
     </body>
 </html>
