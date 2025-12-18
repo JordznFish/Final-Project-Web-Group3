@@ -361,7 +361,7 @@
         </div>
 
         <!-- Functions -->
-        <script src="functions.js"></script>
+        <script src="index_functions.js"></script>
 
         <!-- TEST BY JORDAN -->
     </body>

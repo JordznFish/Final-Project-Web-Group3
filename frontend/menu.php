@@ -98,7 +98,8 @@
   </div>
 </div>
 
-<script src="menu.js"></script>
+<!-- JavaScript -->
+<script src="menu_functions.js"></script>
 
 </body>
 </html>
