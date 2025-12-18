@@ -896,7 +896,6 @@
   #navbar.open { left: 0; }
 
   .sidebar-overlay { z-index: 150; }
-  .menu-btn { z-index: 300; }
 }
 
 /* =========================

@@ -190,7 +190,7 @@ h2 {
   .ac-logo {
     padding: 10px 20px;
     border-radius: 16px;
-    box-shadow: 0 8px 0 #5a3818, 0 10px 14px rgba(0, 0, 0, 0.25);
+    box-shadow: rgb(116, 174, 211) 0px 10px 0px, rgba(0, 0, 0, 0.3) 0px 12px 18px;
     top: 150px;
   }
 }
