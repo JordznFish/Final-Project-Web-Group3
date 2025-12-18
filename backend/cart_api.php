@@ -15,6 +15,7 @@ if ($action === 'add') {
     $price = (float)$_POST['price'];
     $qty = (int)$_POST['qty'];
     $image = $_POST['image'] ?? '';
+    $desc = $_POST['desc'] ?? '';
 
     if (isset($_SESSION['cart'][$id])) {
         $_SESSION['cart'][$id]['qty'] += $qty;
@@ -24,7 +25,8 @@ if ($action === 'add') {
             'name' => $name,
             'price' => $price,
             'qty' => $qty,
-            'image' => $image
+            'image' => $image,
+            'desc' => $desc
         ];
     }
 
