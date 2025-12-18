@@ -1,11 +1,30 @@
 <?php
-  session_start();
-  $cart = $_SESSION['cart'] ?? [];
-  $subtotal = 0;
+session_start();
+$cart = $_SESSION['cart'] ?? [];
+$subtotal = 0;
 
-  foreach ($cart as $item) {
-    $subtotal += $item['price'] * $item['qty'];
-  }
+$COUPONS = [
+  'KIDS1111' => 0.11
+];
+
+
+$discount = 0;
+$couponCode = null;
+
+foreach ($cart as $id => $item) {
+  $subtotal += $item['price'] * $item['qty'];
+}
+
+$DELIVERY_FEE = 2.5;
+$deliveryFee = $subtotal > 0 ? $DELIVERY_FEE : 0;
+
+if (isset($_SESSION['coupon'])) {
+  $couponCode = $_SESSION['coupon']['code'];
+  $discountRate = $_SESSION['coupon']['rate'];
+  $discount = $subtotal * $discountRate;
+}
+
+$total = $subtotal - $discount + $deliveryFee;
 ?>
 
 
@@ -28,7 +47,7 @@
     <link rel="stylesheet" href="../css/cart.css" />
   </head>
 
-  <body>
+  <body data-coupon-rate="<?= isset($_SESSION['coupon']) ? $_SESSION['coupon']['rate'] : 0 ?>">
     <div class="background-wrapper">
       <div class="align">
         <header class="cart-header">
@@ -49,7 +68,7 @@
               <?php if (empty($cart)): ?>
                 <p>Your cart is empty.</p>
               <?php else: ?>
-                <?php foreach ($cart as $item): ?>
+                <?php foreach ($cart as $id => $item): ?>
                   <div class="cart-item">
 
                     <img src="../img/<?= htmlspecialchars($item['image']) ?>" 
@@ -58,21 +77,19 @@
                     <div class="item-info">
                       <h3><?= htmlspecialchars($item['name']) ?></h3>
 
-                      <!-- description not stored in session yet -->
-                      <p>Delicious item from our menu.</p>
+                      <p><?= htmlspecialchars($item['desc'] ?? '') ?></p>
 
-                      <div class="quantity-control" data-id="<?php $id ?>">
+                      <div class="quantity-control" data-id="<?= $id ?>">
                         <button class="decrease">-</button>
                         <input type="number" value="<?= $item['qty'] ?>" min="1" readonly />
                         <button class="increase">+</button>
                       </div>
 
                       <div class="item-bottom">
-                        <span class="item-price">
+                        <span class="item-price" data-id="<?= $id ?>">
                           NT$ <?= number_format($item['price'] * $item['qty'], 2) ?>
                         </span>
-
-                        <button class="remove-btn" data-id="<?= $item['id'] ?>">Remove</button>
+                        <button class="remove-btn" data-id="<?= $id ?>">Remove</button>
                       </div>
                     </div>
                   </div>
@@ -94,14 +111,30 @@
                   <span>Subtotal</span>
                   <span id="cart-subtotal">NT$ <?= number_format($subtotal, 2) ?></span>
                 </div>
-                <div class="summary-item">
-                  <span>Delivery</span>
-                  <span>NT$ 2.50</span>
-                </div>
+
+                <?php if ($subtotal > 0): ?>
+                  <div class="summary-item">
+                    <span>Delivery Fee</span>
+                    <span id="cart-delivery">NT$ <?= number_format($deliveryFee, 2) ?></span>
+                  </div>
+                <?php endif; ?>
+
+                <?php if ($discount > 0): ?>
+                  <div class="summary-item" id="coupon-row">
+                    <span>
+                      Coupon (<?= htmlspecialchars($couponCode) ?>)
+                    </span>
+                    <span id="cart-discount">
+                      - NT$ <?= number_format($discount, 2) ?>
+                    </span>
+                  </div>
+                <?php endif; ?>
+
                 <div class="summary-item total">
                   <strong>Total Payable</strong>
-                  <strong>NT$ 19.99</strong>
+                  <strong id="cart-total">NT$ <?= number_format($total, 2) ?></strong>
                 </div>
+
                 <button class="checkout-btn">Proceed to Payment</button>
                 <button class="clear-cart-btn">Clear Cart</button>
               </div>
@@ -134,7 +167,6 @@
                     </div>
 
                     <p class="copyright">© 2025 CrossingEats. All rights reserved.</p>
-                
                 </footer>
     </div>
 
