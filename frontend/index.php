@@ -397,7 +397,7 @@
     <p>Use this code at checkout:</p>
 
     <p>
-      <input class="newsletter-input" id="coupon-input" type="text" value="KIDS1111" readonly>
+      <input class="newsletter-input" id="coupon-input" type="text" value="KIDS11" readonly>
     </p>
 
     <button type="button" class="newsletter-subscribe" id="copy-coupon">
