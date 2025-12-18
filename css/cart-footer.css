@@ -184,6 +184,7 @@ h3 {
 
 
 #site-footer {
+  font-family: "Comic+Relief", cursive;
   position: relative;
   background-image: url('img/background/footerzz.jpg');
   background-repeat: no-repeat;
@@ -271,7 +272,7 @@ h3 {
 
 @media (min-width: 1025px) {
   #site-footer {
-    background-size: 100% auto; /* full width, keep height ratio */
+    background-size: 100% auto; 
     background-position: bottom center;
     padding: 60px 20px;
   }

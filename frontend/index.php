@@ -147,7 +147,7 @@
             <!-- Contains: Theme banner -->
             <!-- ===================== -->
             <div class="top-bar">
-                <h1 class="bar-logo">Since 2025</h1>
+                <h1 class="bar-logo">EST. 2025</h1>
 
                 <div class="top-icons">
                     <a href="menu.php" class="icon search">
