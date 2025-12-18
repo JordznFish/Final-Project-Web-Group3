@@ -26,7 +26,7 @@ h2 {
 .bar-logo {
   margin: -30px;
   font-size: 26px;
-  font-family: "Dancing Script", cursive;
+  font-family: "Schoolbell", cursive;
   color: #000;
   white-space: nowrap;
 }
@@ -50,14 +50,14 @@ h2 {
 }
 
 .top-right-icon {
-  width: 24px;
-  height: 24px;
+  width: 35px;
+  height: 35px;
   display: block;
 }
 
 .search img {
-  width: 17px;
-  height: 17px;
+  width: 24px;
+  height: 24px;
 }
 
 /* Columns */

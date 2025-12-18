@@ -385,4 +385,20 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".food-card");
+  let shown = 0;
 
+  cards.forEach(card => {
+    if (card.dataset.category === "main" && shown < 6) {
+      card.style.display = "block";
+      shown++;
+    } else {
+      card.style.display = "none";
+    }
+  });
+
+  // Keep the title text
+  const title = document.getElementById("current-category");
+  if (title) title.textContent = "Top Sellers";
+});

@@ -902,5 +902,35 @@
 /* =========================
    NAVBAR TEXT SIZE – GLOBAL
 ========================= */
-.nav-link { font-size: 13px; }
-.submenu a { font-size: 14px; }
+.nav-links a { font-size: 20px; }
+.submenu a { font-size: 17px; }
+
+@media (max-width: 500px) {
+  :root {
+    --mobile-header-height: 85px; /* match your .background-wrapper margin-top */
+  }
+
+  #navbar {
+    top: var(--mobile-header-height);
+    height: calc(100vh - var(--mobile-header-height));
+  }
+
+  .logo {
+    margin: 18px 0 16px 0; /* reduce top spacing so it fits nicely */
+  }
+}
+
+@media (max-width: 375px) {
+  :root {
+    --mobile-header-height: 85px;
+  }
+
+  #navbar {
+    top: var(--mobile-header-height);
+    height: calc(100vh - var(--mobile-header-height));
+    left: -100%;
+    width: 100vw;
+  }
+
+  #navbar.open { left: 0; }
+}
