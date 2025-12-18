@@ -77,8 +77,7 @@ $total = $subtotal - $discount + $deliveryFee;
                     <div class="item-info">
                       <h3><?= htmlspecialchars($item['name']) ?></h3>
 
-                      <!-- description not stored in session yet -->
-                      <p>Delicious item from our menu.</p>
+                      <p><?= htmlspecialchars($item['desc'] ?? '') ?></p>
 
                       <div class="quantity-control" data-id="<?= $id ?>">
                         <button class="decrease">-</button>

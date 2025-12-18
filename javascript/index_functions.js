@@ -210,7 +210,8 @@ if (hasModal) {
         name: currentItem.name,
         price: currentItem.price,
         qty: qty,
-        image: currentItem.img
+        image: currentItem.img,
+        desc: currentItem.desc
       })
     })
     .then(res => res.json())
