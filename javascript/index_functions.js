@@ -210,7 +210,8 @@ if (hasModal) {
         name: currentItem.name,
         price: currentItem.price,
         qty: qty,
-        image: currentItem.img
+        image: currentItem.img,
+        desc: currentItem.desc
       })
     })
     .then(res => res.json())
@@ -233,3 +234,290 @@ function updateCartBadge(cart) {
     badge.textContent = total;
     badge.style.display = total > 0 ? "inline-block" : "none";
 }
+
+//ADD and MINUS QTY
+document.addEventListener("click", function (e) {
+
+  if (!e.target.classList.contains("increase") &&
+      !e.target.classList.contains("decrease")) return;
+
+  const control = e.target.closest(".quantity-control");
+  const id = control.dataset.id;
+  const input = control.querySelector("input");
+
+  let qty = parseInt(input.value);
+
+  if (e.target.classList.contains("increase")) qty++;
+  if (e.target.classList.contains("decrease") && qty > 1) qty--;
+
+  fetch("../backend/cart_api.php", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams({
+      action: "update",
+      id: id,
+      qty: qty
+    })
+  })
+  .then(res => res.json())
+  .then(data => {
+    input.value = qty;
+
+    // Optional: update subtotal if you add a hook later
+    updateCartSummary(data.cart);
+  });
+});
+
+// Clear cart
+document.addEventListener("click", function (e) {
+
+  if (e.target.classList.contains("remove-btn")) {
+    const id = e.target.dataset.id;
+
+    fetch("../backend/cart_api.php", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams({
+        action: "remove",
+        id: id
+      })
+    })
+    .then(() => location.reload());
+  }
+
+  if (e.target.classList.contains("clear-cart-btn")) {
+    if (!confirm("Clear cart?")) return;
+
+    fetch("../backend/cart_api.php", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams({ action: "clear" })
+    })
+    .then(() => location.reload());
+  }
+});
+
+// CATEGORY FILTERING
+function filterCategory(category) {
+  document.querySelectorAll(".food-card").forEach(card => {
+    const cardCategory = card.dataset.category;
+
+    if (category === "all" || cardCategory === category) {
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
+  });
+
+  // Update section title
+  const title = document.getElementById("current-category");
+  if (title) {
+    title.textContent =
+      category === "all"
+        ? "Top Sellers"
+        : category.charAt(0).toUpperCase() + category.slice(1);
+  }
+}
+
+document.querySelectorAll(".nav-link[data-category]").forEach(link => {
+  link.addEventListener("click", e => {
+    e.preventDefault();
+
+    const category = link.dataset.category;
+
+    // 1️⃣ Filter food
+    filterCategory(category);
+
+    // 2️⃣ Scroll to menu signboard
+    const menuSection = document.getElementById("upper-menu");
+    if (menuSection) {
+      menuSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }
+  });
+});
+
+document.querySelectorAll(".sub-link[data-target]").forEach(link => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const targetId = link.dataset.target;
+    const card = document.getElementById(targetId);
+    if (!card) return;
+
+    // Scroll to the card
+    card.scrollIntoView({ behavior: "smooth", block: "center" });
+
+    // Re-trigger shake even if clicked repeatedly
+    card.classList.remove("shake");
+    void card.offsetWidth; // force reflow
+    card.classList.add("shake");
+
+    // Optional: remove class after animation ends
+    setTimeout(() => card.classList.remove("shake"), 500);
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const navbar = document.getElementById("navbar");
+  const overlay = document.querySelector(".sidebar-overlay");
+
+  // support BOTH hamburger buttons
+  const toggles = [
+    document.getElementById("menu-btn"),
+    document.getElementById("menu-toggle"),
+  ].filter(Boolean);
+
+  if (!navbar || !overlay || toggles.length === 0) return;
+
+  function openClose() {
+    navbar.classList.toggle("open");
+    overlay.classList.toggle("active");
+  }
+
+  toggles.forEach(btn => btn.addEventListener("click", openClose));
+
+  overlay.addEventListener("click", () => {
+    navbar.classList.remove("open");
+    overlay.classList.remove("active");
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".food-card");
+  let shown = 0;
+
+  cards.forEach(card => {
+    if (card.dataset.category === "main" && shown < 6) {
+      card.style.display = "block";
+      shown++;
+    } else {
+      card.style.display = "none";
+    }
+  });
+
+  // Keep the title text
+  const title = document.getElementById("current-category");
+  if (title) title.textContent = "Top Sellers";
+});
+
+
+// Coupon popup (Learn More)
+document.addEventListener("DOMContentLoaded", function () {
+  const couponBtn = document.querySelector(".learn-btn");
+  const couponWindow = document.getElementById("coupon-modal");
+  const closeBtn = document.querySelector("#coupon-modal .modal-close");
+
+  if (couponBtn) {
+    couponBtn.addEventListener("click", () => {
+      couponWindow.classList.add("show");
+    });
+  }
+
+  if (closeBtn) {
+    closeBtn.addEventListener("click", () => {
+      couponWindow.classList.remove("show");
+    });
+  }
+
+  if (couponWindow) {
+    window.addEventListener("click", (event) => {
+      if (event.target === couponWindow) {
+        couponWindow.classList.remove("show");
+      }
+    });
+  }
+
+  // Coupon popup (Learn More) + Copy Code
+document.addEventListener("DOMContentLoaded", function () {
+  const couponBtn = document.querySelector(".learn-btn");
+  const couponWindow = document.getElementById("coupon-modal");
+  const closeBtn = document.querySelector("#coupon-modal .modal-close");
+
+  const copyBtn = document.getElementById("copy-coupon");
+  const couponInput = document.getElementById("coupon-input");
+
+  // open
+  if (couponBtn) {
+    couponBtn.addEventListener("click", () => {
+      couponWindow.classList.add("show");
+    });
+  }
+
+  // close
+  if (closeBtn) {
+    closeBtn.addEventListener("click", () => {
+      couponWindow.classList.remove("show");
+    });
+  }
+
+  // click outside closes
+  if (couponWindow) {
+    window.addEventListener("click", (event) => {
+      if (event.target === couponWindow) couponWindow.classList.remove("show");
+    });
+  }
+
+  // COPY CODE
+  if (copyBtn && couponInput) {
+    copyBtn.addEventListener("click", async () => {
+      const code = couponInput.value;
+
+      try {
+        await navigator.clipboard.writeText(code);
+        copyBtn.textContent = "Copied! ✅";
+        setTimeout(() => (copyBtn.textContent = "Copy Code"), 1200);
+      } catch (err) {
+        // fallback for older browsers / http
+        couponInput.focus();
+        couponInput.select();
+        document.execCommand("copy");
+        copyBtn.textContent = "Copied! ✅";
+        setTimeout(() => (copyBtn.textContent = "Copy Code"), 1200);
+      }
+    });
+  }
+});
+});
+
+// Coupon popup + copy (scoped, reliable)
+document.addEventListener("DOMContentLoaded", function () {
+  const couponBtn = document.querySelector(".learn-btn");
+  const couponWindow = document.getElementById("coupon-modal");
+  const closeBtn = document.querySelector("#coupon-modal .modal-close");
+
+  const copyBtn = document.getElementById("copy-coupon");
+  const couponInput = document.getElementById("coupon-input");
+
+  if (!couponBtn || !couponWindow) return;
+
+  // open
+  couponBtn.addEventListener("click", () => couponWindow.classList.add("show"));
+
+  // close X
+  closeBtn?.addEventListener("click", () => couponWindow.classList.remove("show"));
+
+  // close outside
+  window.addEventListener("click", (e) => {
+    if (e.target === couponWindow) couponWindow.classList.remove("show");
+  });
+
+  // copy (super reliable fallback)
+  copyBtn?.addEventListener("click", () => {
+    const code = couponInput?.value || "KIDS11";
+
+    // Create temp input to guarantee copy on most browsers
+    const temp = document.createElement("input");
+    temp.value = code;
+    document.body.appendChild(temp);
+    temp.select();
+    temp.setSelectionRange(0, 99999); // mobile support
+    document.execCommand("copy");
+    document.body.removeChild(temp);
+
+    copyBtn.textContent = "Copied! ✅";
+    setTimeout(() => (copyBtn.textContent = "Copy Code"), 1200);
+  });
+});
