@@ -65,36 +65,38 @@ $total = $subtotal - $discount + $deliveryFee;
           <div class="cart-layout">
             <!-- Cart Items -->
             <section class="cart-items-section">
-              <?php if (empty($cart)): ?>
-                <p>Your cart is empty.</p>
-              <?php else: ?>
-                <?php foreach ($cart as $id => $item): ?>
-                  <div class="cart-item">
+              <div class="cart-items-box">
+                <?php if (empty($cart)): ?>
+                  <p>Your cart is empty</p>
+                <?php else: ?>
+                  <?php foreach ($cart as $id => $item): ?>
+                    <div class="cart-item">
 
-                    <img src="../img/<?= htmlspecialchars($item['image']) ?>" 
-                        alt="<?= htmlspecialchars($item['name']) ?>" />
+                      <img src="../img/<?= htmlspecialchars($item['image']) ?>" 
+                          alt="<?= htmlspecialchars($item['name']) ?>" />
 
-                    <div class="item-info">
-                      <h3><?= htmlspecialchars($item['name']) ?></h3>
+                      <div class="item-info">
+                        <h3><?= htmlspecialchars($item['name']) ?></h3>
 
-                      <p><?= htmlspecialchars($item['desc'] ?? '') ?></p>
+                        <p><?= htmlspecialchars($item['desc'] ?? '') ?></p>
 
-                      <div class="quantity-control" data-id="<?= $id ?>">
-                        <button class="decrease">-</button>
-                        <input type="number" value="<?= $item['qty'] ?>" min="1" readonly />
-                        <button class="increase">+</button>
-                      </div>
+                        <div class="quantity-control" data-id="<?= $id ?>">
+                          <button class="decrease">-</button>
+                          <input type="number" value="<?= $item['qty'] ?>" min="1" readonly />
+                          <button class="increase">+</button>
+                        </div>
 
-                      <div class="item-bottom">
-                        <span class="item-price" data-id="<?= $id ?>">
-                          NT$ <?= number_format($item['price'] * $item['qty'], 2) ?>
-                        </span>
-                        <button class="remove-btn" data-id="<?= $id ?>">Remove</button>
+                        <div class="item-bottom">
+                          <span class="item-price" data-id="<?= $id ?>">
+                            NT$ <?= number_format($item['price'] * $item['qty'], 2) ?>
+                          </span>
+                          <button class="remove-btn" data-id="<?= $id ?>">Remove</button>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                <?php endforeach; ?>
-              <?php endif; ?>
+                  <?php endforeach; ?>
+                <?php endif; ?>
+              </div>
             </section>
 
             <!-- Coupon + Summary -->
