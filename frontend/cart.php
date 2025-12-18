@@ -1,6 +1,11 @@
 <?php
   session_start();
   $cart = $_SESSION['cart'] ?? [];
+  $subtotal = 0;
+
+  foreach ($cart as $item) {
+    $subtotal += $item['price'] * $item['qty'];
+  }
 ?>
 
 
@@ -21,7 +26,6 @@
 
     <link rel="stylesheet" href="../css/global.css" />
     <link rel="stylesheet" href="../css/cart.css" />
-    <script src="functions.js"></script>
   </head>
 
   <body>
@@ -87,16 +91,12 @@
               <div class="cart-summary">
                 <h3>Your Order</h3>
                 <div class="summary-item">
-                  <span>Subtotal (2 items)</span>
-                  <span>NT$ 16.49</span>
+                  <span>Subtotal</span>
+                  <span id="cart-subtotal">NT$ <?= number_format($subtotal, 2) ?></span>
                 </div>
                 <div class="summary-item">
                   <span>Delivery</span>
                   <span>NT$ 2.50</span>
-                </div>
-                <div class="summary-item">
-                  <span>Tax</span>
-                  <span>NT$ 1.00</span>
                 </div>
                 <div class="summary-item total">
                   <strong>Total Payable</strong>
@@ -137,5 +137,8 @@
                 
                 </footer>
     </div>
+
+    <!-- -->
+    <script src="../javascript/cart_functions.js"></script>
   </body>
 </html>

@@ -121,16 +121,16 @@ document.querySelectorAll(".nav-link").forEach((link) => {
 });
 
 // Popping up window menu
-            const modal = document.getElementById("food-modal");
-            const modalImg = document.getElementById("modal-img");
-            const modalTitle = document.getElementById("modal-title");
-            const modalDesc = document.getElementById("modal-desc");
-            const qtyCount = document.getElementById("qty-count");
+const modal = document.getElementById("food-modal");
+const modalImg = document.getElementById("modal-img");
+const modalTitle = document.getElementById("modal-title");
+const modalDesc = document.getElementById("modal-desc");
+const qtyCount = document.getElementById("qty-count");
 
-            const hasModal = modal && modalImg && modalTitle && modalDesc && qtyCount;
+const hasModal = modal && modalImg && modalTitle && modalDesc && qtyCount;
 
-            let currentItem = {};
-            let qty = 1;
+let currentItem = {};
+let qty = 1;
 
 if (hasModal) {
   function openFoodModal(item) {
@@ -233,68 +233,3 @@ function updateCartBadge(cart) {
     badge.textContent = total;
     badge.style.display = total > 0 ? "inline-block" : "none";
 }
-
-//ADD and MINUS QTY
-document.addEventListener("click", function (e) {
-
-  if (!e.target.classList.contains("increase") &&
-      !e.target.classList.contains("decrease")) return;
-
-  const control = e.target.closest(".quantity-control");
-  const id = control.dataset.id;
-  const input = control.querySelector("input");
-
-  let qty = parseInt(input.value);
-
-  if (e.target.classList.contains("increase")) qty++;
-  if (e.target.classList.contains("decrease") && qty > 1) qty--;
-
-  fetch("../backend/cart_api.php", {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: new URLSearchParams({
-      action: "update",
-      id: id,
-      qty: qty
-    })
-  })
-  .then(res => res.json())
-  .then(data => {
-    input.value = qty;
-
-    // Optional: update subtotal if you add a hook later
-    updateCartSummary(data.cart);
-  });
-});
-
-// Clear cart
-document.addEventListener("click", function (e) {
-
-  if (e.target.classList.contains("remove-btn")) {
-    const id = e.target.dataset.id;
-
-    fetch("../backend/cart_api.php", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams({
-        action: "remove",
-        id: id
-      })
-    })
-    .then(() => location.reload());
-  }
-
-  if (e.target.classList.contains("clear-cart-btn")) {
-    if (!confirm("Clear cart?")) return;
-
-    fetch("../backend/cart_api.php", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams({ action: "clear" })
-    })
-    .then(() => location.reload());
-  }
-});
-
-
-

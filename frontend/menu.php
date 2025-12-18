@@ -99,7 +99,7 @@
 </div>
 
 <!-- JavaScript -->
-<script src="menu_functions.js"></script>
+<script src="../javascript/menu_functions.js"></script>
 
 </body>
 </html>
