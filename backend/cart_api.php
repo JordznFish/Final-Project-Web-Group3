@@ -47,6 +47,7 @@ if ($action === 'remove') {
 /* ===== CLEAR CART ===== */
 if ($action === 'clear') {
     $_SESSION['cart'] = [];
+    unset($_SESSION['coupon']);
 
     echo json_encode(['status' => 'success', 'cart' => []]);
     exit;
@@ -65,6 +66,34 @@ if ($action === 'update') {
         'status' => 'success',
         'cart' => $_SESSION['cart']
     ]);
+    exit;
+}
+
+/* ===== APPLY PROMO COUPON ===== */
+if ($action === 'apply_coupon') {
+    $code = strtoupper(trim($_POST['code'] ?? ''));
+
+    $COUPONS = [
+        'KIDS11' => 0.11
+    ];
+
+    if (isset($COUPONS[$code])) {
+        $_SESSION['coupon'] = [
+            'code' => $code,
+            'rate' => $COUPONS[$code]
+        ];
+
+        echo json_encode([
+            'status' => 'success'
+        ]);
+    } 
+    else {
+        unset($_SESSION['coupon']);
+
+        echo json_encode([
+            'status' => 'invalid'
+        ]);
+    }
     exit;
 }
 
