@@ -2,7 +2,7 @@
     require_once "../backend/db-connect.php";
 
     $stmt = $db->prepare("
-        SELECT id, name, price, image, description
+        SELECT id, name, price, image, description, category
         FROM foods
     ");
     $stmt->execute();
@@ -26,6 +26,10 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
 
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+
         <!-- CSS -->
         <link rel="stylesheet" href="../css/global.css" />
         <!-- Team-specific CSS -->
@@ -41,72 +45,76 @@
             <div id="sidebar-overlay" class="sidebar-overlay"></div>
             <nav id="navbar">
                 <div class="logo">
-                    <a href="#banner">
-                        <img src="../img/compass1.png" alt="Logo" class="nav-icon"/>
+                    <a href="#banner" class="text-logo">
+                        Crossing <br>
+                        <span>Eats</span>
                     </a>
                 </div>
+
                 <hr class="divider">
                 <ul class="nav-links" id="navLinks">
                     <li class="nav-item has-children">
-                        <a href="#" class="nav-link" aria-expanded="false">Main Dishes</a>
+                        <a href="#" class="nav-link" data-category="main" aria-expanded="false">Main Dishes</a>
 
                         <ul class="submenu">
-                            <li><a href="#" class="sub-link">Tomato Curry Rice</a></li>
-                            <li><a href="#" class="sub-link">Sea-Bass Pie</a></li>
-                            <li><a href="#" class="sub-link">Minestrone Soup</a></li>
-                            <li><a href="#" class="sub-link">Aji Fry teishoku</a></li>
-                            <li><a href="#" class="sub-link">Teriyaki Rice</a></li>>
-                            <li><a href="#" class="sub-link">Salmon Bowl</a></li>
+                            <li><a href="#" class="sub-link" data-target="food-1">Tomato Curry Rice</a></li>
+                            <li><a href="#" class="sub-link" data-target="food-2">Sea-Bass Pie</a></li>
+                            <li><a href="#" class="sub-link" data-target="food-15">Chicken & Mash</a></li>
+                            <li><a href="#" class="sub-link" data-target="food-6">Aji Fry teishoku</a></li>
+                            <li><a href="#" class="sub-link" data-target="food-">Teriyaki Rice</a></li>
+                            <li><a href="#" class="sub-link" data-target="food-">Salmon Bowl</a></li>
                         </ul>
                     </li>
 
                     <li class="nav-item has-children">
-                        <a href="#" class="nav-link" aria-expanded="false">Snacks</a>
+                        <a href="#" class="nav-link" data-category="snack" aria-expanded="false">Snacks</a>
                     
                         <ul class="submenu">
-                            <li><a href="#" class="sub-link">French Fries</a></li>
-                            <li><a href="#" class="sub-link">Sandwich</a></li>
-                            <li><a href="#" class="sub-link">Potato Croquettes</a></li>
-                            <li><a href="#" class="sub-link">Mozarella Sticks</a></li>
+                            <li><a href="#" class="sub-link" data-target="food-12">French Fries</a></li>
+                            <li><a href="#" class="sub-link" data-target="food-34">Sandwich</a></li>
+                            <li><a href="#" class="sub-link" data-target="food-33">Potato Croquettes</a></li>
+                            <li><a href="#" class="sub-link" data-target="food-24">Chicken Tenders</a></li>
+                            <li><a href="#" class="sub-link" data-target="food-17">Mozzarella Sticks</a></li>
+                            <li><a href="#" class="sub-link" data-target="food-16">Chicken Samosa</a></li>
                         </ul>                 
                     </li>
 
                     <li class="nav-item has-children">
-                        <a href="#" class="nav-link" aria-expanded="false">Soups</a>
+                        <a href="#" class="nav-link" data-category="soup" aria-expanded="false">Soups</a>
 
                         <ul class="submenu">
-                            <li><a href="#" class="sub-link">Mushroom Soup</a></li>
-                            <li><a href="#" class="sub-link">Carrot Potage</a></li>
-                            <li><a href="#" class="sub-link">Miso Soup</a></li>
-                            <li><a href="#" class="sub-link">Corn Chowder</a></li>
-                            <li><a href="#" class="sub-link">Chicken Tenders</a></li>
-                            <li><a href="#" class="sub-link">Pumpkin Soup</a></li>
+                            <li><a href="#" class="sub-link" data-target="food-29">Mushroom Soup</a></li>
+                            <li><a href="#" class="sub-link" data-target="food-28">Carrot Potage</a></li>
+                            <li><a href="#" class="sub-link" data-target="food-">Pumpkin Soup</a></li>
+                            <li><a href="#" class="sub-link" data-target="food-21">Corn Chowder</a></li>
+                            <li><a href="#" class="sub-link" data-target="food-20">Miso Soup</a></li>
+                            <li><a href="#" class="sub-link" data-target="food-3">Minestrone Soup</a></li>
                         </ul>                 
                     </li>
 
                     <li class="nav-item has-children">
-                        <a href="#" class="nav-link" aria-expanded="false">Desserts</a>
+                        <a href="#" class="nav-link" data-category="dessert" aria-expanded="false">Desserts</a>
 
                         <ul class="submenu">
-                            <li><a href="#" class="sub-link">Carrot Cake</a></li>
-                            <li><a href="#" class="sub-link">Apple Pie</a></li>
-                            <li><a href="#" class="sub-link">Fruit Tart</a></li>
-                            <li><a href="#" class="sub-link">Berry French Toast</a></li>
-                            <li><a href="#" class="sub-link">Strawberry Roll Cake</a></li>
-                            <li><a href="#" class="sub-link">Chocolate Waffle</a></li>
+                            <li><a href="#" class="sub-link" data-target="food-32">Carrot Cake</a></li>
+                            <li><a href="#" class="sub-link" data-target="food-31">Apple Pie</a></li>
+                            <li><a href="#" class="sub-link" data-target="food-30">Fruit Tart</a></li>
+                            <li><a href="#" class="sub-link" data-target="food-23">Chocolate Waffle</a></li>
+                            <li><a href="#" class="sub-link" data-target="food-19">Starwberry Roll Cake</a></li>
+                            <li><a href="#" class="sub-link" data-target="food-18">Berry French Toast</a></li>
                         </ul>                 
                     </li>
 
                     <li class="nav-item has-children">
-                        <a href="#" class="nav-link" aria-expanded="false">Beverages</a>
+                        <a href="#" class="nav-link" data-category="beverage" aria-expanded="false">Beverages</a>
 
                         <ul class="submenu">
-                            <li><a href="#" class="sub-link">Strawberry Smoothie</a></li>
-                            <li><a href="#" class="sub-link">Banana Smoothie</a></li>
-                            <li><a href="#" class="sub-link">Mango Smoothie</a></li>
-                            <li><a href="#" class="sub-link">Berry Smoothie</a></li>
-                            <li><a href="#" class="sub-link">Vanilla Milkshake</a></li>
-                            <li><a href="#" class="sub-link">Chocolate Milkshake</a></li>
+                            <li><a href="#" class="sub-link" data-target="food-27">Strawberry Smoothie</a></li>
+                            <li><a href="#" class="sub-link" data-target="food-26">Banana Smoothie</a></li>
+                            <li><a href="#" class="sub-link" data-target="food-25">Mango Smoothie</a></li>
+                            <li><a href="#" class="sub-link" data-target="food-">Vanilla Milkshake</a></li>
+                            <li><a href="#" class="sub-link" data-target="food-">Chocolate Milkshake</a></li>
+                            <li><a href="#" class="sub-link" data-target="food-22">Berry Smoothie</a></li>
                         </ul>                 
                     </li>
                 </ul>
@@ -142,7 +150,7 @@
             <!-- Contains: Theme banner -->
             <!-- ===================== -->
             <div class="top-bar">
-                <h1 class="bar-logo">Crossing Eats</h1>
+                <h1 class="bar-logo">Since 2025</h1>
 
                 <div class="top-icons">
                     <a href="menu.php" class="icon search">
@@ -175,9 +183,20 @@
             </div>
 
             <section class="brown-box">
-                <div class="brown-image">
-                    <img src="../img/aji fry.jpg" alt="Featured Food">
+                <div class="brown-image carousel">
+                    <div class="carousel-viewport">
+                        <div class="carousel-track">
+                            <img src="../img/aji fry.jpg" alt="Aji Fry Set">
+                            <img src="../img/chicken tender.jpg" alt="Chicken Tender Set">
+                            <img src="../img/strawberry-smoothie.jpg" alt="Strawberry Smoothie Set">
+                            <img src="../img/miso soup.jpg" alt="Miso Soup Set">
+                            <img src="../img/sandwich.jpg" alt="Sandwich Set">
+                            <img src="../img/Tomato_Curry.jpg" alt="Tomato_Curry Set">
+                            <img src="../img/fruit-tart.jpg" alt="Fruit Tart Set">
+                        </div>
+                    </div>
                 </div>
+
 
                 <div class="brown-info">
                     <div class="white-ac-box">
@@ -236,11 +255,13 @@
                         <?php foreach ($foods as $food): ?>
                         <div class="food-card"
                                 class="add-btn"
+                                id="food-<?= $food['id'] ?>"
                                 data-id="<?= $food['id'] ?>"
                                 data-name="<?= htmlspecialchars($food['name']) ?>"
                                 data-price="<?= $food['price'] ?>"
                                 data-img="../img/<?= htmlspecialchars($food['image']) ?>"
-                                data-desc="<?= htmlspecialchars($food['description']) ?>">
+                                data-desc="<?= htmlspecialchars($food['description']) ?>"
+                                data-category="<?= htmlspecialchars($food['category']) ?>">
 
                             <img
                             src="../img/<?= htmlspecialchars($food['image']) ?>"
@@ -276,15 +297,6 @@
                 <div class="modal-body">
                 <h2 id="modal-title"></h2>
                 <p id="modal-desc"></p>
-
-                <div class="modal-tabs">
-                    <button class="tab active">Options</button>
-                    <button class="tab">Details</button>
-                </div>
-
-                <textarea id="modal-note"
-                    placeholder="Special notes (no onions, less spicy...)"></textarea>
-                </div>
 
                 <div class="modal-footer">
                 <div class="modal-qty">
@@ -374,7 +386,7 @@
         </div>
 
         <!-- Functions -->
-        <script src="functions.js"></script>
+        <script src="../javascript/index_functions.js"></script>
 
         <!-- TEST BY JORDAN -->
     </body>
