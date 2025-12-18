@@ -506,7 +506,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // copy (super reliable fallback)
   copyBtn?.addEventListener("click", () => {
-    const code = couponInput?.value || "KIDS1111";
+    const code = couponInput?.value || "KIDS11";
 
     // Create temp input to guarantee copy on most browsers
     const temp = document.createElement("input");
