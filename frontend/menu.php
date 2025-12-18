@@ -57,7 +57,13 @@
         <?php } 
         else {?>
             <?php foreach ($foods as $food) {?>
-            <div class="menu-card">
+            <div class="menu-card food-card"
+                data-id="<?= $food['id'] ?>"
+                data-name="<?= htmlspecialchars($food['name']) ?>"
+                data-price="<?= $food['price'] ?>"
+                data-img="../img/<?= htmlspecialchars($food['image']) ?>"
+                data-desc="<?= htmlspecialchars($food['description']) ?>">
+
                 <img src="../img/<?= htmlspecialchars($food['image']) ?>" alt="<?= htmlspecialchars($food['name']) ?>">
                 <div class="menu-info">
                     <h3><?= htmlspecialchars($food['name']) ?></h3>
@@ -73,5 +79,27 @@
         <?php } ?>
     </section>
 </section>
+<!-- Food Modal -->
+<div id="food-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+
+    <img id="modal-img" alt="">
+    <h2 id="modal-title"></h2>
+    <p id="modal-desc"></p>
+
+    <div class="qty-control">
+      <button id="qty-minus">-</button>
+      <span id="qty-count">1</span>
+      <button id="qty-plus">+</button>
+    </div>
+
+    <button id="add-to-cart-btn">Add to Cart</button>
+  </div>
+</div>
+
+<!-- JavaScript -->
+<script src="menu_functions.js"></script>
+
 </body>
 </html>
