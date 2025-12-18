@@ -296,5 +296,92 @@ document.addEventListener("click", function (e) {
   }
 });
 
+// CATEGORY FILTERING
+function filterCategory(category) {
+  document.querySelectorAll(".food-card").forEach(card => {
+    const cardCategory = card.dataset.category;
+
+    if (category === "all" || cardCategory === category) {
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
+  });
+
+  // Update section title
+  const title = document.getElementById("current-category");
+  if (title) {
+    title.textContent =
+      category === "all"
+        ? "Top Sellers"
+        : category.charAt(0).toUpperCase() + category.slice(1);
+  }
+}
+
+document.querySelectorAll(".nav-link[data-category]").forEach(link => {
+  link.addEventListener("click", e => {
+    e.preventDefault();
+
+    const category = link.dataset.category;
+
+    // 1️⃣ Filter food
+    filterCategory(category);
+
+    // 2️⃣ Scroll to menu signboard
+    const menuSection = document.getElementById("upper-menu");
+    if (menuSection) {
+      menuSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }
+  });
+});
+
+document.querySelectorAll(".sub-link[data-target]").forEach(link => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const targetId = link.dataset.target;
+    const card = document.getElementById(targetId);
+    if (!card) return;
+
+    // Scroll to the card
+    card.scrollIntoView({ behavior: "smooth", block: "center" });
+
+    // Re-trigger shake even if clicked repeatedly
+    card.classList.remove("shake");
+    void card.offsetWidth; // force reflow
+    card.classList.add("shake");
+
+    // Optional: remove class after animation ends
+    setTimeout(() => card.classList.remove("shake"), 500);
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const navbar = document.getElementById("navbar");
+  const overlay = document.querySelector(".sidebar-overlay");
+
+  // support BOTH hamburger buttons
+  const toggles = [
+    document.getElementById("menu-btn"),
+    document.getElementById("menu-toggle"),
+  ].filter(Boolean);
+
+  if (!navbar || !overlay || toggles.length === 0) return;
+
+  function openClose() {
+    navbar.classList.toggle("open");
+    overlay.classList.toggle("active");
+  }
+
+  toggles.forEach(btn => btn.addEventListener("click", openClose));
+
+  overlay.addEventListener("click", () => {
+    navbar.classList.remove("open");
+    overlay.classList.remove("active");
+  });
+});
 
 
