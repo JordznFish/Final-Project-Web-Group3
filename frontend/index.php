@@ -264,15 +264,6 @@
                 <h2 id="modal-title"></h2>
                 <p id="modal-desc"></p>
 
-                <div class="modal-tabs">
-                    <button class="tab active">Options</button>
-                    <button class="tab">Details</button>
-                </div>
-
-                <textarea id="modal-note"
-                    placeholder="Special notes (no onions, less spicy...)"></textarea>
-                </div>
-
                 <div class="modal-footer">
                 <div class="modal-qty">
                     <button id="qty-minus">−</button>
