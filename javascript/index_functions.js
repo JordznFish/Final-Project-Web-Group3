@@ -121,16 +121,16 @@ document.querySelectorAll(".nav-link").forEach((link) => {
 });
 
 // Popping up window menu
-            const modal = document.getElementById("food-modal");
-            const modalImg = document.getElementById("modal-img");
-            const modalTitle = document.getElementById("modal-title");
-            const modalDesc = document.getElementById("modal-desc");
-            const qtyCount = document.getElementById("qty-count");
+const modal = document.getElementById("food-modal");
+const modalImg = document.getElementById("modal-img");
+const modalTitle = document.getElementById("modal-title");
+const modalDesc = document.getElementById("modal-desc");
+const qtyCount = document.getElementById("qty-count");
 
-            const hasModal = modal && modalImg && modalTitle && modalDesc && qtyCount;
+const hasModal = modal && modalImg && modalTitle && modalDesc && qtyCount;
 
-            let currentItem = {};
-            let qty = 1;
+let currentItem = {};
+let qty = 1;
 
 if (hasModal) {
   function openFoodModal(item) {
@@ -210,7 +210,8 @@ if (hasModal) {
         name: currentItem.name,
         price: currentItem.price,
         qty: qty,
-        image: currentItem.img
+        image: currentItem.img,
+        desc: currentItem.desc
       })
     })
     .then(res => res.json())
