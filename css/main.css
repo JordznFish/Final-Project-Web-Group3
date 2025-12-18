@@ -294,6 +294,7 @@ CATEGORY SIGNBOARD
   justify-content: center;
   align-items: center;
   z-index: 999;
+  text-align: center;
 }
 .food-modal.show{ display: flex; }
 
@@ -305,7 +306,7 @@ CATEGORY SIGNBOARD
 
   display: flex;
   flex-direction: row;
-  align-items: stretch;
+  align-items: center;
   gap: 16px;
 
   width: 92vw;
@@ -421,4 +422,60 @@ CATEGORY SIGNBOARD
 
 .food-card.shake {
   animation: shake 0.4s ease;
+}
+
+/* =========================
+   FOOD MODAL — <= 650px
+   ========================= */
+@media (max-width: 650px) {
+
+  .food-modal-content {
+    flex-direction: column;
+    align-items: center;
+    width: 75vw;
+    padding: 16px;
+    gap: 14px;
+  }
+
+  /* Image on top */
+  .modal-img {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+
+  /* Text area */
+  .modal-body {
+    width: 100%;
+    text-align: center;
+  }
+
+  #modal-title {
+    font-size: 20px;
+  }
+
+  #modal-desc {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  /* Qty buttons */
+  .modal-qty {
+    gap: 18px;
+  }
+
+  .modal-qty button {
+    width: 42px;
+    height: 42px;
+  }
+
+  /* 🔥 Add to Cart — LONG BUTTON */
+  #add-to-cart-btn {
+    width: 100%;
+    max-width: 320px;
+    padding: 12px 0;
+    font-size: 18px;
+    border-radius: 999px;
+  }
 }

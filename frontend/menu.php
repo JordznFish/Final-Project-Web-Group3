@@ -24,6 +24,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main menu</title>
     <link rel="stylesheet" type="text/css" href="../css/menu.css">
+    <link rel="stylesheet" type="text/css" href="../css/cart-footer.css"
     <!-- Font -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,6 +36,7 @@
 </head>
 <body>
     <a href="index.php" class="back-btn">← Back to Menu</a>
+    <a href="cart.php" class="front-btn">Go to Cart →</a>
     <div class="background-wrapper">
     <header class="menu-header">
         <div class="menu-header-inner">
@@ -83,26 +85,52 @@
 
 <!-- Food Modal -->
 <div id="food-modal" class="modal">
-  <div class="modal-content">
-    <span class="close-modal">&times;</span>
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
 
-    <img id="modal-img" alt="">
-    <h2 id="modal-title"></h2>
-    <p id="modal-desc"></p>
+        <img id="modal-img" alt="">
+        <h2 id="modal-title"></h2>
+        <p id="modal-desc"></p>
 
-    <div class="qty-control">
-      <button id="qty-minus">-</button>
-      <span id="qty-count">1</span>
-      <button id="qty-plus">+</button>
+        <div class="qty-control">
+            <button id="qty-minus">-</button>
+            <span id="qty-count">1</span>
+            <button id="qty-plus">+</button>
+        </div>
+
+        <button id="add-to-cart-btn">Add to Cart</button>
     </div>
-
-    <button id="add-to-cart-btn">Add to Cart</button>
-  </div>
 </div>
+
+<footer id="site-footer"style="background-image: url('../img/background/footerzz.png');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    position: relative;
+    padding: 60px 20px;">
+
+        <h2>Thank you for visiting!</h2>
+        <p>Follow us on social media:</p>
+
+        <div class="social-links">
+        <a href="https://www.facebook.com" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" class="social-icon">
+        </a>
+        <a href="https://www.instagram.com" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" class="social-icon">
+        </a>
+        <a href="https://www.twitter.com" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" class="social-icon">
+        </a>
+        </div>
+
+        <p class="copyright">© 2025 CrossingEats. All rights reserved.</p>
+
+    </footer>
 
 <!-- JavaScript -->
 <script src="../javascript/menu_functions.js"></script>
 
-</div>
 </body>
 </html>

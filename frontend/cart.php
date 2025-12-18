@@ -51,7 +51,7 @@ $total = $subtotal - $discount + $deliveryFee;
     <div class="background-wrapper">
       <div class="align">
         <header class="cart-header">
-          <a href="index.php" class="back-btn">← Back to Menu</a>
+          <a href="menu.php" class="back-btn">← Back to Menu</a>
           <h1>🛒 My Cart</h1>
         </header>
 

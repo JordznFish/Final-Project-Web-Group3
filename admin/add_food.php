@@ -86,17 +86,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <?php endif; ?>
 
         <form action="" method="POST" enctype="multipart/form-data" class="add-form">
+            <br>
+            <label>Name:</label>
+            <input type="text" name="name" required>
 
-            <label>Name:</label><br>
-            <input type="text" name="name" required><br><br>
+            <label>Price:</label>
+            <input type="number" name="price" step="0.01" required>
 
-            <label>Price:</label><br>
-            <input type="number" name="price" step="0.01" required><br><br>
+            <label>Description:</label>
+            <textarea name="description" rows="4" required></textarea>
 
-            <label>Description:</label><br>
-            <textarea name="description" rows="4" required></textarea><br><br>
-
-            <label>Image:</label><br>
+            <label>Image:</label>
             <input type="file" name="image" accept="image/*" required><br><br>
 
             <button type="submit" class="btn">Add Food</button>
