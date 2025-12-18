@@ -34,9 +34,9 @@
         <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <a href="index.php" class="back-btn">← Back to Menu</a>
     <div class="background-wrapper">
     <header class="menu-header">
-        <a href="index.php" class="back-btn">← Back to Menu</a>
         <div class="menu-header-inner">
             <h1 class="menu-sign">Search Menu</h1>
             <p class="menu-subtitle">Find your favorite dishes ✨</p>
@@ -71,10 +71,10 @@
                 <p class="desc"><?= htmlspecialchars($food['description']) ?></p>
 
                 <div class="menu-action">
-                    <p class="price">$<?= htmlspecialchars($food['price']) ?></p>
+                    <p class="price">NT$<?= htmlspecialchars($food['price']) ?></p>
                     <button class="add-btn">+</button>
                 </div>
-            </div>
+                </div>
             </div>
             <?php } ?>
         <?php } ?>
