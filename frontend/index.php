@@ -57,8 +57,8 @@
                             <li><a href="#" class="sub-link" data-target="food-2">Sea-Bass Pie</a></li>
                             <li><a href="#" class="sub-link" data-target="food-15">Chicken & Mash</a></li>
                             <li><a href="#" class="sub-link" data-target="food-6">Aji Fry teishoku</a></li>
-                            <li><a href="#" class="sub-link" data-target="food-">Teriyaki Rice</a></li>
-                            <li><a href="#" class="sub-link" data-target="food-">Salmon Bowl</a></li>
+                            <li><a href="#" class="sub-link" data-target="food-39">Teriyaki Rice</a></li>
+                            <li><a href="#" class="sub-link" data-target="food-38">Salmon Bowl</a></li>
                         </ul>
                     </li>
 
@@ -81,7 +81,7 @@
                         <ul class="submenu">
                             <li><a href="#" class="sub-link" data-target="food-29">Mushroom Soup</a></li>
                             <li><a href="#" class="sub-link" data-target="food-28">Carrot Potage</a></li>
-                            <li><a href="#" class="sub-link" data-target="food-">Pumpkin Soup</a></li>
+                            <li><a href="#" class="sub-link" data-target="food-37">Pumpkin Soup</a></li>
                             <li><a href="#" class="sub-link" data-target="food-21">Corn Chowder</a></li>
                             <li><a href="#" class="sub-link" data-target="food-20">Miso Soup</a></li>
                             <li><a href="#" class="sub-link" data-target="food-3">Minestrone Soup</a></li>
@@ -108,8 +108,8 @@
                             <li><a href="#" class="sub-link" data-target="food-27">Strawberry Smoothie</a></li>
                             <li><a href="#" class="sub-link" data-target="food-26">Banana Smoothie</a></li>
                             <li><a href="#" class="sub-link" data-target="food-25">Mango Smoothie</a></li>
-                            <li><a href="#" class="sub-link" data-target="food-">Vanilla Milkshake</a></li>
-                            <li><a href="#" class="sub-link" data-target="food-">Chocolate Milkshake</a></li>
+                            <li><a href="#" class="sub-link" data-target="food-36">Vanilla Milkshake</a></li>
+                            <li><a href="#" class="sub-link" data-target="food-35">Chocolate Milkshake</a></li>
                             <li><a href="#" class="sub-link" data-target="food-22">Berry Smoothie</a></li>
                         </ul>                 
                     </li>
