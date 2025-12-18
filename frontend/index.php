@@ -201,7 +201,7 @@
 
                         <div class="delivery-row">
                             <div class="pill delivery-pill">
-                                <span class="label">Estimated Delivery:</span>
+                                <span class="label">Delivery Hours:</span>
                                 <div class="time-row">
                                     <span class="time">09:00</span> to <span class="time">21:00</span>
                                 </div>
@@ -209,8 +209,8 @@
 
                             <div class="pill fee-pill">
                                 <span class="fee-label">Delivery Fee</span>
-                                <span class="price">NT$ <strong>39</strong></span>
-                                <span class="free-tag">FREE over NT$ 299</span>
+                                <span class="price">NT$ <strong>2.50</strong></span>
+                                <span class="free-tag">CROSSING EATS SPECIAL</span>
                             </div>
                         </div>
                     </div>

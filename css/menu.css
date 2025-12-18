@@ -61,6 +61,34 @@ body{
   box-shadow: 0 10px 20px rgba(0,0,0,0.25);
 }
 
+.front-btn{
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-family: "Schoolbell", cursive;
+  font-size: 16px;
+  font-weight: bold;
+  color: #0e8253;
+  background: rgba(255, 253, 245, 0.9);
+  border: 2px solid #0e8253;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.18);
+  text-decoration: none;
+  z-index: 10;
+  transition: all 0.2s ease;
+}
+
+.front-btn:hover{
+  background: #0e8253;
+  color: #fffdf5;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+}
+
 .menu-header{
   position: relative;
   width: 100%;
@@ -267,7 +295,7 @@ body{
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
   overflow: hidden;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: bold;
   line-height: 1.5;
   color: #4a2e1a;
@@ -311,10 +339,9 @@ body{
   transition: transform .25s ease, background-color .25s ease, box-shadow .25s ease;
 }
 
-.menu-action .add-btn:hover{
+.menu-card:hover .add-btn{
   background-color: #13a064;
-  transform: rotate(180deg) scale(1.1);
-  box-shadow: 0 6px 12px rgba(0,0,0,.25);
+  transform: rotate(360deg) scale(1.1);
 }
 
 .menu-card{
@@ -324,7 +351,6 @@ body{
 
 .menu-card:hover{
   transform: translateY(-4px);
-  box-shadow: 0 14px 30px rgba(0,0,0,0.18);
 }
 
 *,
@@ -460,6 +486,13 @@ body{
     top: 16px;
     left: 16px;
   }
+  
+  .front-btn{
+    font-size: 14px;
+    padding: 6px 12px;
+    top: 16px;
+    right: 16px;
+  }
 
   .menu-search form{
     width: 92%;
@@ -509,6 +542,8 @@ body{
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 100%;
+    font-size: 14.7px;
+    text-align: center;
   }
 }
 

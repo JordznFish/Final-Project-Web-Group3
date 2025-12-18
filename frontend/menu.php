@@ -36,6 +36,7 @@
 </head>
 <body>
     <a href="index.php" class="back-btn">← Back to Menu</a>
+    <a href="cart.php" class="front-btn">Go to Cart →</a>
     <div class="background-wrapper">
     <header class="menu-header">
         <div class="menu-header-inner">

@@ -107,22 +107,19 @@
         <?php endif; ?>
 
         <form action="" method="POST" enctype="multipart/form-data" class="add-form">
-
+            <br>
             <label>Name:</label>
-            <input type="text" name="name" value="<?= htmlspecialchars($food['name']) ?>" required><br><br>
+            <input type="text" name="name" value="<?= htmlspecialchars($food['name']) ?>" required>
 
             <label>Price:</label>
-            <input type="number" name="price" step="0.01"value="<?= htmlspecialchars($food['price']) ?>" required><br><br>
+            <input type="number" name="price" step="0.01"value="<?= htmlspecialchars($food['price']) ?>" required>
                 
             <label>Description:</label>
-            <textarea name="description" rows="4" required><?= htmlspecialchars($food['description']) ?></textarea><br><br>
+            <textarea name="description" rows="4" required><?= htmlspecialchars($food['description']) ?></textarea>
 
             <label>Current Image Filename:</label>
-            <input type="text" name="image_text"
-                value="<?= htmlspecialchars($food['image']) ?>"
-                required>
-
-            <img src="../img/<?= htmlspecialchars($food['image']) ?>" class="food-img"><br><br>
+            <img src="../img/<?= htmlspecialchars($food['image']) ?>" class="food-img" style="display:block; margin-bottom: 5px;">
+            <input type="text" name="image_text" value="<?= htmlspecialchars($food['image']) ?>"required>
 
             <label>Upload New Image (optional):</label>
             <input type="file" name="image_file" accept="image/*"><br><br>
