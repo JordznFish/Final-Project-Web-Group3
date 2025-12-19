@@ -5,6 +5,7 @@ require_once "../backend/db-connect.php";
 // initialize error & success messages
 $error = "";
 $success = "";
+$categories = ["main", "soup", "snack", "dessert", "beverage"];
 
 // When form is submitted:
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -13,7 +14,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $price = $_POST["price"];
     $description = $_POST["description"];
     $imageName = "";
-
+    $category = $_POST["category"];
+    
     //  HANDLE IMAGE UPLOAD
     // Check if a file was uploaded AND no errors occurred
     if (isset($_FILES["image"]) && $_FILES["image"]["error"] === UPLOAD_ERR_OK) {
@@ -32,11 +34,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     //  INSERT INTO DATABASE USING PDO
     if (empty($error)) {
         $stmt = $db->prepare("
-            INSERT INTO foods (name, price, description, image)
-            VALUES (?, ?, ?, ?)
+            INSERT INTO foods (name, price, description, image, category)
+            VALUES (?, ?, ?, ?, ?)
         ");
 
-        if ($stmt->execute([$name, $price, $description, $imageName])) {
+        if ($stmt->execute([$name, $price, $description, $imageName, $category])) {
             $success = "Food item added successfully!";
             // header("Location: admin_dashboard.php");
             // exit;
@@ -92,7 +94,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <textarea name="description" rows="4" required></textarea>
 
             <label>Image:</label>
-            <input type="file" name="image" accept="image/*" required><br><br>
+            <input type="file" name="image" accept="image/*" required>
+
+            <label>Category:</label>
+            <select name="category" required>
+                <option value="">-- Select Category --</option>
+                <?php foreach ($categories as $cat): ?>
+                    <option value="<?= $cat ?>"><?= ucfirst($cat) ?></option>
+                <?php endforeach; ?>
+            </select>
+
+            <br><br>
 
             <button type="submit" class="btn">Add Food</button>
         </form>

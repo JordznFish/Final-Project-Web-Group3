@@ -2,6 +2,8 @@
     require_once "../backend/session_check.php";
     require_once "../backend/db-connect.php";
 
+    $categories = ["main", "soup", "snack", "dessert", "beverage"];
+
     // Get ID from URL
     if (!isset($_GET["id"])) {
         die("Invalid Food ID");
@@ -18,6 +20,8 @@
         die("Food not found!");
     }
 
+    $currentCategory = $food["category"];
+
     $error = "";
     $success = "";
 
@@ -28,6 +32,7 @@
         $name = $_POST["name"];
         $price = $_POST["price"];
         $description = $_POST["description"];
+        $category = $_POST["category"];
         $imageName = $food["image"];  // default: keep old image
 
         // If file uploaded: highest priority
@@ -53,17 +58,19 @@
         if (empty($error)) {
             $updateStmt = $db->prepare("
                 UPDATE foods
-                SET name = ?, price = ?, description = ?, image = ?
+                SET name = ?, price = ?, description = ?, image = ?, category = ?
                 WHERE id = ?
             ");
 
-            if ($updateStmt->execute([$name, $price, $description, $imageName, $food_id])) {
+            if ($updateStmt->execute([$name, $price, $description, $imageName, $category, $food_id])) {
                 $success = "Food updated successfully!";
                 // Refresh data after update
                 $food["name"] = $name;
                 $food["price"] = $price;
                 $food["description"] = $description;
                 $food["image"] = $imageName;
+                $food["category"] = $category;
+                $currentCategory = $category;
 
             } else {
                 $error = "Failed to update data!";
@@ -78,7 +85,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit food</title>
-    <link rel="stylesheet" type="text/css" href="../css/admin_dashboard.css"
+    <link rel="stylesheet" type="text/css" href="../css/admin_dashboard.css">
 </head>
 <body>
     <!-- SIDEBAR -->
@@ -118,8 +125,20 @@
             <input type="text" name="image_text" value="<?= htmlspecialchars($food['image']) ?>"required>
 
             <label>Upload New Image (optional):</label>
-            <input type="file" name="image_file" accept="image/*"><br><br>
+            <input type="file" name="image_file" accept="image/*">
             
+            <label>Category:</label>
+            <select name="category" required>
+                <?php foreach ($categories as $cat): ?>
+                    <option value="<?= $cat ?>"
+                        <?= ($cat === $currentCategory) ? "selected" : "" ?>>
+                        <?= ucfirst($cat) ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
+
+            <br><br>
+
             <button type="submit" class="btn">Update Food</button>
 
         </form>
