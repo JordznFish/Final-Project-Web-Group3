@@ -1,6 +1,4 @@
-/* ---------------------------
-   BASIC RESET
-----------------------------*/
+/*BASIC RESET*/
 * {
     margin: 0;
     padding: 0;
@@ -13,9 +11,7 @@ body {
     display: flex;
 }
 
-/* ---------------------------
-   SIDEBAR
-----------------------------*/
+/*SIDEBAR*/
 .sidebar {
     width: 240px;
     height: 100vh;
@@ -60,9 +56,7 @@ body {
     margin-right: 10px;
 }
 
-/* ---------------------------
-   MAIN CONTENT
-----------------------------*/
+/*MAIN CONTENT*/
 .main-content {
     margin-left: 240px;   /* same as sidebar width */
     padding: 25px;
@@ -75,9 +69,7 @@ body {
     margin-bottom: 20px;
 }
 
-/* ---------------------------
-   BUTTONS
-----------------------------*/
+/*BUTTONS*/
 .btn {
     padding: 10px 15px;
     background: #02b854;
@@ -112,9 +104,7 @@ body {
     color: #333;
 }
 
-/* ---------------------------
-   TABLE (Food List)
-----------------------------*/
+/*TABLE (Food List)*/
 .table-container {
     margin-top: 20px;
     background: white;
@@ -153,9 +143,7 @@ img.food-img {
     box-shadow: 2px 2px rgba(0, 0, 0, 0.574);
 }
 
-/* ---------------------------
-   FORM FIXES
-----------------------------*/
+/*FORM FIXES*/
 .add-form label {
     display: block;
     font-weight: bold;

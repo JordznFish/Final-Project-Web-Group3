@@ -38,9 +38,7 @@ body {
   to { background-position: -100px -100px, -50px -50px, -50px -100px; }
 }
 
-/* ------------------------------
-   LOGIN CARD (CENTER)
------------------------------- */
+/* LOGIN CARD (CENTER)*/
 .login-container {
     width: 100%;
     min-height: 100vh;
@@ -61,26 +59,20 @@ body {
     color: white;
 }
 
-/* ------------------------------
-   LOGO LOGO
------------------------------- */
+/*LOGIN LOGO*/
 .login-logo {
     margin: 20px;
     font-size: 40px;
     color: grey;
 }
 
-/* ------------------------------
-   LOGO ICON
------------------------------- */
+/* LOGO ICON*/
 .login-icon {
     font-size: 60px;
     margin-bottom: 25px;
 }
 
-/* ------------------------------
-   INPUT TITLES
------------------------------- */
+/* INPUT TITLES*/
 .input-title {
     text-align: left;
     font-size: 20px;
@@ -88,9 +80,7 @@ body {
     padding-left: 5px;
 }
 
-/* ------------------------------
-   INPUT BOXES
------------------------------- */
+/* INPUT BOXES*/
 .input-group {
     width: 94%;
     background: rgb(255, 255, 255);
@@ -123,9 +113,7 @@ input::placeholder {
     color: #cfd8dc;
 }
 
-/* ------------------------------
-   LOGIN BUTTON
------------------------------- */
+/* LOGIN BUTTON*/
 .login-btn {
     width: 100%;
     padding: 12px;
@@ -150,9 +138,7 @@ input::placeholder {
     font-size: 14px;
 }
 
-/* ------------------------------
-   RESPONSIVE DESIGN
------------------------------- */
+/* RESPONSIVE DESIGN*/
 @media (max-width: 480px) {
     .login-card {
         width: 300px;

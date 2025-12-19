@@ -2,17 +2,14 @@
     require_once "../backend/session_check.php";
     require_once "../backend/db-connect.php";
 
-    // ------------------------------
-    // 1) Get ID from URL
-    // ------------------------------
+    // Get ID from URL
     if (!isset($_GET["id"])) {
         die("Invalid Food ID");
     }
     $food_id = $_GET["id"];
 
-    // ------------------------------
-    // 2) Fetch existing food data
-    // ------------------------------
+    
+    // Fetch existing food data
     $stmt = $db->prepare("SELECT * FROM foods WHERE id = ?");
     $stmt->execute([$food_id]);
     $food = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -24,9 +21,8 @@
     $error = "";
     $success = "";
 
-    // ------------------------------
-    // 3) If form submitted → update
-    // ------------------------------
+    
+    // If form submitted → update
     if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         $name = $_POST["name"];
@@ -34,7 +30,7 @@
         $description = $_POST["description"];
         $imageName = $food["image"];  // default: keep old image
 
-        // 1️⃣ If file uploaded → highest priority
+        // If file uploaded: highest priority
         if (!empty($_FILES["image_file"]["name"])) {
 
             $newImage = basename($_FILES["image_file"]["name"]);
@@ -46,14 +42,14 @@
                 $error = "Image upload failed!";
             }
 
-        // 2️⃣ Else → use text input
+        // Else: use text input
         } else {
             if (!empty($_POST["image_text"])) {
                 $imageName = trim($_POST["image_text"]);
             }
         }
 
-        // -------- UPDATE IN DB --------
+        // UPDATE IN DB 
         if (empty($error)) {
             $updateStmt = $db->prepare("
                 UPDATE foods

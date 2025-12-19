@@ -8,7 +8,7 @@ if (!isset($_SESSION['cart'])) {
 
 $action = $_POST['action'] ?? '';
 
-/* ===== ADD ===== */
+/* ADD */
 if ($action === 'add') {
     $id = (int)$_POST['id'];
     $name = $_POST['name'];
@@ -34,7 +34,7 @@ if ($action === 'add') {
     exit;
 }
 
-/* ===== REMOVE ONE ITEM ===== */
+/* REMOVE ONE ITEM */
 if ($action === 'remove') {
     $id = (int)$_POST['id'];
 
@@ -46,7 +46,7 @@ if ($action === 'remove') {
     exit;
 }
 
-/* ===== CLEAR CART ===== */
+/* CLEAR CART */
 if ($action === 'clear') {
     $_SESSION['cart'] = [];
     unset($_SESSION['coupon']);
@@ -71,7 +71,7 @@ if ($action === 'update') {
     exit;
 }
 
-/* ===== APPLY PROMO COUPON ===== */
+/* APPLY PROMO COUPON */
 if ($action === 'apply_coupon') {
     $code = strtoupper(trim($_POST['code'] ?? ''));
 
@@ -100,5 +100,5 @@ if ($action === 'apply_coupon') {
 }
 
 
-/* ===== FALLBACK ===== */
+/* FALLBACK */
 echo json_encode(['status' => 'invalid_action']);

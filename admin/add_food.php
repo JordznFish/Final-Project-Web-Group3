@@ -14,9 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $description = $_POST["description"];
     $imageName = "";
 
-    // ---------------------------------------------------
     //  HANDLE IMAGE UPLOAD
-    // ---------------------------------------------------
     // Check if a file was uploaded AND no errors occurred
     if (isset($_FILES["image"]) && $_FILES["image"]["error"] === UPLOAD_ERR_OK) {
 
@@ -31,9 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $error = "Image upload is required!";
     }
 
-    // ---------------------------------------------------
     //  INSERT INTO DATABASE USING PDO
-    // ---------------------------------------------------
     if (empty($error)) {
         $stmt = $db->prepare("
             INSERT INTO foods (name, price, description, image)
@@ -42,7 +38,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         if ($stmt->execute([$name, $price, $description, $imageName])) {
             $success = "Food item added successfully!";
-            // optional redirect:
             // header("Location: admin_dashboard.php");
             // exit;
         } else {
